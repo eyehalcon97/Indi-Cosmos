@@ -15,7 +15,22 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+
+
+    void on_boolpanelderecho_changed();
+
+    void on_actionSalir_triggered();
+
+
+    void on_boolpanelsuperior_changed();
+
+    void on_Nobjetos_valueChanged(int arg1);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
+
