@@ -2,6 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
+#include <QButtonGroup>
+#include <QGridLayout>
+#include <QWidget>
+#include <iostream>
+#include <telescopio.h>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,8 +22,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
 
+private slots:
 
     void on_boolpanelderecho_changed();
 
@@ -29,8 +36,18 @@ private slots:
 
     void on_pushButton_clicked();
 
+
 private:
     Ui::MainWindow *ui;
+    int idbotones=0;
+    QGridLayout *layoutbotones = new QGridLayout;
+    QPushButton **botones  = new QPushButton*[100];
+    int columnasmaxima =5;
+
+    QGridLayout *layouttelesopio = new QGridLayout;
+    telescopio **telescopios  = new telescopio*[100];
+
+
 };
 #endif // MAINWINDOW_H
 

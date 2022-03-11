@@ -3,10 +3,10 @@
 #include <string>
 #include <QWidget>
 #include <QPushButton>
+#include <iostream>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+
+MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 
 {
 
@@ -16,6 +16,11 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
 
+    for (int i=0;i<100 ;i++ ) {
+        delete botones[i];
+    }
+    delete *botones;
+    delete layoutbotones;
     delete ui;
 
 }
@@ -52,21 +57,41 @@ void MainWindow::on_boolpanelsuperior_changed()
 
 void MainWindow::on_Nobjetos_valueChanged(int arg1)
 {
-    //ui->label->setText(QString::number(arg1));
-    QPushButton **boton  = new QPushButton*[arg1];
-    for (int i=0;i<arg1;i++){
-        boton[i] = new QPushButton;
-        boton[i]->setText("Boton numero " + QString::number(i+1) );
-        boton[i]->setSizePolicy(QSizePolicy::Minimum,QSizePolicy::Fixed);
-        ui->PanelPrincipal->setWidget(boton[i]);
-        boton[i]->setVisible(true);
-    }
+
+
 
 }
 
 
+
+
 void MainWindow::on_pushButton_clicked()
 {
+
+    idbotones++;
+    int fila= (idbotones/columnasmaxima);
+    int columna = idbotones%columnasmaxima;
+    if(columna == 0){
+        columna = columnasmaxima;
+        fila--;
+    }
+/*
+    botones[idbotones] = new QPushButton;
+
+    botones[idbotones]->setText("Boton numero " + QString::number(fila) + QString::number(columna) );
+    botones[idbotones]->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
+    botones[idbotones]->setMinimumSize(QSize(100,100));
+    layoutbotones->addWidget(botones[idbotones],fila,columna);
+
+    ui->PanelPrincipal->widget()->setLayout(layoutbotones);
+*/
+
+    telescopios[idbotones] = new telescopio;
+    telescopios[idbotones]->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
+
+    layouttelesopio->addWidget(telescopios[idbotones],fila,columna);
+
+    ui->PanelPrincipal->widget()->setLayout(layouttelesopio);
 
 }
 

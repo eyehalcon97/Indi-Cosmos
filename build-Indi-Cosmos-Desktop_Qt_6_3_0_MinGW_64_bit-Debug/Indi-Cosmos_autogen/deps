@@ -104,8 +104,19 @@ Indi-Cosmos_autogen/timestamp: \
 	C:/Qt/6.3.0/mingw_64/include/QtGui/qtransform.h \
 	C:/Qt/6.3.0/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.3.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/QButtonGroup \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGridLayout \
 	C:/Qt/6.3.0/mingw_64/include/QtWidgets/QMainWindow \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/QPushButton \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qboxlayout.h \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qbuttongroup.h \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qgridlayout.h \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qlayout.h \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qmainwindow.h \
+	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qpushbutton.h \
 	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qsizepolicy.h \
 	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qtabwidget.h \
 	C:/Qt/6.3.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
@@ -199,81 +210,24 @@ Indi-Cosmos_autogen/timestamp: \
 	C:/Qt/6.3.0/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
 	C:/Qt/6.3.0/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	C:/Qt/6.3.0/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeCXXInformation.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeDetermineRCCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeFindDependencyMacro.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeNinjaFindMake.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeParseArguments.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeRCCompiler.cmake.in \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeRCInformation.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeSystem.cmake.in \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeTestRCCompiler.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CheckCXXCompilerFlag.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CheckIncludeFile.cxx.in \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CheckIncludeFileCXX.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CheckLibraryExists.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/GNU.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindPackageMessage.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindThreads.cmake \
@@ -281,8 +235,6 @@ Indi-Cosmos_autogen/timestamp: \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/GNUInstallDirs.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Internal/CheckCompilerFlag.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake \
-	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Platform/Windows-Determine-CXX.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake \
@@ -327,6 +279,7 @@ Indi-Cosmos_autogen/timestamp: \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/hash_bytes.h \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/invoke.h \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h \
+	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/iterator_concepts.h \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h \
@@ -416,6 +369,8 @@ Indi-Cosmos_autogen/timestamp: \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/initializer_list \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iosfwd \
+	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
+	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iterator \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits \
 	C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list \
@@ -507,9 +462,12 @@ Indi-Cosmos_autogen/timestamp: \
 	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/main.cpp \
 	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/mainwindow.cpp \
 	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/mainwindow.h \
+	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/telescopio.cpp \
+	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/telescopio.h \
 	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake \
 	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/CMakeFiles/3.21.1/CMakeRCCompiler.cmake \
 	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/CMakeFiles/3.21.1/CMakeSystem.cmake \
 	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/Indi-Cosmos_autogen/moc_predefs.h \
 	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/mainwindow.ui \
+	C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/telescopio.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

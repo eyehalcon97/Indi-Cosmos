@@ -43,6 +43,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/gadit/OneDrive/Escri
 set(OLD_GLOB
   "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/main.cpp"
   "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/mainwindow.cpp"
+  "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/telescopio.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -62,6 +63,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/*.h")
 set(OLD_GLOB
   "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/mainwindow.h"
+  "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/telescopio.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -162,6 +164,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/*.ui")
 set(OLD_GLOB
   "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/mainwindow.ui"
+  "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/telescopio.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

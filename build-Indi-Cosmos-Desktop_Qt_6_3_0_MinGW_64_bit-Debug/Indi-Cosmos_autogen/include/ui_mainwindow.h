@@ -18,6 +18,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QWidget>
@@ -35,11 +36,11 @@ public:
     QWidget *PanelSuperior;
     QSpinBox *Nobjetos;
     QLabel *label;
+    QPushButton *pushButton;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_2;
     QScrollArea *PanelPrincipal;
-    QWidget *scrollPanelIzquierdo;
-    QGridLayout *gridLayout;
+    QWidget *ScrollPanelPrincipal;
     QScrollArea *PanelDerecho;
     QWidget *scrollPanelDerecho;
     QMenuBar *menubar;
@@ -88,6 +89,9 @@ public:
         label = new QLabel(PanelSuperior);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(330, 0, 49, 16));
+        pushButton = new QPushButton(PanelSuperior);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(110, 10, 80, 24));
 
         gridLayout_2->addWidget(PanelSuperior, 0, 0, 1, 1);
 
@@ -98,14 +102,13 @@ public:
         PanelPrincipal = new QScrollArea(widget_2);
         PanelPrincipal->setObjectName(QString::fromUtf8("PanelPrincipal"));
         PanelPrincipal->setWidgetResizable(true);
-        scrollPanelIzquierdo = new QWidget();
-        scrollPanelIzquierdo->setObjectName(QString::fromUtf8("scrollPanelIzquierdo"));
-        scrollPanelIzquierdo->setGeometry(QRect(0, 0, 1036, 615));
-        sizePolicy1.setHeightForWidth(scrollPanelIzquierdo->sizePolicy().hasHeightForWidth());
-        scrollPanelIzquierdo->setSizePolicy(sizePolicy1);
-        gridLayout = new QGridLayout(scrollPanelIzquierdo);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        PanelPrincipal->setWidget(scrollPanelIzquierdo);
+        PanelPrincipal->setAlignment(Qt::AlignJustify|Qt::AlignVCenter);
+        ScrollPanelPrincipal = new QWidget();
+        ScrollPanelPrincipal->setObjectName(QString::fromUtf8("ScrollPanelPrincipal"));
+        ScrollPanelPrincipal->setGeometry(QRect(0, 0, 1036, 615));
+        sizePolicy1.setHeightForWidth(ScrollPanelPrincipal->sizePolicy().hasHeightForWidth());
+        ScrollPanelPrincipal->setSizePolicy(sizePolicy1);
+        PanelPrincipal->setWidget(ScrollPanelPrincipal);
 
         horizontalLayout_2->addWidget(PanelPrincipal);
 
@@ -157,6 +160,7 @@ public:
 #endif // QT_CONFIG(shortcut)
         boolpanelsuperior->setText(QCoreApplication::translate("MainWindow", "Panel Superior", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Objetos", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Addbutton", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
         menuVer->setTitle(QCoreApplication::translate("MainWindow", "Ver", nullptr));
         (void)MainWindow;

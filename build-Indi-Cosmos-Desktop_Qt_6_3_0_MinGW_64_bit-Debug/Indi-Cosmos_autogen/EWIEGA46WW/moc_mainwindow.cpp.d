@@ -105,8 +105,19 @@ C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_
   C:/Qt/6.3.0/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.3.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.3.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/QButtonGroup \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/QGridLayout \
   C:/Qt/6.3.0/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/QPushButton \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/QWidget \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/qboxlayout.h \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/qbuttongroup.h \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/qgridlayout.h \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/qlayout.h \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.3.0/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.3.0/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.3.0/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.3.0/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.3.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
@@ -150,6 +161,7 @@ C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/hash_bytes.h \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/invoke.h \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h \
+  C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/iterator_concepts.h \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h \
@@ -239,6 +251,8 @@ C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/initializer_list \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iosfwd \
+  C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
+  C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iterator \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits \
   C:/Qt/Tools/mingw900_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list \
@@ -325,4 +339,5 @@ C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_
   C:/Qt/Tools/mingw900_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw900_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw900_64/x86_64-w64-mingw32/include/wchar.h \
-  C:/Qt/Tools/mingw900_64/x86_64-w64-mingw32/include/wctype.h
+  C:/Qt/Tools/mingw900_64/x86_64-w64-mingw32/include/wctype.h \
+  C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/telescopio.h

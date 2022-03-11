@@ -21,6 +21,9 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        telescopio.ui
+        telescopio.h
+        telescopio.cpp
         ${TS_FILES}
 )
 
