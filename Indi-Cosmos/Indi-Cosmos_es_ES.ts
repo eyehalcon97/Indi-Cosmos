@@ -52,13 +52,8 @@
 <context>
     <name>telescopio</name>
     <message>
-        <location filename="telescopio.ui" line="26"/>
+        <location filename="telescopio.ui" line="32"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="telescopio.ui" line="38"/>
-        <source>PushButton</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

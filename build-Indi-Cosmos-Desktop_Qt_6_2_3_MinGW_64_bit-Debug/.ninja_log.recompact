@@ -1,0 +1,16 @@
+# ninja log v5
+3	61	0	C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	c34bb81e07a9b2f3
+458	4294	6689522485375836	CMakeFiles/Indi-Cosmos.dir/mainwindow.cpp.obj	cbafda86c834f292
+10	422	6689529859060387	Indi-Cosmos_autogen/timestamp	66e70c0db1054ffb
+10	422	6689529859060387	C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/Indi-Cosmos_autogen/mocs_compilation.cpp	66e70c0db1054ffb
+10	422	6689529859060387	Indi-Cosmos_autogen/mocs_compilation.cpp	66e70c0db1054ffb
+436	515	6689529859949594	C:/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/Indi-Cosmos_es_ES.ts	5740915ebd7f06a0
+1315	6100	6689120005040153	CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/mocs_compilation.cpp.obj	f06b8a0302ea496
+463	4225	6689522484799433	CMakeFiles/Indi-Cosmos.dir/telescopio.cpp.obj	14010745e15a46ab
+10	422	6689529859060387	C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/Indi-Cosmos_autogen/timestamp	66e70c0db1054ffb
+1320	6457	6689120008740866	CMakeFiles/Indi-Cosmos.dir/main.cpp.obj	7661b5d1698e7de6
+4294	4721	6689522489706111	Indi-Cosmos.exe	be449f537f09cb6c
+439	540	6689529860213787	Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp	b306ab3d92355934
+439	540	6689529860213787	C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp	b306ab3d92355934
+545	683	6689529861727044	CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp.obj	d7d1ba086e8a4e83
+50	830	6689529852985968	build.ninja	b5e71b3a2f246ac4

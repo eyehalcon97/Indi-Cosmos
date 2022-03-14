@@ -24,6 +24,7 @@ set(PROJECT_SOURCES
         telescopio.ui
         telescopio.h
         telescopio.cpp
+        images.qrc
         ${TS_FILES}
 )
 
@@ -63,6 +64,7 @@ set_target_properties(Indi-Cosmos PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
+
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Indi-Cosmos)

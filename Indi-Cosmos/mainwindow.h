@@ -42,7 +42,7 @@ private:
     int idbotones=0;
     QGridLayout *layoutbotones = new QGridLayout;
     QPushButton **botones  = new QPushButton*[100];
-    int columnasmaxima =5;
+    int columnasmaxima =4;
 
     QGridLayout *layouttelesopio = new QGridLayout;
     telescopio **telescopios  = new telescopio*[100];

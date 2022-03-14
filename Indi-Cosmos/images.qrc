@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/lentecuadrada.png</file>
+        <file>Images/Monturacuadrada.png</file>
+    </qresource>
+</RCC>

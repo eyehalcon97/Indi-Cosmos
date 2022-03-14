@@ -75,21 +75,19 @@ void MainWindow::on_pushButton_clicked()
         columna = columnasmaxima;
         fila--;
     }
-/*
-    botones[idbotones] = new QPushButton;
-
-    botones[idbotones]->setText("Boton numero " + QString::number(fila) + QString::number(columna) );
-    botones[idbotones]->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
-    botones[idbotones]->setMinimumSize(QSize(100,100));
-    layoutbotones->addWidget(botones[idbotones],fila,columna);
-
-    ui->PanelPrincipal->widget()->setLayout(layoutbotones);
-*/
 
     telescopios[idbotones] = new telescopio;
-    telescopios[idbotones]->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
+
+    if(idbotones < 5){
+        for(int i=1;i<=idbotones;i++){
+            telescopios[i]->cambiartamanio(ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)),ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)));
+        }
+    }else{
+        telescopios[idbotones]->cambiartamanio(ui->PanelPrincipal->height()/2.5,ui->PanelPrincipal->height()/2.5);
+    }
 
     layouttelesopio->addWidget(telescopios[idbotones],fila,columna);
+
 
     ui->PanelPrincipal->widget()->setLayout(layouttelesopio);
 

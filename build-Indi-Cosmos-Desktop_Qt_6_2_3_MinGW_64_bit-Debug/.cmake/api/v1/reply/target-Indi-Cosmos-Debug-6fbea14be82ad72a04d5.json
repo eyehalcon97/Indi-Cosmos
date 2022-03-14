@@ -32,7 +32,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 31,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
@@ -56,7 +56,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 57,
+				"line" : 58,
 				"parent" : 0
 			},
 			{
@@ -178,7 +178,8 @@
 				0,
 				1,
 				2,
-				7
+				7,
+				13
 			]
 		}
 	],
@@ -274,7 +275,8 @@
 				0,
 				1,
 				2,
-				7
+				7,
+				13
 			]
 		},
 		{
@@ -283,8 +285,8 @@
 			[
 				3,
 				6,
-				9,
-				10
+				10,
+				11
 			]
 		},
 		{
@@ -294,15 +296,17 @@
 				4,
 				5,
 				8,
-				11
+				9,
+				12
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				12,
-				13
+				14,
+				15,
+				16
 			]
 		}
 	],
@@ -355,6 +359,11 @@
 		},
 		{
 			"backtrace" : 4,
+			"path" : "images.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
 			"isGenerated" : true,
 			"path" : "Indi-Cosmos_es_ES.ts",
 			"sourceGroupIndex" : 2
@@ -379,6 +388,13 @@
 		},
 		{
 			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "Indi-Cosmos_es_ES.ts.rule",
 			"sourceGroupIndex" : 3
@@ -387,6 +403,12 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/Indi-Cosmos_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

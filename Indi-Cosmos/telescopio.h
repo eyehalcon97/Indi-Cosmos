@@ -14,6 +14,7 @@ class telescopio : public QWidget
 public:
     explicit telescopio(QWidget *parent = nullptr);
     ~telescopio();
+    void cambiartamanio(int altura,int anchura);
 
 private:
     Ui::telescopio *ui;
