@@ -87,12 +87,23 @@ void MainWindow::repintar(){
         columna = columnasmaxima;
         fila--;
     }
+
+    if(idbotones < 5){
+        for(int i=1;i<=idbotones;i++){
+            telescopios[i]->cambiartamanio(ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)),ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)));
+            botones[i]->setMaximumSize(ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)),ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)));
+            botones[i]->setMinimumSize(ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)),ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)));
+            botones[i]->resize(ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)),ui->PanelPrincipal->height()/(1 + ((idbotones-1)*0.5)));
+        }
+    }else{
         for(int i=1;i<=idbotones;i++){
         telescopios[i]->cambiartamanio(ui->PanelPrincipal->height()/2.5,ui->PanelPrincipal->height()/2.5);
         botones[i]->setMaximumSize(ui->PanelPrincipal->height()/2.5,ui->PanelPrincipal->height()/2.5);
         botones[i]->setMinimumSize(ui->PanelPrincipal->height()/2.5,ui->PanelPrincipal->height()/2.5);
         botones[i]->resize(ui->PanelPrincipal->height()/2.5,ui->PanelPrincipal->height()/2.5);
     }
+    }
+
     layouttelesopio->addWidget(telescopios[idbotones],fila,columna);
     layouttelesopio->addWidget(botones[idbotones],fila,columna);
     ui->PanelPrincipal->widget()->setLayout(layouttelesopio);

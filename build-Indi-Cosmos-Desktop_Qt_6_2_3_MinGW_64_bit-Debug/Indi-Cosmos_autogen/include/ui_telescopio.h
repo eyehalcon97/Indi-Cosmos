@@ -23,19 +23,20 @@ QT_BEGIN_NAMESPACE
 class Ui_telescopio
 {
 public:
+    QWidget *paneltelescopio;
     QGridLayout *gridLayout;
     QScrollArea *scrolltexto;
-    QWidget *scrollAreaWidgetContents;
-    QHBoxLayout *horizontalLayout;
-    QTextBrowser *texto;
+    QWidget *scrollAreaWidgetContents_3;
+    QHBoxLayout *horizontalLayout_3;
+    QTextBrowser *texto_3;
     QScrollArea *scrollArea_2;
-    QWidget *dibujo;
-    QGridLayout *gridLayout_2;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_7;
+    QWidget *dibujo_3;
+    QGridLayout *gridLayout_4;
+    QPushButton *pushButton_12;
+    QPushButton *pushButton_13;
+    QPushButton *pushButton_16;
+    QPushButton *pushButton_14;
+    QPushButton *pushButton_15;
 
     void setupUi(QWidget *telescopio)
     {
@@ -48,88 +49,102 @@ public:
         sizePolicy.setHeightForWidth(telescopio->sizePolicy().hasHeightForWidth());
         telescopio->setSizePolicy(sizePolicy);
         telescopio->setMinimumSize(QSize(200, 200));
-        telescopio->setCursor(QCursor(Qt::PointingHandCursor));
+        telescopio->setCursor(QCursor(Qt::ArrowCursor));
         telescopio->setFocusPolicy(Qt::ClickFocus);
-        gridLayout = new QGridLayout(telescopio);
+        paneltelescopio = new QWidget(telescopio);
+        paneltelescopio->setObjectName(QString::fromUtf8("paneltelescopio"));
+        paneltelescopio->setGeometry(QRect(0, 0, 561, 521));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(paneltelescopio->sizePolicy().hasHeightForWidth());
+        paneltelescopio->setSizePolicy(sizePolicy1);
+        gridLayout = new QGridLayout(paneltelescopio);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        scrolltexto = new QScrollArea(telescopio);
+        scrolltexto = new QScrollArea(paneltelescopio);
         scrolltexto->setObjectName(QString::fromUtf8("scrolltexto"));
         sizePolicy.setHeightForWidth(scrolltexto->sizePolicy().hasHeightForWidth());
         scrolltexto->setSizePolicy(sizePolicy);
         scrolltexto->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 536, 246));
-        horizontalLayout = new QHBoxLayout(scrollAreaWidgetContents);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        texto = new QTextBrowser(scrollAreaWidgetContents);
-        texto->setObjectName(QString::fromUtf8("texto"));
+        scrollAreaWidgetContents_3 = new QWidget();
+        scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 541, 246));
+        sizePolicy.setHeightForWidth(scrollAreaWidgetContents_3->sizePolicy().hasHeightForWidth());
+        scrollAreaWidgetContents_3->setSizePolicy(sizePolicy);
+        scrollAreaWidgetContents_3->setCursor(QCursor(Qt::IBeamCursor));
+        horizontalLayout_3 = new QHBoxLayout(scrollAreaWidgetContents_3);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        texto_3 = new QTextBrowser(scrollAreaWidgetContents_3);
+        texto_3->setObjectName(QString::fromUtf8("texto_3"));
+        texto_3->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
 
-        horizontalLayout->addWidget(texto);
+        horizontalLayout_3->addWidget(texto_3);
 
-        scrolltexto->setWidget(scrollAreaWidgetContents);
+        scrolltexto->setWidget(scrollAreaWidgetContents_3);
 
-        gridLayout->addWidget(scrolltexto, 1, 0, 1, 1);
+        gridLayout->addWidget(scrolltexto, 1, 1, 1, 1);
 
-        scrollArea_2 = new QScrollArea(telescopio);
+        scrollArea_2 = new QScrollArea(paneltelescopio);
         scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
         sizePolicy.setHeightForWidth(scrollArea_2->sizePolicy().hasHeightForWidth());
         scrollArea_2->setSizePolicy(sizePolicy);
         scrollArea_2->setWidgetResizable(true);
-        dibujo = new QWidget();
-        dibujo->setObjectName(QString::fromUtf8("dibujo"));
-        dibujo->setGeometry(QRect(0, 0, 536, 247));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(dibujo->sizePolicy().hasHeightForWidth());
-        dibujo->setSizePolicy(sizePolicy1);
-        gridLayout_2 = new QGridLayout(dibujo);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        pushButton_2 = new QPushButton(dibujo);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy);
-        pushButton_2->setStyleSheet(QString::fromUtf8("\n"
+        dibujo_3 = new QWidget();
+        dibujo_3->setObjectName(QString::fromUtf8("dibujo_3"));
+        dibujo_3->setGeometry(QRect(0, 0, 541, 247));
+        sizePolicy.setHeightForWidth(dibujo_3->sizePolicy().hasHeightForWidth());
+        dibujo_3->setSizePolicy(sizePolicy);
+        gridLayout_4 = new QGridLayout(dibujo_3);
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
+        pushButton_12 = new QPushButton(dibujo_3);
+        pushButton_12->setObjectName(QString::fromUtf8("pushButton_12"));
+        sizePolicy.setHeightForWidth(pushButton_12->sizePolicy().hasHeightForWidth());
+        pushButton_12->setSizePolicy(sizePolicy);
+        pushButton_12->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton_12->setStyleSheet(QString::fromUtf8("\n"
 "image: url(:/Images/lentecuadrada.png);"));
 
-        gridLayout_2->addWidget(pushButton_2, 0, 0, 2, 1);
+        gridLayout_4->addWidget(pushButton_12, 1, 0, 2, 1);
 
-        pushButton = new QPushButton(dibujo);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy);
-        pushButton->setStyleSheet(QString::fromUtf8("image: url(:/Images/lentecuadrada.png);"));
+        pushButton_13 = new QPushButton(dibujo_3);
+        pushButton_13->setObjectName(QString::fromUtf8("pushButton_13"));
+        sizePolicy.setHeightForWidth(pushButton_13->sizePolicy().hasHeightForWidth());
+        pushButton_13->setSizePolicy(sizePolicy);
+        pushButton_13->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton_13->setStyleSheet(QString::fromUtf8("image: url(:/Images/lentecuadrada.png);"));
 
-        gridLayout_2->addWidget(pushButton, 2, 0, 2, 1);
+        gridLayout_4->addWidget(pushButton_13, 3, 0, 2, 1);
 
-        pushButton_4 = new QPushButton(dibujo);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
-        pushButton_4->setSizePolicy(sizePolicy);
-        pushButton_4->setStyleSheet(QString::fromUtf8("image: url(:/Images/lentecuadrada.png);"));
+        pushButton_16 = new QPushButton(dibujo_3);
+        pushButton_16->setObjectName(QString::fromUtf8("pushButton_16"));
+        sizePolicy.setHeightForWidth(pushButton_16->sizePolicy().hasHeightForWidth());
+        pushButton_16->setSizePolicy(sizePolicy);
+        pushButton_16->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton_16->setStyleSheet(QString::fromUtf8("image: url(:/Images/lentecuadrada.png);"));
 
-        gridLayout_2->addWidget(pushButton_4, 0, 2, 2, 1);
+        gridLayout_4->addWidget(pushButton_16, 1, 2, 2, 1);
 
-        pushButton_6 = new QPushButton(dibujo);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        sizePolicy.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
-        pushButton_6->setSizePolicy(sizePolicy);
-        pushButton_6->setStyleSheet(QString::fromUtf8("image: url(:/Images/lentecuadrada.png);"));
+        pushButton_14 = new QPushButton(dibujo_3);
+        pushButton_14->setObjectName(QString::fromUtf8("pushButton_14"));
+        sizePolicy.setHeightForWidth(pushButton_14->sizePolicy().hasHeightForWidth());
+        pushButton_14->setSizePolicy(sizePolicy);
+        pushButton_14->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton_14->setStyleSheet(QString::fromUtf8("image: url(:/Images/lentecuadrada.png);"));
 
-        gridLayout_2->addWidget(pushButton_6, 2, 2, 2, 1);
+        gridLayout_4->addWidget(pushButton_14, 3, 2, 2, 1);
 
-        pushButton_7 = new QPushButton(dibujo);
-        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
-        sizePolicy.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
-        pushButton_7->setSizePolicy(sizePolicy);
-        pushButton_7->setStyleSheet(QString::fromUtf8("image: url(:/Images/Monturacuadrada.png);"));
+        pushButton_15 = new QPushButton(dibujo_3);
+        pushButton_15->setObjectName(QString::fromUtf8("pushButton_15"));
+        sizePolicy.setHeightForWidth(pushButton_15->sizePolicy().hasHeightForWidth());
+        pushButton_15->setSizePolicy(sizePolicy);
+        pushButton_15->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton_15->setStyleSheet(QString::fromUtf8("image: url(:/Images/Monturacuadrada.png);"));
 
-        gridLayout_2->addWidget(pushButton_7, 0, 1, 4, 1);
+        gridLayout_4->addWidget(pushButton_15, 1, 1, 4, 1);
 
-        scrollArea_2->setWidget(dibujo);
+        scrollArea_2->setWidget(dibujo_3);
 
-        gridLayout->addWidget(scrollArea_2, 0, 0, 1, 1);
+        gridLayout->addWidget(scrollArea_2, 0, 1, 1, 1);
 
 
         retranslateUi(telescopio);
@@ -140,11 +155,11 @@ public:
     void retranslateUi(QWidget *telescopio)
     {
         telescopio->setWindowTitle(QCoreApplication::translate("telescopio", "Form", nullptr));
-        pushButton_2->setText(QString());
-        pushButton->setText(QString());
-        pushButton_4->setText(QString());
-        pushButton_6->setText(QString());
-        pushButton_7->setText(QString());
+        pushButton_12->setText(QString());
+        pushButton_13->setText(QString());
+        pushButton_16->setText(QString());
+        pushButton_14->setText(QString());
+        pushButton_15->setText(QString());
     } // retranslateUi
 
 };
