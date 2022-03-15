@@ -37,26 +37,28 @@ private slots:
     void on_pushButton_clicked();
 
 
-    void setTelescopioSeleccionado(int numero);
-
     void on_botones_clicked();
 
-
+    void limpiar();
 
 
     void on_checkBox_stateChanged(int arg1);
+    void resizeEvent(QResizeEvent* event);
+    void repintar();
+    void MostrarPropiedades();
+
 
 private:
     Ui::MainWindow *ui;
-    int idbotones=0;
     QPushButton **botones  = new QPushButton*[100];
     QGridLayout *layouttelesopio = new QGridLayout;
+    QGridLayout *layoutpropiedades;
     telescopio **telescopios  = new telescopio*[100];
-    int *seleccionados = new int[100];
+    int *telescopiosseleccionados = new int[100];
+    int nseleccionados=0;
     bool modoseleccion=false;
-
+    int idbotones=0;
     int columnasmaxima =4;
-    int telescopioseleccionado=0;
 
 
 };

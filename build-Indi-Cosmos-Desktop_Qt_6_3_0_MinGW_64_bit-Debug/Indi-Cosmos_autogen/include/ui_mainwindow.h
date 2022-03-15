@@ -16,12 +16,14 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpinBox>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -34,17 +36,19 @@ public:
     QAction *boolpanelsuperior;
     QWidget *centralwidget;
     QGridLayout *gridLayout_2;
+    QWidget *PanelSuperior;
+    QSpinBox *Nobjetos;
+    QLabel *label;
+    QPushButton *pushButton;
+    QCheckBox *checkBox;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_2;
     QScrollArea *PanelPrincipal;
     QWidget *ScrollPanelPrincipal;
     QScrollArea *PanelDerecho;
     QWidget *scrollPanelDerecho;
-    QWidget *PanelSuperior;
-    QSpinBox *Nobjetos;
-    QLabel *label;
-    QPushButton *pushButton;
-    QCheckBox *checkBox;
+    QVBoxLayout *verticalLayout;
+    QListWidget *Propiedades;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QMenu *menuVer;
@@ -64,7 +68,7 @@ public:
         boolpanelderecho = new QAction(MainWindow);
         boolpanelderecho->setObjectName(QString::fromUtf8("boolpanelderecho"));
         boolpanelderecho->setCheckable(true);
-        boolpanelderecho->setChecked(true);
+        boolpanelderecho->setChecked(false);
         actionSalir = new QAction(MainWindow);
         actionSalir->setObjectName(QString::fromUtf8("actionSalir"));
         boolpanelsuperior = new QAction(MainWindow);
@@ -81,6 +85,25 @@ public:
         centralwidget->setSizePolicy(sizePolicy1);
         gridLayout_2 = new QGridLayout(centralwidget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        PanelSuperior = new QWidget(centralwidget);
+        PanelSuperior->setObjectName(QString::fromUtf8("PanelSuperior"));
+        PanelSuperior->setMinimumSize(QSize(80, 40));
+        PanelSuperior->setMaximumSize(QSize(16777215, 40));
+        Nobjetos = new QSpinBox(PanelSuperior);
+        Nobjetos->setObjectName(QString::fromUtf8("Nobjetos"));
+        Nobjetos->setGeometry(QRect(330, 19, 42, 21));
+        label = new QLabel(PanelSuperior);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(330, 0, 49, 16));
+        pushButton = new QPushButton(PanelSuperior);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(110, 10, 80, 24));
+        checkBox = new QCheckBox(PanelSuperior);
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        checkBox->setGeometry(QRect(477, 10, 181, 22));
+
+        gridLayout_2->addWidget(PanelSuperior, 0, 0, 1, 1);
+
         widget_2 = new QWidget(centralwidget);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         horizontalLayout_2 = new QHBoxLayout(widget_2);
@@ -107,31 +130,24 @@ public:
         scrollPanelDerecho = new QWidget();
         scrollPanelDerecho->setObjectName(QString::fromUtf8("scrollPanelDerecho"));
         scrollPanelDerecho->setGeometry(QRect(0, 0, 198, 615));
+        verticalLayout = new QVBoxLayout(scrollPanelDerecho);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        Propiedades = new QListWidget(scrollPanelDerecho);
+        Propiedades->setObjectName(QString::fromUtf8("Propiedades"));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(Propiedades->sizePolicy().hasHeightForWidth());
+        Propiedades->setSizePolicy(sizePolicy2);
+
+        verticalLayout->addWidget(Propiedades);
+
         PanelDerecho->setWidget(scrollPanelDerecho);
 
         horizontalLayout_2->addWidget(PanelDerecho);
 
 
         gridLayout_2->addWidget(widget_2, 1, 0, 1, 1);
-
-        PanelSuperior = new QWidget(centralwidget);
-        PanelSuperior->setObjectName(QString::fromUtf8("PanelSuperior"));
-        PanelSuperior->setMinimumSize(QSize(80, 40));
-        PanelSuperior->setMaximumSize(QSize(16777215, 40));
-        Nobjetos = new QSpinBox(PanelSuperior);
-        Nobjetos->setObjectName(QString::fromUtf8("Nobjetos"));
-        Nobjetos->setGeometry(QRect(330, 19, 42, 21));
-        label = new QLabel(PanelSuperior);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(330, 0, 49, 16));
-        pushButton = new QPushButton(PanelSuperior);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(110, 10, 80, 24));
-        checkBox = new QCheckBox(PanelSuperior);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setGeometry(QRect(477, 10, 121, 22));
-
-        gridLayout_2->addWidget(PanelSuperior, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -166,8 +182,8 @@ public:
 #endif // QT_CONFIG(shortcut)
         boolpanelsuperior->setText(QCoreApplication::translate("MainWindow", "Panel Superior", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Objetos", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Addbutton", nullptr));
-        checkBox->setText(QCoreApplication::translate("MainWindow", "Modo Seleccion", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Telescopio +1", nullptr));
+        checkBox->setText(QCoreApplication::translate("MainWindow", "Modo Seleccion Multiple", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
         menuVer->setTitle(QCoreApplication::translate("MainWindow", "Ver", nullptr));
         (void)MainWindow;

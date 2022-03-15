@@ -4,52 +4,53 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="137"/>
+        <location filename="mainwindow.ui" line="73"/>
         <source>Objetos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="150"/>
-        <source>Addbutton</source>
+        <location filename="mainwindow.ui" line="86"/>
+        <source>Telescopio +1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="163"/>
-        <source>Modo Seleccion</source>
+        <location filename="mainwindow.ui" line="99"/>
+        <source>Modo Seleccion Multiple</source>
+        <oldsource>Modo Seleccion</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="181"/>
+        <location filename="mainwindow.ui" line="193"/>
         <source>Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="187"/>
+        <location filename="mainwindow.ui" line="199"/>
         <source>Ver</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="203"/>
+        <location filename="mainwindow.ui" line="215"/>
         <source>Panel derecho</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="206"/>
+        <location filename="mainwindow.ui" line="218"/>
         <source>Ctrl+V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="211"/>
+        <location filename="mainwindow.ui" line="223"/>
         <source>Salir</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="214"/>
+        <location filename="mainwindow.ui" line="226"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="225"/>
+        <location filename="mainwindow.ui" line="237"/>
         <source>Panel Superior</source>
         <translation type="unfinished"></translation>
     </message>
