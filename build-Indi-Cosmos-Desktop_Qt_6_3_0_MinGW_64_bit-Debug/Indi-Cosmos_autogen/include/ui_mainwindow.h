@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -33,16 +34,17 @@ public:
     QAction *boolpanelsuperior;
     QWidget *centralwidget;
     QGridLayout *gridLayout_2;
-    QWidget *PanelSuperior;
-    QSpinBox *Nobjetos;
-    QLabel *label;
-    QPushButton *pushButton;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_2;
     QScrollArea *PanelPrincipal;
     QWidget *ScrollPanelPrincipal;
     QScrollArea *PanelDerecho;
     QWidget *scrollPanelDerecho;
+    QWidget *PanelSuperior;
+    QSpinBox *Nobjetos;
+    QLabel *label;
+    QPushButton *pushButton;
+    QCheckBox *checkBox;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QMenu *menuVer;
@@ -79,28 +81,13 @@ public:
         centralwidget->setSizePolicy(sizePolicy1);
         gridLayout_2 = new QGridLayout(centralwidget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        PanelSuperior = new QWidget(centralwidget);
-        PanelSuperior->setObjectName(QString::fromUtf8("PanelSuperior"));
-        PanelSuperior->setMinimumSize(QSize(80, 40));
-        PanelSuperior->setMaximumSize(QSize(16777215, 40));
-        Nobjetos = new QSpinBox(PanelSuperior);
-        Nobjetos->setObjectName(QString::fromUtf8("Nobjetos"));
-        Nobjetos->setGeometry(QRect(330, 19, 42, 21));
-        label = new QLabel(PanelSuperior);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(330, 0, 49, 16));
-        pushButton = new QPushButton(PanelSuperior);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(110, 10, 80, 24));
-
-        gridLayout_2->addWidget(PanelSuperior, 0, 0, 1, 1);
-
         widget_2 = new QWidget(centralwidget);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         horizontalLayout_2 = new QHBoxLayout(widget_2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         PanelPrincipal = new QScrollArea(widget_2);
         PanelPrincipal->setObjectName(QString::fromUtf8("PanelPrincipal"));
+        PanelPrincipal->setMouseTracking(false);
         PanelPrincipal->setWidgetResizable(true);
         PanelPrincipal->setAlignment(Qt::AlignJustify|Qt::AlignVCenter);
         ScrollPanelPrincipal = new QWidget();
@@ -126,6 +113,25 @@ public:
 
 
         gridLayout_2->addWidget(widget_2, 1, 0, 1, 1);
+
+        PanelSuperior = new QWidget(centralwidget);
+        PanelSuperior->setObjectName(QString::fromUtf8("PanelSuperior"));
+        PanelSuperior->setMinimumSize(QSize(80, 40));
+        PanelSuperior->setMaximumSize(QSize(16777215, 40));
+        Nobjetos = new QSpinBox(PanelSuperior);
+        Nobjetos->setObjectName(QString::fromUtf8("Nobjetos"));
+        Nobjetos->setGeometry(QRect(330, 19, 42, 21));
+        label = new QLabel(PanelSuperior);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(330, 0, 49, 16));
+        pushButton = new QPushButton(PanelSuperior);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(110, 10, 80, 24));
+        checkBox = new QCheckBox(PanelSuperior);
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        checkBox->setGeometry(QRect(477, 10, 121, 22));
+
+        gridLayout_2->addWidget(PanelSuperior, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -161,6 +167,7 @@ public:
         boolpanelsuperior->setText(QCoreApplication::translate("MainWindow", "Panel Superior", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Objetos", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "Addbutton", nullptr));
+        checkBox->setText(QCoreApplication::translate("MainWindow", "Modo Seleccion", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
         menuVer->setTitle(QCoreApplication::translate("MainWindow", "Ver", nullptr));
         (void)MainWindow;

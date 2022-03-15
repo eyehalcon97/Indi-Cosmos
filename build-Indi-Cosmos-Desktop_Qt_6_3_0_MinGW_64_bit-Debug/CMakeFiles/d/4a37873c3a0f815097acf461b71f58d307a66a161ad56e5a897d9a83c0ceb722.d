@@ -459,6 +459,7 @@ Indi-Cosmos_autogen/timestamp: \
   C:/Qt/Tools/mingw900_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw900_64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/CMakeLists.txt \
+  C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/images.qrc \
   C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/main.cpp \
   C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/mainwindow.cpp \
   C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/mainwindow.h \

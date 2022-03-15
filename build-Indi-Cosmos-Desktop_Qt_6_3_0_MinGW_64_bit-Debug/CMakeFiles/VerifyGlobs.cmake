@@ -145,6 +145,7 @@ endif()
 # _directory_contents at C:/Qt/6.3.0/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:79 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/*.qrc")
 set(OLD_GLOB
+  "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/images.qrc"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

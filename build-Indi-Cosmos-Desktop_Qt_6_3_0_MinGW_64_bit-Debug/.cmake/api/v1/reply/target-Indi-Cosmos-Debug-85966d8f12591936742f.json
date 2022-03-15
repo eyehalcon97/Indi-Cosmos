@@ -32,7 +32,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 28,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
@@ -56,7 +56,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 54,
+				"line" : 58,
 				"parent" : 0
 			},
 			{
@@ -177,18 +177,20 @@
 			[
 				0,
 				1,
-				2
+				2,
+				7,
+				13
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "Indi-Cosmos_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "Indi-Cosmos_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "Indi-Cosmos_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "Indi-Cosmos::@6890427a1f51a3e7e1df",
@@ -272,7 +274,9 @@
 			[
 				0,
 				1,
-				2
+				2,
+				7,
+				13
 			]
 		},
 		{
@@ -280,7 +284,9 @@
 			"sourceIndexes" : 
 			[
 				3,
-				6
+				6,
+				10,
+				11
 			]
 		},
 		{
@@ -289,15 +295,18 @@
 			[
 				4,
 				5,
-				7
+				8,
+				9,
+				12
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				8,
-				9
+				14,
+				15,
+				16
 			]
 		}
 	],
@@ -334,6 +343,27 @@
 		},
 		{
 			"backtrace" : 4,
+			"path" : "telescopio.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "telescopio.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "telescopio.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "images.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
 			"isGenerated" : true,
 			"path" : "Indi-Cosmos_es_ES.ts",
 			"sourceGroupIndex" : 2
@@ -347,8 +377,21 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
+			"path" : "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/Indi-Cosmos_autogen/include/ui_telescopio.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
 			"path" : "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/Indi-Cosmos_autogen/timestamp",
 			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
@@ -360,6 +403,12 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/Indi-Cosmos_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

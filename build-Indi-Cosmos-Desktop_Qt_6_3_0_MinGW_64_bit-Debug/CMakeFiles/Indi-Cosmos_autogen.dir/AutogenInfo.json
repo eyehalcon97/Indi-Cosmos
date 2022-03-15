@@ -263,7 +263,8 @@
 		"C:/Qt/6.3.0/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsAdditionalTargetInfo.cmake",
 		"C:/Qt/6.3.0/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsVersionlessTargets.cmake",
 		"C:/Qt/6.3.0/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeParseArguments.cmake"
+		"C:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeParseArguments.cmake",
+		"C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos/images.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/Indi-Cosmos",
 	"DEP_FILE" : "C:/Users/gadit/OneDrive/Escritorio/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_3_0_MinGW_64_bit-Debug/Indi-Cosmos_autogen/deps",
