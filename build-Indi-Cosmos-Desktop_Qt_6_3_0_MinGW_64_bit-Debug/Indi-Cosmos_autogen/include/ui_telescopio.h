@@ -42,7 +42,7 @@ public:
     {
         if (telescopio->objectName().isEmpty())
             telescopio->setObjectName(QString::fromUtf8("telescopio"));
-        telescopio->resize(556, 521);
+        telescopio->resize(560, 519);
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
