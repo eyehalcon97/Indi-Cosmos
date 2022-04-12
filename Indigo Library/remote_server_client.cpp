@@ -1,26 +1,3 @@
-// Copyright (c) 2020 CloudMakers, s. r. o. & Rumen G.Bogdanovski
-// All rights reserved.
-//
-// You can use this software under the terms of 'INDIGO Astronomy
-// open-source license' (see LICENSE.md).
-//
-// THIS SOFTWARE IS PROVIDED BY THE AUTHORS 'AS IS' AND ANY EXPRESS
-// OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-// ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
-// DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-// GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-// WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-// NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-// SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-// version history
-// 2.0 by Peter Polakovic <peter.polakovic@cloudmakers.eu>
-//      & Rumen G.Bogdanovski <rumen@skyarchive.org>
-
-
 #include <string>
 #include <iostream>
 #include <chrono>
@@ -40,9 +17,10 @@
 
 static bool connected = false;
 static int count = 5;
-
 using namespace std;
-string CCD_SIMULATOR = "CCD Imager Simulator @ localhost";
+
+#define CCD_SIMULATOR "CCD Imager Simulator @ localhost"
+
 static indigo_result client_attach(indigo_client *client) {
 	indigo_log("attached to INDIGO bus...");
 	indigo_enumerate_properties(client, &INDIGO_ALL_PROPERTIES);
@@ -52,18 +30,44 @@ static indigo_result client_attach(indigo_client *client) {
 
 static indigo_result client_define_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message) {
 
-	if (property->device == CCD_SIMULATOR){
+	if (strcmp(property->device, CCD_SIMULATOR))
+		return INDIGO_OK;
+	if (!strcmp(property->name, CONNECTION_PROPERTY_NAME)) {
+		if (indigo_get_switch(property, CONNECTION_CONNECTED_ITEM_NAME)) {
+			connected = true;
+			indigo_device_connect(client, CCD_SIMULATOR);
+			cout << "already connected..." << endl;
+			cout <<"Tiempo de exposicion: " << property->items[0].number.value << " s " << endl;
+			
+			static const char * items[] = { CCD_EXPOSURE_ITEM_NAME };
+			static double values[] = { 3.0 };
+			indigo_change_number_property(client, CCD_SIMULATOR, CCD_EXPOSURE_PROPERTY_NAME, 1, items, values);
 
+			cout <<"Tiempo de exposicion: " << property->items[0].number.value << " s " << endl;
+		} else {
+			indigo_device_connect(client, CCD_SIMULATOR);
+			return INDIGO_OK;
+		}
 	}
-
+	if (!strcmp(property->name, CCD_IMAGE_PROPERTY_NAME)) {
+		if (device->version >= INDIGO_VERSION_2_0)
+			indigo_enable_blob(client, property, INDIGO_ENABLE_BLOB_URL);
+		else
+			indigo_enable_blob(client, property, INDIGO_ENABLE_BLOB_ALSO);
+	}
+	if (!strcmp(property->name, CCD_IMAGE_FORMAT_PROPERTY_NAME)) {
+		static const char * items[] = { CCD_IMAGE_FORMAT_FITS_ITEM_NAME };
+		static bool values[] = { true };
+		indigo_change_switch_property(client, CCD_SIMULATOR, CCD_IMAGE_FORMAT_PROPERTY_NAME, 1, items, values);
+	}
 	return INDIGO_OK;
+
 }
 
 static indigo_result client_update_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message) {
 
-
-
 		return INDIGO_OK;
+
 }
 
 static indigo_result client_detach(indigo_client *client) {
@@ -89,27 +93,32 @@ static indigo_client client = {
 int main(int argc, const char * argv[]) {
 	indigo_main_argc = argc;
 	indigo_main_argv = argv;
-	string valor;
+	int valor;
 	bool salir= false;
 #if defined(INDIGO_WINDOWS)
 	freopen("indigo.log", "w", stderr);
 #endif
 
-	indigo_set_log_level(INDIGO_LOG_INFO);
+	indigo_set_log_level(INDIGO_LOG_DEBUG);
 	indigo_start();
-
 	indigo_server_entry *server;
 	indigo_attach_client(&client);
 	indigo_connect_server("localhost", "localhost", 7624, &server); // Check correct host name in 2nd arg!!!
 	
-	
-	cout.clear();
 
 	while (!(salir)) {
 		this_thread::sleep_for(chrono::milliseconds(50));
-		cout << ("Menu:");
+		
+		cout << "Menu:" << endl;
+		cout << "Ver: 1" << endl;
+		cout << "Salir: 9" << endl;
+		cout << "Introduce: ";
 		cin >> valor;
-		if(valor == "salir"){
+		if(valor == 1){
+			cout << "Las propiedades son: " << endl;
+			cout << indigo_enumerate_properties(&client,&INDIGO_ALL_PROPERTIES);
+		}
+		if(valor == 9){
 			indigo_disconnect_server(server);
 			indigo_detach_client(&client);
 			this_thread::sleep_for(chrono::milliseconds(50));
@@ -117,9 +126,6 @@ int main(int argc, const char * argv[]) {
 			salir=true;
 		}
 	}
-
-
-
 
 	return 0;
 }
