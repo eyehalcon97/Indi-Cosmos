@@ -1,5 +1,0 @@
-C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/CMakeFiles/Indi-Cosmos.dir
-C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/CMakeFiles/Indi-Cosmos_autogen_timestamp_deps.dir
-C:/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/CMakeFiles/Indi-Cosmos_autogen.dir

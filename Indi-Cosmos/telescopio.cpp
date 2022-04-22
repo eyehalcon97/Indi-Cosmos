@@ -1,6 +1,7 @@
 #include "telescopio.h"
 #include "ui_telescopio.h"
 
+
 telescopio::telescopio(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::telescopio)
@@ -24,7 +25,7 @@ void telescopio::cambiartamanio(int anchura,int altura){
     ui->paneltelescopio->resize(anchura,altura);
     ui->scrolltexto->setMinimumHeight(altura*0.3);
     ui->scrolltexto->setMaximumHeight(altura*0.3);
-    ui->texto_3->setText("Esto ess una descripcion");
+    ui->texto_3->setText("Esto es una descripcion");
 
 }
 

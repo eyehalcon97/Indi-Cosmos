@@ -1,5 +1,7 @@
 
 #include "mainwindow.h"
+#include <indigo/indigo_bus.h>
+#include <indigo/indigo_client.h>
 
 #include <QApplication>
 #include <QLocale>
