@@ -133,9 +133,8 @@ static indigo_client client = {
 	client_detach
 };
 
-int main(int argc, const char * argv[]) {
-	indigo_main_argc = argc;
-	indigo_main_argv = argv;
+int main() {
+
 	int valor;
 	bool salir= false;
 	

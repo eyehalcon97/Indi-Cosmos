@@ -1,0 +1,22 @@
+# ninja log v5
+84	190	1650910207286013200	Indi-Cosmos_autogen/mocs_compilation.cpp	65ec571a1855f427
+267	4952	1650910110368632600	CMakeFiles/Indi-Cosmos.dir/main.cpp.o	d7f90ee4b08fa765
+263	4926	1650910110339652000	CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/mocs_compilation.cpp.o	66292270c04b699c
+87	165	1650910207259119100	/mnt/c/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_3_0_GCC_64bit-Debug/indigo_autogen/mocs_compilation.cpp	62bce2432442c967
+84	190	1650910207286013200	/mnt/c/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_3_0_GCC_64bit-Debug/Indi-Cosmos_autogen/timestamp	65ec571a1855f427
+18	1381	0	/mnt/c/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/cmake.verify_globs	dc4c700ecd7576c2
+84	190	1650910207286013200	/mnt/c/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_3_0_GCC_64bit-Debug/Indi-Cosmos_autogen/mocs_compilation.cpp	65ec571a1855f427
+87	165	1650910207259119100	indigo_autogen/mocs_compilation.cpp	62bce2432442c967
+232	4123	1650910211211286100	CMakeFiles/Indi-Cosmos.dir/telescopio.cpp.o	8fa4792b36f83ed1
+8069	9353	1650791439673520600	Indi-Cosmos	3354a59138eb949
+1	102	0	CMakeFiles/clean.additional	13a0fc6ee4068d9d
+817	880	1650825752276876700	Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp	8064b2e8f1142c76
+817	880	1650825752276876700	/mnt/c/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_3_0_GCC_64bit-Debug/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp	8064b2e8f1142c76
+103	143	0	clean	a31eedcededa8236
+211	362	1650910105773149600	CMakeFiles/indigo.dir/indigo_autogen/mocs_compilation.cpp.o	a20d403da2c828cf
+84	190	1650910207286013200	Indi-Cosmos_autogen/timestamp	65ec571a1855f427
+87	165	1650910207259119100	/mnt/c/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_3_0_GCC_64bit-Debug/indigo_autogen/timestamp	62bce2432442c967
+87	165	1650910207259119100	indigo_autogen/timestamp	62bce2432442c967
+229	4411	1650910211497738800	CMakeFiles/Indi-Cosmos.dir/mainwindow.cpp.o	357f7d722870901b
+387	539	1650908198176467300	libindigo.a	52f4d5e8ac1a03f3
+257	488	1650910105897392300	CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp.o	8c8faa517fb53f6d

@@ -8,19 +8,29 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
+
+
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
 
+
 set(TS_FILES Indi-Cosmos_es_ES.ts)
+
+
+
 
 set(PROJECT_SOURCES
         mainwindow.ui
         main.cpp
         mainwindow.cpp
         mainwindow.h
+
 
         telescopio.ui
         telescopio.h
@@ -49,7 +59,7 @@ else()
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-         add_library(indigo)
+
         add_executable(Indi-Cosmos
             ${PROJECT_SOURCES}
         )
@@ -58,7 +68,7 @@ else()
     qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-target_link_libraries(Indi-Cosmos PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Indi-Cosmos PRIVATE Qt${QT_VERSION_MAJOR}::Widgets indigo)
 
 
 
@@ -74,3 +84,6 @@ set_target_properties(Indi-Cosmos PROPERTIES
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Indi-Cosmos)
 endif()
+
+
+

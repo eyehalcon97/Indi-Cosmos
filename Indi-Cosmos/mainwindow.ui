@@ -2,24 +2,27 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>720</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1280</width>
-    <height>720</height>
+    <width>800</width>
+    <height>600</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -120,8 +123,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1036</width>
-            <height>617</height>
+            <width>556</width>
+            <height>497</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -156,7 +159,7 @@
             <x>0</x>
             <y>0</y>
             <width>198</width>
-            <height>617</height>
+            <height>497</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
@@ -184,7 +187,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1280</width>
+     <width>800</width>
      <height>19</height>
     </rect>
    </property>

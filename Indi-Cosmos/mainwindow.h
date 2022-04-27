@@ -43,7 +43,7 @@ private slots:
 
 
     void on_checkBox_stateChanged(int arg1);
-    void resizeEvent(QResizeEvent* event);
+    //void resizeEvent(QResizeEvent* event);
     void repintar();
     void MostrarPropiedades();
 

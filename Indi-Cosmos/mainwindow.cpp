@@ -7,6 +7,9 @@
 #include <iostream>
 
 
+using namespace std;
+
+
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 
 {
@@ -69,7 +72,7 @@ void MainWindow::on_Nobjetos_valueChanged(int arg1)
 
 
 }
-
+/*
 void MainWindow::resizeEvent(QResizeEvent* event)
 {
 
@@ -78,7 +81,7 @@ void MainWindow::resizeEvent(QResizeEvent* event)
     }
 
    // Your code here.
-}
+}*/
 
 void MainWindow::repintar(){
     int fila= (idbotones/columnasmaxima);
@@ -120,6 +123,7 @@ void MainWindow::on_pushButton_clicked()
         columna = columnasmaxima;
         fila--;
     }
+
     telescopios[idbotones] = new telescopio(this);
     botones[idbotones] = new QPushButton();
     botones[idbotones]->setObjectName(QString::number(idbotones));
