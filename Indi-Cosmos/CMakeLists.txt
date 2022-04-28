@@ -8,6 +8,8 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+#Comando iniciar servidor
+#indigo_server indigo_ccd_simulator
 
 
 set(CMAKE_CXX_STANDARD 17)

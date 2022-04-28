@@ -165,7 +165,7 @@ build Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp | ${cmake_ninja_workdir}Indi
 #############################################
 # Phony custom command for CMakeFiles/Indi-Cosmos_autogen_timestamp_deps
 
-build CMakeFiles/Indi-Cosmos_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Indi-Cosmos_autogen_timestamp_deps: phony /opt/Qt/6.3.0/gcc_64/lib/libQt6Core.so.6.3.0 /opt/Qt/6.3.0/gcc_64/./libexec/uic /opt/Qt/6.3.0/gcc_64/lib/libQt6Widgets.so.6.3.0 /opt/Qt/6.3.0/gcc_64/./libexec/moc
+build CMakeFiles/Indi-Cosmos_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Indi-Cosmos_autogen_timestamp_deps: phony /opt/Qt/6.3.0/gcc_64/lib/libQt6Core.so.6.3.0 /opt/Qt/6.3.0/gcc_64/./libexec/uic /opt/Qt/6.3.0/gcc_64/./libexec/moc /opt/Qt/6.3.0/gcc_64/lib/libQt6Widgets.so.6.3.0
 
 
 #############################################
