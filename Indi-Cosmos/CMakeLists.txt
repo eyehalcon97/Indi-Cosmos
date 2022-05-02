@@ -32,11 +32,11 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
+        device.cpp
+        device.h
+        device.ui
 
 
-        telescopio.ui
-        telescopio.h
-        telescopio.cpp
         images.qrc
         ${TS_FILES}
 )

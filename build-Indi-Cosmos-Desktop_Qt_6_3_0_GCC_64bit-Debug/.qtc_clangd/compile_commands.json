@@ -7,7 +7,7 @@
         "-I",
         "/opt/Qt/Tools/QtCreator/share/qtcreator/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/tmp/QtCreator-ecamsS/clang-uiheader-qkkUnH",
+        "/tmp/QtCreator-ObbTQs/clang-uiheader-OBcqqx",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -74,7 +74,7 @@
         "-I",
         "/opt/Qt/Tools/QtCreator/share/qtcreator/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/tmp/QtCreator-ecamsS/clang-uiheader-qkkUnH",
+        "/tmp/QtCreator-ObbTQs/clang-uiheader-OBcqqx",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -141,7 +141,7 @@
         "-I",
         "/opt/Qt/Tools/QtCreator/share/qtcreator/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/tmp/QtCreator-ecamsS/clang-uiheader-qkkUnH",
+        "/tmp/QtCreator-ObbTQs/clang-uiheader-OBcqqx",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -195,10 +195,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/telescopio.cpp"
+        "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/device.cpp"
     ],
     "directory": "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_3_0_GCC_64bit-Debug/.qtc_clangd",
-    "file": "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/telescopio.cpp"
+    "file": "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/device.cpp"
 },
 {
     "arguments": [
@@ -208,7 +208,7 @@
         "-I",
         "/opt/Qt/Tools/QtCreator/share/qtcreator/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/tmp/QtCreator-ecamsS/clang-uiheader-qkkUnH",
+        "/tmp/QtCreator-ObbTQs/clang-uiheader-OBcqqx",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -275,7 +275,7 @@
         "-I",
         "/opt/Qt/Tools/QtCreator/share/qtcreator/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/tmp/QtCreator-ecamsS/clang-uiheader-qkkUnH",
+        "/tmp/QtCreator-ObbTQs/clang-uiheader-OBcqqx",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -329,9 +329,9 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/telescopio.h"
+        "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/device.h"
     ],
     "directory": "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/build-Indi-Cosmos-Desktop_Qt_6_3_0_GCC_64bit-Debug/.qtc_clangd",
-    "file": "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/telescopio.h"
+    "file": "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/device.h"
 }
 ]

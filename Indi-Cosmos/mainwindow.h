@@ -7,7 +7,9 @@
 #include <QGridLayout>
 #include <QWidget>
 #include <iostream>
-#include <telescopio.h>
+#include <device.h>
+#include <indigo/indigo_bus.h>
+#include <indigo/indigo_client.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +23,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void creardevice(char* propiedad);
 
 
 private slots:
@@ -34,10 +37,9 @@ private slots:
 
     void on_Nobjetos_valueChanged(int arg1);
 
-    void on_pushButton_clicked();
 
 
-    void on_botones_clicked();
+    void botones_clicked();
 
     void limpiar();
 
@@ -48,13 +50,17 @@ private slots:
     void MostrarPropiedades();
 
 
+    int indexofdevice(char* id);
+
+    void on_Conectar_clicked();
+
 private:
     Ui::MainWindow *ui;
     QPushButton **botones  = new QPushButton*[100];
-    QGridLayout *layouttelesopio = new QGridLayout;
+    QGridLayout *layoutdevice = new QGridLayout;
     QGridLayout *layoutpropiedades;
-    telescopio **telescopios  = new telescopio*[100];
-    int *telescopiosseleccionados = new int[100];
+    device **devices  = new device*[100];
+    int *devicesseleccionados = new int[100];
     int nseleccionados=0;
     bool modoseleccion=false;
     int idbotones=0;

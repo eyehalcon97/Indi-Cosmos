@@ -41,9 +41,9 @@ endif()
 # _directory_contents at /opt/Qt/6.3.0/gcc_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:83 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/*.cpp")
 set(OLD_GLOB
+  "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/device.cpp"
   "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/main.cpp"
   "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/mainwindow.cpp"
-  "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/telescopio.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -62,8 +62,8 @@ endif()
 # _directory_contents at /opt/Qt/6.3.0/gcc_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:83 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/*.h")
 set(OLD_GLOB
+  "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/device.h"
   "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/mainwindow.h"
-  "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/telescopio.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -164,8 +164,8 @@ endif()
 # _directory_contents at /opt/Qt/6.3.0/gcc_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:83 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/*.ui")
 set(OLD_GLOB
+  "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/device.ui"
   "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/mainwindow.ui"
-  "/mnt/c/Users/gadit/Desktop/Indi-Cosmos/Indi-Cosmos/telescopio.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

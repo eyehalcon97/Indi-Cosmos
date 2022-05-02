@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>telescopio</class>
- <widget class="QWidget" name="telescopio">
+ <class>device</class>
+ <widget class="QWidget" name="device">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -31,7 +31,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="paneltelescopio" native="true">
+  <widget class="QWidget" name="paneldevice" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
