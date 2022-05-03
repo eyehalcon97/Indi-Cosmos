@@ -45,7 +45,6 @@ public:
     QWidget *ScrollPanelPrincipal;
     QScrollArea *PanelDerecho;
     QWidget *propiedades;
-    QWidget *widget;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QMenu *menuVer;
@@ -128,9 +127,6 @@ public:
         propiedades = new QWidget();
         propiedades->setObjectName(QString::fromUtf8("propiedades"));
         propiedades->setGeometry(QRect(0, 0, 198, 497));
-        widget = new QWidget(propiedades);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(70, 170, 120, 80));
         PanelDerecho->setWidget(propiedades);
 
         horizontalLayout_2->addWidget(PanelDerecho);

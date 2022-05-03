@@ -318,8 +318,23 @@ void MainWindow::botones_clicked()
 void MainWindow::MostrarPropiedades(){
 
 
-    QLabel *nombre;
+
+    QLabel *nombre = new QLabel;
     layoutpropiedades = new QGridLayout;
+
+    if ( ui->propiedades->layout() != NULL )
+    {
+        QLayoutItem* item;
+        while ( ( item = ui->propiedades->layout()->takeAt( 0 ) ) != NULL )
+        {
+            delete item->widget();
+            delete item;
+        }
+        delete ui->propiedades->layout();
+    }
+
+
+
 
     for(int i=1;i<=nseleccionados;i++){
         char texto[100];
@@ -476,9 +491,8 @@ void MainWindow::MostrarPropiedades(){
             }
         }
     }
+ui->propiedades->setLayout(layoutpropiedades);
 
-    ui->propiedades->setLayout(layoutpropiedades);
-    ui->propiedades->update();
 
 }
 
