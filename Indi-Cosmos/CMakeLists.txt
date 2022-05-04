@@ -35,6 +35,11 @@ set(PROJECT_SOURCES
         device.cpp
         device.h
         device.ui
+        conectar.ui
+        conectar.h
+        conectar.cpp
+
+
 
 
         images.qrc

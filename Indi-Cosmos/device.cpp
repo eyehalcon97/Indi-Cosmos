@@ -1,8 +1,12 @@
 #include "device.h"
 #include "ui_device.h"
+#include <string>
+#include <QString>
+
+using namespace std;
 
 
-device::device(QWidget *parent , char* id) :QWidget(parent),ui(new Ui::device)
+device::device(QWidget *parent , string id) :QWidget(parent),ui(new Ui::device)
 {
   deviceid = id ;
 
@@ -27,8 +31,42 @@ void device::nuevapropiedad(indigo_property* propiedad){
 
 }
 
-char* device::getDeviceID(){
+string device::getDeviceID(){
     return deviceid;
+}
+QLayout* device::getlayoutpropiedad(){
+    QLayout *layout = new QGridLayout;
+    return layout;
+}
+QLayout *device::propiedadgeneral(){
+    QLayout *layout = new QGridLayout;
+    return layout;
+}
+
+
+QLayout *device::propiedadtexto(){
+    QLayout *layout = new QGridLayout;
+    return layout;
+}
+
+QLayout *device::propiedadnumero(){
+    QLayout *layout = new QGridLayout;
+    return layout;
+}
+
+QLayout *device::propiedadswitch(){
+    QLayout *layout = new QGridLayout;
+    return layout;
+}
+
+QLayout *device::propiedadluz(){
+    QLayout *layout = new QGridLayout;
+    return layout;
+}
+
+QLayout *device::propiedadblob(){
+    QLayout *layout = new QGridLayout;
+    return layout;
 }
 
 void device::cambiartamanio(int anchura,int altura){
@@ -40,7 +78,7 @@ void device::cambiartamanio(int anchura,int altura){
     ui->paneldevice->resize(anchura,altura);
     ui->scrolltexto->setMinimumHeight(altura*0.3);
     ui->scrolltexto->setMaximumHeight(altura*0.3);
-    ui->texto_3->setText(deviceid);
+    ui->texto_3->setText(deviceid.c_str());
 
 }
 

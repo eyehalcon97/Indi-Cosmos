@@ -1,6 +1,6 @@
 
 #include "mainwindow.h"
-
+#include "conectar.h"
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
@@ -21,10 +21,10 @@ int main(int argc, char *argv[])
             break;
         }
     }
+    MainWindow wa;
+    wa.show();
 
 
-    MainWindow w;
-    w.show();
 
 
 

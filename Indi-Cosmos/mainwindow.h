@@ -10,6 +10,8 @@
 #include <device.h>
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
+#include <string>
+using namespace std;
 
 
 QT_BEGIN_NAMESPACE
@@ -23,7 +25,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void creardevice(char* propiedad);
+    void creardevice(string id);
 
 
 private slots:
@@ -48,9 +50,13 @@ private slots:
     //void resizeEvent(QResizeEvent* event);
     void repintar();
     void MostrarPropiedades();
+    void resizeEvent(QResizeEvent*);
 
 
-    int indexofdevice(char* id);
+
+
+
+    int indexofdevice(string id);
 
     void on_Conectar_clicked();
 

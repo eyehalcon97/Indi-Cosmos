@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "conectar.h"
 #include "./ui_mainwindow.h"
 #include <string>
 #include <QWidget>
@@ -8,7 +9,7 @@
 #include <QThread>
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
-
+#include <ctime>
 
 
 #include <iostream>
@@ -24,8 +25,9 @@
 #include <windows.h>
 #pragma warning(disable:4996)
 #endif
-indigo_property *lista_propiedades[100];
-int npropiedades=0;
+indigo_property *lista_propiedades[130][130];
+int npropiedades[130];
+int idpropiedad=0;
 bool cargado=false;
 
 
@@ -48,8 +50,8 @@ static indigo_result client_attach(indigo_client *client) {
 
 static indigo_result client_define_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message) {
 
-        lista_propiedades[npropiedades] = property;
-        npropiedades++;
+        lista_propiedades[idpropiedad][npropiedades[idpropiedad]] = property;
+        npropiedades[idpropiedad]++;
 
         //indigo_log(property->items[0].number.value);
     /*else
@@ -206,7 +208,7 @@ void MainWindow::on_Nobjetos_valueChanged(int arg1)
 
 
 }
-/*
+
 void MainWindow::resizeEvent(QResizeEvent* event)
 {
 
@@ -215,7 +217,7 @@ void MainWindow::resizeEvent(QResizeEvent* event)
     }
 
    // Your code here.
-}*/
+}
 
 void MainWindow::repintar(){
     int fila= (idbotones/columnasmaxima);
@@ -248,7 +250,7 @@ void MainWindow::repintar(){
     ui->PanelPrincipal->widget()->setLayout(layoutdevice);
 }
 
-void MainWindow::creardevice(char* id){
+void MainWindow::creardevice(string id){
     idbotones++;
     int fila= (idbotones/columnasmaxima);
     int columna = idbotones%columnasmaxima;
@@ -315,12 +317,16 @@ void MainWindow::botones_clicked()
     repintar();
 }
 
-void MainWindow::MostrarPropiedades(){
+
+ void MainWindow::MostrarPropiedades(){
 
 
 
     QLabel *nombre = new QLabel;
     layoutpropiedades = new QGridLayout;
+    QWidget *device = new QWidget;
+    device->setStyleSheet("background-color:red");
+    QLayout *layoutdevice = new QGridLayout;
 
     if ( ui->propiedades->layout() != NULL )
     {
@@ -337,19 +343,20 @@ void MainWindow::MostrarPropiedades(){
 
 
     for(int i=1;i<=nseleccionados;i++){
-        char texto[100];
-        sprintf(texto, "%d", devicesseleccionados[i]);
-        indigo_log(texto);
+
         int npropiedades = devices[devicesseleccionados[i]]->getnpropiedades();
+
         nombre = new QLabel;
-        nombre->setText("Nombre del dispositivo");
+        nombre->setText("Nombre del Grupo");
         layoutpropiedades->addWidget(nombre);
+
         nombre = new QLabel;
-        nombre->setText(devices[devicesseleccionados[i]]->getDeviceID());
-        indigo_log(devices[devicesseleccionados[i]]->getDeviceID());
+        nombre->setText(devices[devicesseleccionados[i]]->getDeviceID().c_str());
         layoutpropiedades->addWidget(nombre);
+
         for(int j=1;j<=npropiedades;j++){
             indigo_property* propiedad = devices[devicesseleccionados[i]]->getpropiedad(j);
+
             nombre = new QLabel;
             nombre->setText("Nombre de la propiedad");
             layoutpropiedades->addWidget(nombre);
@@ -373,15 +380,15 @@ void MainWindow::MostrarPropiedades(){
             nombre = new QLabel;
             nombre->setText(propiedad->label);
             layoutpropiedades->addWidget(nombre);
-            /*
+/*
             nombre = new QLabel;
             nombre->setText("GUI");
             layoutpropiedades->addWidget(nombre);
 
             nombre = new QLabel;
             nombre->setText(QString(propiedad->hints));
-            layoutpropiedades->addWidget(nombre);
-            */
+            layoutpropiedades->addWidget(nombre);*/
+
 
             nombre = new QLabel;
             nombre->setText(QString("valor luz"));
@@ -419,35 +426,66 @@ void MainWindow::MostrarPropiedades(){
                 nombre = new QLabel;
                 nombre->setText(propiedad->items[k].label);
                 layoutpropiedades->addWidget(nombre);
-
-               /* nombre = new QLabel;
+/*
+                nombre = new QLabel;
                 nombre->setText(QString("GUI item propiedad"));
                 layoutpropiedades->addWidget(nombre);
 
                 nombre = new QLabel;
                 nombre->setText(propiedad->items[k].hints);
-                layoutpropiedades->addWidget(nombre);
-                */
+                layoutpropiedades->addWidget(nombre);*/
+
 
 
                 if(propiedad->type == 1){
                     nombre = new QLabel;
                     nombre->setText(QString("valor"));
                     layoutpropiedades->addWidget(nombre);
+                    if(propiedad->items[k].text.length < INDIGO_VALUE_SIZE){
+                        nombre = new QLabel;
+                        nombre->setText(propiedad->items[k].text.value);
+                        layoutpropiedades->addWidget(nombre);
+                    }else{
+                        nombre = new QLabel;
+                        nombre->setText(propiedad->items[k].text.long_value);
+                        layoutpropiedades->addWidget(nombre);
+                    }
 
-                    nombre = new QLabel;
-                    nombre->setText(propiedad->items[k].text.value);
-                    layoutpropiedades->addWidget(nombre);
+
+
                 }
                 if(propiedad->type == 2){
+                    nombre = new QLabel;
+                    nombre->setText(QString("formato"));
+                    layoutpropiedades->addWidget(nombre);
+
+                    nombre = new QLabel;
+                    nombre->setText(propiedad->items[k].number.format);
+                    layoutpropiedades->addWidget(nombre);
+
+
                     nombre = new QLabel;
                     nombre->setText(QString("valor"));
                     layoutpropiedades->addWidget(nombre);
 
-                    nombre = new QLabel;
-                    char texto[100];
-                    sprintf(texto, "%f", propiedad->items[k].number.value);
-                    nombre->setText(texto);
+                    if(string(propiedad->items[k].number.format) == "%g"){
+                        char texto[100];
+                        sprintf(texto, "%g", propiedad->items[k].number.value);
+                        indigo_log(texto);
+                        nombre->setText(texto);
+                    }else{
+                        char textohora[2];
+                        char texto[100];
+
+                        sprintf(texto,    "%1-%2-%3T%4:%5:%6", propiedad->items[k].number.format);
+
+                        indigo_log(texto);
+                        nombre->setText(texto);
+                    }
+
+
+
+
                     layoutpropiedades->addWidget(nombre);
 
                 }
@@ -491,7 +529,10 @@ void MainWindow::MostrarPropiedades(){
             }
         }
     }
-ui->propiedades->setLayout(layoutpropiedades);
+    device->setLayout(layoutpropiedades);
+
+    layoutdevice->addWidget(device);
+    ui->propiedades->setLayout(layoutdevice);
 
 
 }
@@ -518,9 +559,9 @@ void MainWindow::on_checkBox_stateChanged(int arg1)
     }
 }
 
-int MainWindow::indexofdevice(char* id){
+int MainWindow::indexofdevice(string id){
     for(int i=1;i<=idbotones;i++){
-        if((string)devices[i]->getDeviceID() == (string)id){
+        if(devices[i]->getDeviceID() == id){
             return i;
         }
     }
@@ -534,22 +575,29 @@ int MainWindow::indexofdevice(char* id){
 
 void MainWindow::on_Conectar_clicked()
 {
-    indigo_set_log_level(INDIGO_LOG_DEBUG);
+
+
+
+    conectar w;
+    w.show();
+
+    idpropiedad++;
+
+     indigo_set_log_level(INDIGO_LOG_DEBUG);
      indigo_start();
      indigo_server_entry *server;
      indigo_attach_client(&client);
      indigo_connect_server("localhost", "localhost", 7624, &server);
      QThread::sleep(1);
-
-     for(int i=0;i<npropiedades;i++){
-         int posicion =indexofdevice(lista_propiedades[i]->device);
+     string id = " dispositivo: puerto 7624 " + to_string(idpropiedad);
+     for(int i=0;i<npropiedades[idpropiedad];i++){
+         int posicion =indexofdevice(id);
          if(posicion > 0){
-             devices[posicion]->nuevapropiedad(lista_propiedades[i]);
-
+             devices[posicion]->nuevapropiedad(lista_propiedades[idpropiedad][i]);
          }
          else{
-             creardevice(lista_propiedades[i]->device);
-             devices[idbotones]->nuevapropiedad(lista_propiedades[i]);
+             creardevice(id);
+             devices[idbotones]->nuevapropiedad(lista_propiedades[idpropiedad][i]);
          }
 
      }

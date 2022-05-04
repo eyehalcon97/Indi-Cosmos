@@ -4,7 +4,8 @@
 #include <QWidget>
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
-
+#include <string>
+using namespace std;
 namespace Ui {
 class device;
 }
@@ -14,19 +15,32 @@ class device : public QWidget
     Q_OBJECT
 
 public:
-    explicit device(QWidget *parent = nullptr,char* id = nullptr);
+    explicit device(QWidget *parent = nullptr,string id = nullptr);
 
     ~device();
     void cambiartamanio(int altura,int anchura);
     void nuevapropiedad(indigo_property* propiedad);
     indigo_property* getpropiedad(int num);
-    char* getDeviceID();
+    string getDeviceID();
     int getnpropiedades();
+    QLayout *propiedadgeneral();
+
+    QLayout *propiedadtexto();
+
+    QLayout *propiedadnumero();
+
+    QLayout *propiedadswitch();
+
+    QLayout *propiedadluz();
+
+    QLayout *propiedadblob();
+
+    QLayout *getlayoutpropiedad();
 
 
 private:
     Ui::device *ui;
-    char* deviceid;
+    string deviceid;
     indigo_property* propiedades[100];
     int npropiedades=0;
 
