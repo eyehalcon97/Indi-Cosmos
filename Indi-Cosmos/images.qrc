@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>Images/lentecuadrada.png</file>
         <file>Images/Monturacuadrada.png</file>
+        <file>Images/alerta.png</file>
+        <file>Images/telescopioiconoprincipal.png</file>
     </qresource>
 </RCC>

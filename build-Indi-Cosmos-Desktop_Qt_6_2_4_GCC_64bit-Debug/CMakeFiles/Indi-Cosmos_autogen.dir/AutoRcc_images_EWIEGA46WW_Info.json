@@ -7,6 +7,8 @@
 	"INCLUDE_DIR" : "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_2_4_GCC_64bit-Debug/Indi-Cosmos_autogen/include",
 	"INPUTS" : 
 	[
+		"/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/alerta.png",
+		"/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/telescopioiconoprincipal.png",
 		"/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/lentecuadrada.png",
 		"/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/Monturacuadrada.png"
 	],

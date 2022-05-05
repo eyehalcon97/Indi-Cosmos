@@ -28,6 +28,16 @@
   <property name="windowTitle">
    <string notr="true">Indi-Cosmos</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/Images/telescopioiconoprincipal.png</normaloff>:/Images/telescopioiconoprincipal.png</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>30</width>
+    <height>30</height>
+   </size>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="enabled">
     <bool>true</bool>
@@ -229,6 +239,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

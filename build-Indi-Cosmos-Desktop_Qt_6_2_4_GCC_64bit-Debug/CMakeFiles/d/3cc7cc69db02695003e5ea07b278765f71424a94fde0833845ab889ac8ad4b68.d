@@ -5,6 +5,8 @@ Indi-Cosmos_autogen/timestamp: \
   /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/device.cpp \
   /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/device.h \
   /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/images.qrc \
+  /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/indigolib.cpp \
+  /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/indigolib.h \
   /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/main.cpp \
   /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/mainwindow.cpp \
   /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/mainwindow.h \
@@ -103,7 +105,7 @@ Indi-Cosmos_autogen/timestamp: \
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qtransform.h \
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qwindowdefs.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QButtonGroup \
-  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QFrame \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QDialog \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QGridLayout \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QMainWindow \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QPushButton \
@@ -111,7 +113,7 @@ Indi-Cosmos_autogen/timestamp: \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qabstractbutton.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qboxlayout.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qframe.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qdialog.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qgridlayout.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qlayout.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qlayoutitem.h \

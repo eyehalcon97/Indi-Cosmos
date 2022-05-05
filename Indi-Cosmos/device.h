@@ -20,6 +20,7 @@ public:
     ~device();
     void cambiartamanio(int altura,int anchura);
     void nuevapropiedad(indigo_property* propiedad);
+
     indigo_property* getpropiedad(int num);
     string getDeviceID();
     int getnpropiedades();

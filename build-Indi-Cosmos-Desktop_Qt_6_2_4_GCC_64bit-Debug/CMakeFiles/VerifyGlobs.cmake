@@ -43,6 +43,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/gadit/Desktop/In
 set(OLD_GLOB
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/conectar.cpp"
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/device.cpp"
+  "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/indigolib.cpp"
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/main.cpp"
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/mainwindow.cpp"
   )
@@ -65,6 +66,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/gadit/Desktop/In
 set(OLD_GLOB
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/conectar.h"
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/device.h"
+  "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/indigolib.h"
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/mainwindow.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -168,7 +170,6 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/gadit/Desktop/In
 set(OLD_GLOB
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/conectar.ui"
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/device.ui"
-  "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/dfdsafda.ui"
   "/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/mainwindow.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

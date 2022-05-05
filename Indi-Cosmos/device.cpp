@@ -1,5 +1,6 @@
 #include "device.h"
 #include "ui_device.h"
+#include "conectar.h"
 #include <string>
 #include <QString>
 
@@ -9,6 +10,8 @@ using namespace std;
 device::device(QWidget *parent , string id) :QWidget(parent),ui(new Ui::device)
 {
   deviceid = id ;
+  conectar w;
+  w.show();
 
 
   ui->setupUi(this);

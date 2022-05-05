@@ -89,6 +89,14 @@ build CMakeFiles/Indi-Cosmos.dir/conectar.cpp.o: CXX_COMPILER__Indi-Cosmos_Debug
   OBJECT_DIR = CMakeFiles/Indi-Cosmos.dir
   OBJECT_FILE_DIR = CMakeFiles/Indi-Cosmos.dir
 
+build CMakeFiles/Indi-Cosmos.dir/indigolib.cpp.o: CXX_COMPILER__Indi-Cosmos_Debug /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/indigolib.cpp || cmake_object_order_depends_target_Indi-Cosmos
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Indi-Cosmos.dir/indigolib.cpp.o.d
+  FLAGS = -g -fPIC -std=gnu++17
+  INCLUDES = -I/mnt/c/Users/gadit/Desktop/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_2_4_GCC_64bit-Debug -I/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos -I/mnt/c/Users/gadit/Desktop/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_2_4_GCC_64bit-Debug/Indi-Cosmos_autogen/include -isystem /opt/Qt/6.2.4/gcc_64/include/QtCore -isystem /opt/Qt/6.2.4/gcc_64/include -isystem /opt/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /opt/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /opt/Qt/6.2.4/gcc_64/include/QtGui
+  OBJECT_DIR = CMakeFiles/Indi-Cosmos.dir
+  OBJECT_FILE_DIR = CMakeFiles/Indi-Cosmos.dir
+
 build CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp.o: CXX_COMPILER__Indi-Cosmos_Debug /mnt/c/Users/gadit/Desktop/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_2_4_GCC_64bit-Debug/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp || cmake_object_order_depends_target_Indi-Cosmos
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp.o.d
@@ -105,7 +113,7 @@ build CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp.o
 #############################################
 # Link the executable Indi-Cosmos
 
-build Indi-Cosmos: CXX_EXECUTABLE_LINKER__Indi-Cosmos_Debug CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/mocs_compilation.cpp.o CMakeFiles/Indi-Cosmos.dir/main.cpp.o CMakeFiles/Indi-Cosmos.dir/mainwindow.cpp.o CMakeFiles/Indi-Cosmos.dir/device.cpp.o CMakeFiles/Indi-Cosmos.dir/conectar.cpp.o CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp.o | /opt/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /opt/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4 /opt/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || Indi-Cosmos_autogen Indi-Cosmos_autogen_timestamp_deps
+build Indi-Cosmos: CXX_EXECUTABLE_LINKER__Indi-Cosmos_Debug CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/mocs_compilation.cpp.o CMakeFiles/Indi-Cosmos.dir/main.cpp.o CMakeFiles/Indi-Cosmos.dir/mainwindow.cpp.o CMakeFiles/Indi-Cosmos.dir/device.cpp.o CMakeFiles/Indi-Cosmos.dir/conectar.cpp.o CMakeFiles/Indi-Cosmos.dir/indigolib.cpp.o CMakeFiles/Indi-Cosmos.dir/Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp.o | /opt/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /opt/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4 /opt/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || Indi-Cosmos_autogen Indi-Cosmos_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/opt/Qt/6.2.4/gcc_64/lib  /opt/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4  -lindigo  /opt/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4  /opt/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so
   OBJECT_DIR = CMakeFiles/Indi-Cosmos.dir
@@ -163,7 +171,7 @@ build Indi-Cosmos_autogen/timestamp Indi-Cosmos_autogen/mocs_compilation.cpp | $
 #############################################
 # Custom command for Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp
 
-build Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp | ${cmake_ninja_workdir}Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp: CUSTOM_COMMAND /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/images.qrc CMakeFiles/Indi-Cosmos_autogen.dir/AutoRcc_images_EWIEGA46WW_Info.json /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/lentecuadrada.png /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/Monturacuadrada.png /opt/Qt/6.2.4/gcc_64/./libexec/rcc || Indi-Cosmos_autogen Indi-Cosmos_autogen_timestamp_deps
+build Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp | ${cmake_ninja_workdir}Indi-Cosmos_autogen/EWIEGA46WW/qrc_images.cpp: CUSTOM_COMMAND /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/images.qrc CMakeFiles/Indi-Cosmos_autogen.dir/AutoRcc_images_EWIEGA46WW_Info.json /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/alerta.png /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/telescopioiconoprincipal.png /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/lentecuadrada.png /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/Images/Monturacuadrada.png /opt/Qt/6.2.4/gcc_64/./libexec/rcc || Indi-Cosmos_autogen Indi-Cosmos_autogen_timestamp_deps
   COMMAND = cd /mnt/c/Users/gadit/Desktop/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_2_4_GCC_64bit-Debug && /usr/bin/cmake -E cmake_autorcc /mnt/c/Users/gadit/Desktop/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_2_4_GCC_64bit-Debug/CMakeFiles/Indi-Cosmos_autogen.dir/AutoRcc_images_EWIEGA46WW_Info.json Debug
   DESC = Automatic RCC for images.qrc
   restat = 1

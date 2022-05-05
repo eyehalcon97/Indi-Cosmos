@@ -38,6 +38,8 @@ set(PROJECT_SOURCES
         conectar.ui
         conectar.h
         conectar.cpp
+        indigolib.h
+        indigolib.cpp
 
 
 

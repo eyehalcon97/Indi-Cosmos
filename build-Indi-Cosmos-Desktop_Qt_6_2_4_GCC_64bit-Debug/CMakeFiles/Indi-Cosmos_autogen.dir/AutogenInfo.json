@@ -329,6 +329,12 @@
 			null
 		],
 		[
+			"/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/indigolib.h",
+			"MU",
+			"EWIEGA46WW/moc_indigolib.cpp",
+			null
+		],
+		[
 			"/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -394,6 +400,11 @@
 		],
 		[
 			"/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/device.cpp",
+			"MU",
+			null
+		],
+		[
+			"/mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/indigolib.cpp",
 			"MU",
 			null
 		],

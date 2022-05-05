@@ -1,7 +1,6 @@
 #include "mainwindow.h"
-#include "conectar.h"
+
 #include "./ui_mainwindow.h"
-#include <string>
 #include <QWidget>
 #include <QPushButton>
 #include <QLabel>
@@ -10,132 +9,16 @@
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
 #include <ctime>
-
-
+#include "conectar.h"
+#include "indigolib.h"
 #include <iostream>
 #include <chrono>
 #include <thread>
 
 
 
-#if defined(INDIGO_LINUX) || defined(INDIGO_MACOS)
-#include <unistd.h>
-#endif
-#if defined(INDIGO_WINDOWS)
-#include <windows.h>
-#pragma warning(disable:4996)
-#endif
-indigo_property *lista_propiedades[130][130];
-int npropiedades[130];
-int idpropiedad=0;
-bool cargado=false;
-
-
-static bool connected = false;
-static int count = 5;
-using namespace std;
-
-
-string CCD_SIMULATOR = "CCD Imager Simulator @ localhost";
-
-
-
-static indigo_result client_attach(indigo_client *client) {
-    indigo_log("attached to INDIGO bus...");
-    indigo_enumerate_properties(client, &INDIGO_ALL_PROPERTIES);
-
-
-    return INDIGO_OK;
-}
-
-static indigo_result client_define_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message) {
-
-        lista_propiedades[idpropiedad][npropiedades[idpropiedad]] = property;
-        npropiedades[idpropiedad]++;
-
-        //indigo_log(property->items[0].number.value);
-    /*else
-        mipropiedad = property;
-    }
-
-    if(!strcmp(property->name,CCD_EXPOSURE_PROPERTY_NAME)){
-
-    }
-    if (!strcmp(property->name, CONNECTION_PROPERTY_NAME)) {
-        if (indigo_get_switch(property, CONNECTION_CONNECTED_ITEM_NAME)) {
-            connected = true;
-            indigo_log("already connected...");
-            static const char * items[] = { CCD_EXPOSURE_ITEM_NAME };
-            static double values[] = { 3.0 };
-            indigo_change_number_property(client, CCD_SIMULATOR, CCD_EXPOSURE_PROPERTY_NAME, 1, items, values);
-
-        } else {
-            indigo_device_connect(client, CCD_SIMULATOR);
-            return INDIGO_OK;
-        }
-    }
-    if (!strcmp(property->name, "FILE_NAME")) {
-        char value[1024] = { 0 };
-        static const char * items[] = { "PATH" };
-        static const char *values[1];
-        values[0] = value;
-        for (int i = 0 ; i < 1023; i++)
-            value[i] = '0' + i % 10;
-        indigo_change_text_property(client, CCD_SIMULATOR, "FILE_NAME" , 1, items, values);
-    }
-    if (!strcmp(property->name, CCD_IMAGE_PROPERTY_NAME)) {
-        if (device->version >= INDIGO_VERSION_2_0)
-            indigo_enable_blob(client, property, INDIGO_ENABLE_BLOB_URL);
-        else
-            indigo_enable_blob(client, property, INDIGO_ENABLE_BLOB_ALSO);
-    }
-    if (!strcmp(property->name, CCD_IMAGE_FORMAT_PROPERTY_NAME)) {
-        static const char * items[] = { CCD_IMAGE_FORMAT_FITS_ITEM_NAME };
-        static bool values[] = { true };
-        indigo_change_switch_property(client, CCD_SIMULATOR, CCD_IMAGE_FORMAT_PROPERTY_NAME, 1, items, values);
-    }*/
-    return INDIGO_OK;
-}
-
-static indigo_result client_update_property(indigo_client *client,indigo_device *device,indigo_property *property,const char *message)
-{
-/*
-    if(property == mipropiedad){
-        cout << "ES LA MISMA" << endl;
-    }
-    cout << "xxx" <<  mipropiedad->name << endl;
-    if (!strcmp(property->name, CCD_EXPOSURE_PROPERTY_NAME)) {
-        if (property->state == INDIGO_BUSY_STATE) {
-
-            indigo_log("exposure %gs...", property->items[0].number.value);
-        } else if (property->state == INDIGO_OK_STATE) {
-            indigo_log("exposure done...");
-        }
-        return INDIGO_OK;
-    }*/
-    return INDIGO_OK;
-
-}
-static indigo_result client_detach(indigo_client *client) {
-    indigo_log("detached from INDIGO bus...");
-    return INDIGO_OK;
-}
-
-static indigo_client client = {
-    "Remote server client",
-    false,
-    NULL,
-    INDIGO_OK,
-    INDIGO_VERSION_CURRENT,
-    NULL,
-    client_attach,
-    client_define_property,
-    client_update_property,
-    NULL,
-    NULL,
-    client_detach
-};
-
+conectar *menuconectar;
+indigolib *libreria = new indigolib;
 using namespace std;
 
 
@@ -150,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 
     ui->setupUi(this);
     ui->PanelDerecho->setVisible(false);
-
+    //indigolib *lib = new indigolib(this);
 
 
 }
@@ -571,36 +454,43 @@ int MainWindow::indexofdevice(string id){
 
 
 
+void MainWindow::nuevodispositivo(){
 
+    string nombre = menuconectar->getnombre();
+    string host = menuconectar->gethost();
+    int puerto = menuconectar->getpuerto();
+    if(!nombre.empty() && !host.empty() ){
+        menuconectar->hide();
+        libreria->conectar(this,nombre,host,puerto);
+        QThread::sleep(1);
+        indigo_property** propiedades = libreria->getpropiedades();
+        string id = nombre + " - " + host + " - " + to_string(puerto);
+        int npropiedades = libreria->getnpropiedades();
+
+        for(int i=1;i<npropiedades;i++){
+            int posicion =indexofdevice(id);
+            if(posicion > 0){
+                devices[posicion]->nuevapropiedad(propiedades[i]);
+            }
+            else{
+                creardevice(id);
+                devices[idbotones]->nuevapropiedad(propiedades[i]);
+            }
+
+        }
+    }else{
+        menuconectar->error();
+    }
+
+
+}
 
 void MainWindow::on_Conectar_clicked()
 {
 
+    menuconectar = new conectar(this);
+    menuconectar->show();
 
-
-    conectar w;
-    w.show();
-
-    idpropiedad++;
-
-     indigo_set_log_level(INDIGO_LOG_DEBUG);
-     indigo_start();
-     indigo_server_entry *server;
-     indigo_attach_client(&client);
-     indigo_connect_server("localhost", "localhost", 7624, &server);
-     QThread::sleep(1);
-     string id = " dispositivo: puerto 7624 " + to_string(idpropiedad);
-     for(int i=0;i<npropiedades[idpropiedad];i++){
-         int posicion =indexofdevice(id);
-         if(posicion > 0){
-             devices[posicion]->nuevapropiedad(lista_propiedades[idpropiedad][i]);
-         }
-         else{
-             creardevice(id);
-             devices[idbotones]->nuevapropiedad(lista_propiedades[idpropiedad][i]);
-         }
-
-     }
 
 }
 

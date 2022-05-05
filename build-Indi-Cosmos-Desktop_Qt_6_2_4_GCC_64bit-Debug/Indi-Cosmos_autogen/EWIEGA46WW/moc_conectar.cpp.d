@@ -1,5 +1,7 @@
 /mnt/c/Users/gadit/Desktop/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_2_4_GCC_64bit-Debug/Indi-Cosmos_autogen/EWIEGA46WW/moc_conectar.cpp: /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/conectar.h \
   /mnt/c/Users/gadit/Desktop/Indi-COSMOS/build-Indi-Cosmos-Desktop_Qt_6_2_4_GCC_64bit-Debug/Indi-Cosmos_autogen/moc_predefs.h \
+  /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/device.h \
+  /mnt/c/Users/gadit/Desktop/Indi-COSMOS/Indi-Cosmos/mainwindow.h \
   /opt/Qt/6.2.4/gcc_64/include/QtCore/qalgorithms.h \
   /opt/Qt/6.2.4/gcc_64/include/QtCore/qanystringview.h \
   /opt/Qt/6.2.4/gcc_64/include/QtCore/qarraydata.h \
@@ -76,6 +78,7 @@
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qfont.h \
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qfontinfo.h \
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qfontmetrics.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtGui/qicon.h \
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qimage.h \
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qkeysequence.h \
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qpaintdevice.h \
@@ -90,9 +93,23 @@
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qtguiglobal.h \
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qtransform.h \
   /opt/Qt/6.2.4/gcc_64/include/QtGui/qwindowdefs.h \
-  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QFrame \
-  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qframe.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QButtonGroup \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QDialog \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QGridLayout \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QMainWindow \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QPushButton \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/QWidget \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qabstractbutton.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qboxlayout.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qbuttongroup.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qdialog.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qgridlayout.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qlayout.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qlayoutitem.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qmainwindow.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qpushbutton.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qsizepolicy.h \
+  /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qtabwidget.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
   /opt/Qt/6.2.4/gcc_64/include/QtWidgets/qwidget.h \
@@ -135,6 +152,7 @@
   /usr/include/c++/11/bits/hash_bytes.h \
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/ios_base.h \
+  /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/iterator_concepts.h \
   /usr/include/c++/11/bits/list.tcc \
   /usr/include/c++/11/bits/locale_classes.h \
@@ -226,6 +244,8 @@
   /usr/include/c++/11/initializer_list \
   /usr/include/c++/11/ios \
   /usr/include/c++/11/iosfwd \
+  /usr/include/c++/11/iostream \
+  /usr/include/c++/11/istream \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/limits \
   /usr/include/c++/11/list \
@@ -268,6 +288,11 @@
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/indigo/indigo_bus.h \
+  /usr/include/indigo/indigo_client.h \
+  /usr/include/indigo/indigo_config.h \
+  /usr/include/indigo/indigo_names.h \
+  /usr/include/indigo/indigo_token.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
@@ -276,6 +301,7 @@
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
+  /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
@@ -314,6 +340,7 @@
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
@@ -326,15 +353,19 @@
   /usr/include/x86_64-linux-gnu/bits/types.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
@@ -371,4 +402,5 @@
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h

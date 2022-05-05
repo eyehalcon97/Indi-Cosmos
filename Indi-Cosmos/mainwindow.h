@@ -8,6 +8,7 @@
 #include <QWidget>
 #include <iostream>
 #include <device.h>
+
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
 #include <string>
@@ -27,6 +28,8 @@ public:
     ~MainWindow();
     void creardevice(string id);
 
+public slots:
+    void nuevodispositivo();
 
 private slots:
 
@@ -51,6 +54,7 @@ private slots:
     void repintar();
     void MostrarPropiedades();
     void resizeEvent(QResizeEvent*);
+
 
 
 
