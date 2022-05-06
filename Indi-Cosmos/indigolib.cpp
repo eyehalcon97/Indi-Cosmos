@@ -8,6 +8,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <string>
 
 
 
@@ -20,7 +21,7 @@
 #endif
 
 
-//indigolib *lib = new indigolib;
+
 int npropiedades=0;
 indigo_property* lista_propiedades[130];
 
@@ -30,14 +31,18 @@ static indigo_result client_attach(indigo_client *client) {
     indigo_enumerate_properties(client, &INDIGO_ALL_PROPERTIES);
 
 
+
     return INDIGO_OK;
 }
 
 static indigo_result client_define_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message) {
 
-       // lib->setpropiedad(property);
+
         npropiedades++;
         lista_propiedades[npropiedades]=property;
+
+
+
         //indigo_log(property->items[0].number.value);
     /*else
         mipropiedad = property;
@@ -124,7 +129,12 @@ static indigo_client client = {
         client_detach
 };
 
-indigolib::indigolib(){}
+
+
+
+indigolib::indigolib(){
+
+}
 
 
 void indigolib::conectar(MainWindow *parent,string name,string hosts,int port){
@@ -138,20 +148,18 @@ void indigolib::conectar(MainWindow *parent,string name,string hosts,int port){
     indigo_attach_client(&client);
     indigo_connect_server(nombre.c_str(), host.c_str() , puerto , &server);
 
+    QThread::sleep(2);
+
+    nuevapropiedad();
+
+
+
 }
 
-void indigolib::setpadre(MainWindow *parent){
-    padre = parent;
-}
 
-void indigolib::setpropiedad(indigo_property* propiedad){
-    indigo_log("nueva propiedad");
-    npropiedades++;
-    indigo_log((to_string(npropiedades)).c_str());
-    lista_propiedades[npropiedades] = propiedad;
-}
+
 indigo_property* indigolib::getpropiedad(int id){
-    indigo_log((to_string(npropiedades)).c_str());
+    //indigo_log((to_string(npropiedades)).c_str());
     return lista_propiedades[id];
 }
 indigo_property** indigolib::getpropiedades(){

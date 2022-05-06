@@ -40,6 +40,25 @@ set(PROJECT_SOURCES
         conectar.cpp
         indigolib.h
         indigolib.cpp
+        itemtexto.h
+        itemtexto.cpp
+        itemtexto.ui
+        itemnumero.h
+        itemnumero.cpp
+        itemnumero.ui
+        itemswitch.h
+        itemswitch.cpp
+        itemswitch.ui
+        itemlight.h
+        itemlight.cpp
+        itemlight.ui
+        itemblob.h
+        itemblob.cpp
+        itemblob.ui
+        propiedad.h
+        propiedad.cpp
+        propiedad.ui
+
 
 
 

@@ -44,6 +44,18 @@ private:
     string deviceid;
     indigo_property* propiedades[100];
     int npropiedades=0;
+    /*
+    string device;
+    string name;
+    string group;
+    string label;
+    string hints;
+    int state;
+    int type;
+    int perm;
+    int rule;
+    short version;
+    bool hidden;*/
 
 };
 

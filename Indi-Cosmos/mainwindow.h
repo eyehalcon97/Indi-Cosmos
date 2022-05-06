@@ -8,6 +8,8 @@
 #include <QWidget>
 #include <iostream>
 #include <device.h>
+#include<QThread>
+
 
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
@@ -27,9 +29,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void creardevice(string id);
+    QThread *workerThread;
+
+
 
 public slots:
     void nuevodispositivo();
+    void nuevapropiedad();
 
 private slots:
 
@@ -75,6 +81,7 @@ private:
     bool modoseleccion=false;
     int idbotones=0;
     int columnasmaxima =4;
+    int contador=0;
 
 
 };

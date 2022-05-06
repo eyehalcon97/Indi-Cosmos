@@ -9,16 +9,19 @@
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
 #include <ctime>
-#include "conectar.h"
 #include "indigolib.h"
+
+
 #include <iostream>
 #include <chrono>
-#include <thread>
-
-
+#include <QThread>
+#include "conectar.h"
 
 conectar *menuconectar;
 indigolib *libreria = new indigolib;
+
+
+
 using namespace std;
 
 
@@ -28,12 +31,13 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 
 
 
-
     devicesseleccionados[1] = 0;
 
     ui->setupUi(this);
     ui->PanelDerecho->setVisible(false);
+
     //indigolib *lib = new indigolib(this);
+
 
 
 }
@@ -49,6 +53,7 @@ MainWindow::~MainWindow()
     delete[] botones;
     delete[] devices;
     delete ui;
+    workerThread->quit();
 
 }
 void MainWindow::on_boolpanelderecho_changed()
@@ -456,33 +461,45 @@ int MainWindow::indexofdevice(string id){
 
 void MainWindow::nuevodispositivo(){
 
+    workerThread = new QThread;
+    libreria->moveToThread(workerThread);
+    connect(libreria, &indigolib::nuevapropiedad, this, &MainWindow::nuevapropiedad);
+    workerThread->start();
+
     string nombre = menuconectar->getnombre();
     string host = menuconectar->gethost();
     int puerto = menuconectar->getpuerto();
     if(!nombre.empty() && !host.empty() ){
         menuconectar->hide();
         libreria->conectar(this,nombre,host,puerto);
-        QThread::sleep(1);
-        indigo_property** propiedades = libreria->getpropiedades();
-        string id = nombre + " - " + host + " - " + to_string(puerto);
-        int npropiedades = libreria->getnpropiedades();
 
-        for(int i=1;i<npropiedades;i++){
-            int posicion =indexofdevice(id);
-            if(posicion > 0){
-                devices[posicion]->nuevapropiedad(propiedades[i]);
-            }
-            else{
-                creardevice(id);
-                devices[idbotones]->nuevapropiedad(propiedades[i]);
-            }
-
-        }
     }else{
         menuconectar->error();
     }
 
 
+}
+
+void MainWindow::nuevapropiedad(){
+    indigo_log("señal de la libreria");
+
+    contador++;
+
+    indigo_property** propiedades = libreria->getpropiedades();
+    string id = libreria->getnombre() + " - " + libreria->gethost() + " - " + to_string(libreria->getpuerto());
+    int npropiedades = libreria->getnpropiedades();
+
+    for(int i=1;i<npropiedades;i++){
+        int posicion =indexofdevice(id);
+        if(posicion > 0){
+            devices[posicion]->nuevapropiedad(propiedades[i]);
+        }
+        else{
+            creardevice(id);
+            devices[idbotones]->nuevapropiedad(propiedades[i]);
+        }
+
+    }
 }
 
 void MainWindow::on_Conectar_clicked()
