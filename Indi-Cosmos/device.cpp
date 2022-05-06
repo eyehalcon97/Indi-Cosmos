@@ -22,15 +22,15 @@ device::~device()
 {
     delete ui;
 }
-indigo_property* device::getpropiedad(int num){
+propiedad* device::getpropiedad(int num){
     return propiedades[num];
 }
 int device::getnpropiedades(){
     return npropiedades;
 }
-void device::nuevapropiedad(indigo_property* propiedad){
+void device::nuevapropiedad(indigo_property* property){
     npropiedades++;
-    propiedades[npropiedades] = propiedad;
+    propiedades[npropiedades] = new propiedad(property,this);
 
 }
 
@@ -38,36 +38,6 @@ string device::getDeviceID(){
     return deviceid;
 }
 QLayout* device::getlayoutpropiedad(){
-    QLayout *layout = new QGridLayout;
-    return layout;
-}
-QLayout *device::propiedadgeneral(){
-    QLayout *layout = new QGridLayout;
-    return layout;
-}
-
-
-QLayout *device::propiedadtexto(){
-    QLayout *layout = new QGridLayout;
-    return layout;
-}
-
-QLayout *device::propiedadnumero(){
-    QLayout *layout = new QGridLayout;
-    return layout;
-}
-
-QLayout *device::propiedadswitch(){
-    QLayout *layout = new QGridLayout;
-    return layout;
-}
-
-QLayout *device::propiedadluz(){
-    QLayout *layout = new QGridLayout;
-    return layout;
-}
-
-QLayout *device::propiedadblob(){
     QLayout *layout = new QGridLayout;
     return layout;
 }

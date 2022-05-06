@@ -18,7 +18,7 @@ public:
     explicit itemblob(QWidget *parent = nullptr);
     ~itemblob();
     itemblob(string nombre,string etiqueta,string gui,string formato,string url,long size,void *value,QWidget *parent =nullptr);
-    itemblob(indigo_item *item,QWidget *parent = nullptr);
+    itemblob(indigo_item item,QWidget *parent = nullptr);
 
 private:
     Ui::itemblob *ui;

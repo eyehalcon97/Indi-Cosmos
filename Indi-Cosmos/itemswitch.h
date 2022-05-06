@@ -19,7 +19,7 @@ public:
     explicit itemswitch(QWidget *parent = nullptr);
     ~itemswitch();
     itemswitch(string nombre,string etiqueta,string gui,bool valor,QWidget *parent =nullptr);
-    itemswitch(indigo_item *item,QWidget *parent = nullptr);
+    itemswitch(indigo_item item,QWidget *parent = nullptr);
 
 private:
     Ui::itemswitch *ui;

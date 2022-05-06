@@ -19,7 +19,7 @@ public:
     explicit itemlight(QWidget *parent = nullptr);
     ~itemlight();
     itemlight(string nombre,string etiqueta,string gui ,int valor,QWidget *parent =nullptr);
-    itemlight(indigo_item *item,QWidget *parent = nullptr);
+    itemlight(indigo_item item,QWidget *parent = nullptr);
 
 private:
     Ui::itemlight *ui;

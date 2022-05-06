@@ -26,14 +26,14 @@ itemblob::itemblob(string nombre,string etiqueta,string gui,string format,string
 }
 
 
-itemblob::itemblob(indigo_item* item,QWidget *parent){
+itemblob::itemblob(indigo_item item,QWidget *parent){
     padre=parent;
-    this->name=string(item->name);
-    this->label=string(item->label);
-    this->hints=string(item->hints);
+    this->name=string(item.name);
+    this->label=string(item.label);
+    this->hints=string(item.hints);
 
-    this->formato = string(item->blob.format);
-    this->url = string(item->blob.url);
-    this->size = item->blob.size;
-    this->value = item->blob.value;
+    this->formato = string(item.blob.format);
+    this->url = string(item.blob.url);
+    this->size = item.blob.size;
+    this->value = item.blob.value;
 }

@@ -1,6 +1,6 @@
 #include "itemtexto.h"
 #include "ui_itemtexto.h"
-
+#include <string>
 itemtexto::itemtexto(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::itemtexto)
@@ -14,25 +14,27 @@ itemtexto::~itemtexto()
 }
 
 
-itemtexto::itemtexto(string nombre,string etiqueta,string gui,string value,string long_value,long length,QWidget *parent){
+itemtexto::itemtexto(string nombre,string etiqueta,string gui,string value,QWidget *parent){
     name=nombre;
     label=etiqueta;
     hints=gui;
     padre=parent;
     this->value=value;
-    this->long_value=long_value;
-    this->length=length;
 
 }
 
-itemtexto::itemtexto(indigo_item *item,QWidget *parent){
-    padre=parent;
-    this->name=string(item->name);
-    this->label=string(item->label);
-    this->hints=string(item->hints);
+itemtexto::itemtexto(indigo_item item,QWidget *parent){
 
-    this->value=string(item->text.value);
-    this->long_value=string(item->text.long_value);
-    this->length=item->text.length;
+    padre=parent;
+    this->name=string(item.name);
+    this->label=string(item.label);
+    this->hints=string(item.hints);
+
+
+    if(item.text.length < INDIGO_VALUE_SIZE){
+        this->value=string(item.text.value);
+    }else{
+        this->value=string(item.text.long_value);
+    }
 
 }

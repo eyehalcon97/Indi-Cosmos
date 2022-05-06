@@ -235,6 +235,23 @@ void MainWindow::botones_clicked()
         int npropiedades = devices[devicesseleccionados[i]]->getnpropiedades();
 
         nombre = new QLabel;
+        nombre->setText("Nombre del dispositivo");
+        layoutpropiedades->addWidget(nombre);
+
+        nombre = new QLabel;
+        nombre->setText(devices[devicesseleccionados[i]]->getDeviceID().c_str());
+        layoutpropiedades->addWidget(nombre);
+
+        nombre = new QLabel;
+        nombre->setText("Nombre de la propiedad");
+        layoutpropiedades->addWidget(nombre);
+
+        nombre = new QLabel;
+        indigo_log(devices[devicesseleccionados[i]]->getpropiedad(i)->getname().c_str());
+        nombre->setText(QString::fromStdString(devices[devicesseleccionados[i]]->getpropiedad(i)->getname()));
+        layoutpropiedades->addWidget(nombre);
+/*
+        nombre = new QLabel;
         nombre->setText("Nombre del Grupo");
         layoutpropiedades->addWidget(nombre);
 
@@ -243,7 +260,7 @@ void MainWindow::botones_clicked()
         layoutpropiedades->addWidget(nombre);
 
         for(int j=1;j<=npropiedades;j++){
-            indigo_property* propiedad = devices[devicesseleccionados[i]]->getpropiedad(j);
+            propiedad* property = devices[devicesseleccionados[i]]->getpropiedad(j);
 
             nombre = new QLabel;
             nombre->setText("Nombre de la propiedad");
@@ -275,7 +292,7 @@ void MainWindow::botones_clicked()
 
             nombre = new QLabel;
             nombre->setText(QString(propiedad->hints));
-            layoutpropiedades->addWidget(nombre);*/
+            layoutpropiedades->addWidget(nombre);
 
 
             nombre = new QLabel;
@@ -321,7 +338,7 @@ void MainWindow::botones_clicked()
 
                 nombre = new QLabel;
                 nombre->setText(propiedad->items[k].hints);
-                layoutpropiedades->addWidget(nombre);*/
+                layoutpropiedades->addWidget(nombre);
 
 
 
@@ -415,7 +432,7 @@ void MainWindow::botones_clicked()
 
                 }
             }
-        }
+        }*/
     }
     device->setLayout(layoutpropiedades);
 

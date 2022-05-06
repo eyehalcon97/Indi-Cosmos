@@ -18,8 +18,8 @@ class itemtexto : public QWidget
 public:
     explicit itemtexto(QWidget *parent = nullptr);
     ~itemtexto();
-    itemtexto(string nombre,string etiqueta,string gui,string value,string long_value,long length,QWidget *parent = nullptr);
-    itemtexto(indigo_item *item,QWidget *parent = nullptr);
+    itemtexto(string nombre,string etiqueta,string gui,string value,QWidget *parent = nullptr);
+    itemtexto(indigo_item item,QWidget *parent = nullptr);
 private:
     Ui::itemtexto *ui;
     string name;
@@ -27,8 +27,6 @@ private:
     string hints;
     QWidget* padre;
     string value;  ///< item value (for text properties)
-    string long_value;	///< item value, set if text is longer than NDIGO_VALUE_SIZE
-    long length;
 };
 
 #endif // itemTEXTO_H

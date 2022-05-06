@@ -5,6 +5,7 @@
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
 #include <string>
+#include "propiedad.h"
 using namespace std;
 namespace Ui {
 class device;
@@ -19,43 +20,21 @@ public:
 
     ~device();
     void cambiartamanio(int altura,int anchura);
-    void nuevapropiedad(indigo_property* propiedad);
+    void nuevapropiedad(indigo_property* property);
 
-    indigo_property* getpropiedad(int num);
+    propiedad* getpropiedad(int num);
     string getDeviceID();
     int getnpropiedades();
-    QLayout *propiedadgeneral();
+    QLayout* getlayoutpropiedad();
 
-    QLayout *propiedadtexto();
-
-    QLayout *propiedadnumero();
-
-    QLayout *propiedadswitch();
-
-    QLayout *propiedadluz();
-
-    QLayout *propiedadblob();
-
-    QLayout *getlayoutpropiedad();
 
 
 private:
     Ui::device *ui;
     string deviceid;
-    indigo_property* propiedades[100];
+    propiedad* propiedades[130];
     int npropiedades=0;
-    /*
-    string device;
-    string name;
-    string group;
-    string label;
-    string hints;
-    int state;
-    int type;
-    int perm;
-    int rule;
-    short version;
-    bool hidden;*/
+
 
 };
 

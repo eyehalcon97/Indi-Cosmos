@@ -21,12 +21,12 @@ itemswitch::itemswitch(string nombre,string etiqueta,string gui,bool valor,QWidg
     value=valor;
 }
 
-itemswitch::itemswitch(indigo_item *item,QWidget *parent){
+itemswitch::itemswitch(indigo_item item,QWidget *parent){
     padre=parent;
-    this->name=string(item->name);
-    this->label=string(item->label);
-    this->hints=string(item->hints);
+    this->name=string(item.name);
+    this->label=string(item.label);
+    this->hints=string(item.hints);
 
-    this->value=item->sw.value;
+    this->value=item.sw.value;
 
 }

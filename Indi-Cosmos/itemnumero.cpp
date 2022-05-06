@@ -28,16 +28,17 @@ itemnumero::itemnumero(string nombre,string etiqueta,string gui,string format,do
 
 }
 
-itemnumero::itemnumero(indigo_item *item,QWidget *parent){
-    padre=parent;
-    this->name=string(item->name);
-    this->label=string(item->label);
-    this->hints=string(item->hints);
+itemnumero::itemnumero(indigo_item item,QWidget *parent){
 
-    this->format=string(item->number.format);
-    this->min=item->number.min;
-    this->max=item->number.max;
-    this->step=item->number.step;
-    this->value=item->number.value;
-    this->target=item->number.target;
+    padre=parent;
+    this->name=string(item.name);
+    this->label=string(item.label);
+    this->hints=string(item.hints);
+
+    this->format=string(item.number.format);
+    this->min=item.number.min;
+    this->max=item.number.max;
+    this->step=item.number.step;
+    this->value=item.number.value;
+    this->target=item.number.target;
 }
