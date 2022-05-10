@@ -25,13 +25,15 @@ itemtexto::itemtexto(string nombre,string etiqueta,string gui,string value,QWidg
 }
 
 
-itemtexto::itemtexto(indigo_item item,QWidget *parent){
 
-    padre=parent;
+
+itemtexto::itemtexto(indigo_item item,int perm,QWidget *parent):QWidget(parent),ui(new Ui::itemtexto){
+
+    ui->setupUi(this);
     this->name=string(item.name);
     this->label=string(item.label);
     this->hints=string(item.hints);
-
+    this->perm=perm;
 
     if(item.text.length < INDIGO_VALUE_SIZE){
         this->value=string(item.text.value);
@@ -42,11 +44,25 @@ itemtexto::itemtexto(indigo_item item,QWidget *parent){
     }
     indigo_log(this->name.c_str());
 
+    switch(this->perm){
+        case 1:
+            ui->nuevovalor->hide();
+            ui->poner->hide();
+            this->setMinimumHeight(100);
+
+        break;
+        case 2:
+
+        break;
+        case 3:
+
+        break;
+    }
 
 
-    this->ui->menu->setText("thisname");
-    ui->etiqueta->setText("thislabel");
-    ui->valor->insertPlainText("thisvalue");
+    ui->menu->setText(QString::fromStdString(this->name));
+    ui->etiqueta->setText(QString::fromStdString(this->label));
+    ui->valor->insertPlainText(QString::fromStdString(this->value));
 
 
 }
@@ -58,3 +74,9 @@ void itemtexto::mostrarpropiedad(){
     indigo_log("valor");
     indigo_log(this->name.c_str());
 }
+
+void itemtexto::on_poner_clicked()
+{
+
+}
+

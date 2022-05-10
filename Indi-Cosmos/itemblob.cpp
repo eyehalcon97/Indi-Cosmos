@@ -26,7 +26,8 @@ itemblob::itemblob(string nombre,string etiqueta,string gui,string format,string
 }
 
 
-itemblob::itemblob(indigo_item item,QWidget *parent){
+itemblob::itemblob(indigo_item item,QWidget *parent): QWidget(parent), ui(new Ui::itemblob){
+    ui->setupUi(this);
     padre=parent;
     this->name=string(item.name);
     this->label=string(item.label);

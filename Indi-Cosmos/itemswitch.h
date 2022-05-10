@@ -7,9 +7,7 @@
 #include <indigo/indigo_client.h>
 using namespace std;
 
-namespace Ui {
-class itemswitch;
-}
+
 
 class itemswitch : public QWidget
 {
@@ -20,9 +18,11 @@ public:
     ~itemswitch();
     itemswitch(string nombre,string etiqueta,string gui,bool valor,QWidget *parent =nullptr);
     itemswitch(indigo_item item,QWidget *parent = nullptr);
+    string getname();
+    bool getvalue();
 
 private:
-    Ui::itemswitch *ui;
+
     string name;
     string label;
     string hints;

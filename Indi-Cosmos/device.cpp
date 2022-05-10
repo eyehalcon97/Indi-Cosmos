@@ -36,16 +36,17 @@ void device::nuevapropiedad(indigo_property* property){
 }
 
 QVBoxLayout* device::mostrarpropiedades(){
-QVBoxLayout *layout = new QVBoxLayout;
+QWidget *widget;
+QVBoxLayout* layout = new QVBoxLayout;
     for(int i=1;i<npropiedades;i++){
-        indigo_log("adios");
-        QWidget ** widgets = propiedades[i]->mostrarpropiedades();
-        for(int j=0;j<propiedades[i]->getcount();j++){
-            layout[i].addWidget( widgets[j]);
-        }
-
+        widget = new QWidget;
+        widget->setLayout(propiedades[i]->getlayout());
+        layout->addWidget(widget,i);
 
     }
+
+
+
     return layout;
 }
 

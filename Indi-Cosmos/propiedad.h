@@ -25,11 +25,13 @@ class propiedad : public QWidget
 public:
     explicit propiedad(QWidget *parent = nullptr);
     ~propiedad();
-    propiedad(string device,string name,string group,string label,string hints,int state,int type,int perm,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent =nullptr);
+    propiedad(string device,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent =nullptr);
     propiedad(indigo_property *property,QWidget *parent = nullptr);
     string getname();
     QWidget **mostrarpropiedades();
     int getcount();
+    int gettype();
+    QVBoxLayout *getlayout();
 
 private:
     Ui::propiedad *ui;
@@ -41,12 +43,12 @@ private:
     string hints;
     int state;
     int type;
-    int perm;
     int rule;
     indigo_token access_token;
     short version;
     bool hidden;
     int count;
+
     itemblob** itemsblob;
     itemlight** itemslight;
     itemnumero** itemsnumero;

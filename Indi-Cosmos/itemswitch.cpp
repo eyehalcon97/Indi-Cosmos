@@ -2,15 +2,15 @@
 #include "ui_itemswitch.h"
 
 itemswitch::itemswitch(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::itemswitch)
+    QWidget(parent)
+
 {
-    ui->setupUi(this);
+
 }
 
 itemswitch::~itemswitch()
 {
-    delete ui;
+
 }
 
 itemswitch::itemswitch(string nombre,string etiqueta,string gui,bool valor,QWidget *parent){
@@ -20,8 +20,14 @@ itemswitch::itemswitch(string nombre,string etiqueta,string gui,bool valor,QWidg
     padre=parent;
     value=valor;
 }
+string itemswitch::getname(){
+    return name;
+}
+bool itemswitch::getvalue(){
+    return value;
+}
 
-itemswitch::itemswitch(indigo_item item,QWidget *parent){
+itemswitch::itemswitch(indigo_item item,QWidget *parent):QWidget(parent){
     padre=parent;
     this->name=string(item.name);
     this->label=string(item.label);

@@ -19,13 +19,17 @@ public:
     explicit itemtexto(QWidget *parent = nullptr);
     ~itemtexto();
     itemtexto(string nombre,string etiqueta,string gui,string value,QWidget *parent = nullptr);
-    itemtexto(indigo_item item,QWidget *parent = nullptr);
+    itemtexto(indigo_item item,int perm,QWidget *parent );
     void mostrarpropiedad();
+
+private slots:
+    void on_poner_clicked();
 
 private:
     Ui::itemtexto *ui;
     string name;
     string label;
+    int perm;
     string hints;
     QWidget* padre;
     string value;  ///< item value (for text properties)

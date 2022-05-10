@@ -231,7 +231,7 @@ void MainWindow::botones_clicked()
 
 
     for(int i=1;i<=nseleccionados;i++){
-
+        /*
         int npropiedades = devices[devicesseleccionados[i]]->getnpropiedades();
 
         nombre = new QLabel;
@@ -251,8 +251,23 @@ void MainWindow::botones_clicked()
         nombre->setText(QString::fromStdString(devices[devicesseleccionados[i]]->getpropiedad(i)->getname()));
         layoutpropiedades->addWidget(nombre);
         indigo_log("eee");
-        ;
-         ui->propiedades->setLayout(devices[devicesseleccionados[i]]->mostrarpropiedades());
+        */
+        nombre = new QLabel;
+        nombre->setText("Nombre del dispositivo");
+        layoutpropiedades->addWidget(nombre);
+
+        nombre = new QLabel;
+        nombre->setText(devices[devicesseleccionados[i]]->getDeviceID().c_str());
+        layoutpropiedades->addWidget(nombre);
+
+        QWidget *deviceproperty = new QWidget;
+        QVBoxLayout *layoutpropiedad = devices[devicesseleccionados[i]]->mostrarpropiedades();
+        deviceproperty->setLayout(layoutpropiedad);
+        layoutpropiedades->addWidget(deviceproperty);
+
+        ui->propiedades->setLayout(layoutpropiedades);
+
+
 
 /*
         nombre = new QLabel;
@@ -480,22 +495,23 @@ int MainWindow::indexofdevice(string id){
 
 void MainWindow::nuevodispositivo(){
 
-    workerThread = new QThread;
-    libreria->moveToThread(workerThread);
-    connect(libreria, &indigolib::nuevapropiedad, this, &MainWindow::nuevapropiedad);
-    workerThread->start();
+
 
     //string nombre = menuconectar->getnombre();
     //string host = menuconectar->gethost();
     //int puerto = menuconectar->getpuerto();
     //if(!nombre.empty() && !host.empty() ){
+        workerThread = new QThread;
+        libreria->moveToThread(workerThread);
+        connect(libreria, &indigolib::nuevapropiedad, this, &MainWindow::nuevapropiedad);
+        workerThread->start();
         //menuconectar->hide();
+        libreria->conectar(this,"nombremolon","localhost",7777);
         //libreria->conectar(this,nombre,host,puerto);
-        libreria->conectar(this,"localhost","localhost",7777);
 
     //}else{
-     //   menuconectar->error();
-   // }
+    //    menuconectar->error();
+    //}
 
 
 }
@@ -525,7 +541,7 @@ void MainWindow::nuevapropiedad(){
 void MainWindow::on_Conectar_clicked()
 {
 
-   // menuconectar = new conectar(this);
+    //menuconectar = new conectar(this);
     //menuconectar->show();
 nuevodispositivo();
 

@@ -48,7 +48,6 @@ set(PROJECT_SOURCES
         itemnumero.ui
         itemswitch.h
         itemswitch.cpp
-        itemswitch.ui
         itemlight.h
         itemlight.cpp
         itemlight.ui

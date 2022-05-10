@@ -28,9 +28,13 @@ string conectar::gethost(){
 void conectar::error(){
     if(ui->nombretexto->toPlainText().toStdString().empty()){
         ui->alertanombre->setVisible(true);
+    }else{
+        ui->alertanombre->setVisible(false);
     }
     if(ui->hosttexto->toPlainText().toStdString().empty()){
         ui->alertahost->setVisible(true);
+    }else{
+        ui->alertahost->setVisible(false);
     }
 }
 
