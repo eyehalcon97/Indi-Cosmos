@@ -3,6 +3,7 @@
 #include "conectar.h"
 #include <string>
 #include <QString>
+#include <QVBoxLayout>
 
 using namespace std;
 
@@ -34,13 +35,24 @@ void device::nuevapropiedad(indigo_property* property){
 
 }
 
+QVBoxLayout* device::mostrarpropiedades(){
+QVBoxLayout *layout = new QVBoxLayout;
+    for(int i=1;i<npropiedades;i++){
+        indigo_log("adios");
+        QWidget ** widgets = propiedades[i]->mostrarpropiedades();
+        for(int j=0;j<propiedades[i]->getcount();j++){
+            layout[i].addWidget( widgets[j]);
+        }
+
+
+    }
+    return layout;
+}
+
 string device::getDeviceID(){
     return deviceid;
 }
-QLayout* device::getlayoutpropiedad(){
-    QLayout *layout = new QGridLayout;
-    return layout;
-}
+
 
 void device::cambiartamanio(int anchura,int altura){
 

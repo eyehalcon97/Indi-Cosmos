@@ -20,6 +20,8 @@ public:
     ~itemtexto();
     itemtexto(string nombre,string etiqueta,string gui,string value,QWidget *parent = nullptr);
     itemtexto(indigo_item item,QWidget *parent = nullptr);
+    void mostrarpropiedad();
+
 private:
     Ui::itemtexto *ui;
     string name;
@@ -27,6 +29,7 @@ private:
     string hints;
     QWidget* padre;
     string value;  ///< item value (for text properties)
+    QWidget widget;
 };
 
 #endif // itemTEXTO_H

@@ -6,6 +6,7 @@
 #include <indigo/indigo_client.h>
 #include <string>
 #include "propiedad.h"
+#include <QVBoxLayout>
 using namespace std;
 namespace Ui {
 class device;
@@ -25,7 +26,7 @@ public:
     propiedad* getpropiedad(int num);
     string getDeviceID();
     int getnpropiedades();
-    QLayout* getlayoutpropiedad();
+    QVBoxLayout* mostrarpropiedades();
 
 
 

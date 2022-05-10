@@ -44,11 +44,11 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 
 MainWindow::~MainWindow()
 {
-
+/*
     for (int i=0;i<100 ;i++ ) {
         delete[] botones[i];
         delete[] devices[i];
-    }
+    }*/
     delete[] devicesseleccionados;
     delete[] botones;
     delete[] devices;
@@ -250,6 +250,10 @@ void MainWindow::botones_clicked()
         indigo_log(devices[devicesseleccionados[i]]->getpropiedad(i)->getname().c_str());
         nombre->setText(QString::fromStdString(devices[devicesseleccionados[i]]->getpropiedad(i)->getname()));
         layoutpropiedades->addWidget(nombre);
+        indigo_log("eee");
+        ;
+         ui->propiedades->setLayout(devices[devicesseleccionados[i]]->mostrarpropiedades());
+
 /*
         nombre = new QLabel;
         nombre->setText("Nombre del Grupo");
@@ -434,10 +438,8 @@ void MainWindow::botones_clicked()
             }
         }*/
     }
-    device->setLayout(layoutpropiedades);
 
-    layoutdevice->addWidget(device);
-    ui->propiedades->setLayout(layoutdevice);
+
 
 
 }
@@ -483,16 +485,17 @@ void MainWindow::nuevodispositivo(){
     connect(libreria, &indigolib::nuevapropiedad, this, &MainWindow::nuevapropiedad);
     workerThread->start();
 
-    string nombre = menuconectar->getnombre();
-    string host = menuconectar->gethost();
-    int puerto = menuconectar->getpuerto();
-    if(!nombre.empty() && !host.empty() ){
-        menuconectar->hide();
-        libreria->conectar(this,nombre,host,puerto);
+    //string nombre = menuconectar->getnombre();
+    //string host = menuconectar->gethost();
+    //int puerto = menuconectar->getpuerto();
+    //if(!nombre.empty() && !host.empty() ){
+        //menuconectar->hide();
+        //libreria->conectar(this,nombre,host,puerto);
+        libreria->conectar(this,"localhost","localhost",7777);
 
-    }else{
-        menuconectar->error();
-    }
+    //}else{
+     //   menuconectar->error();
+   // }
 
 
 }
@@ -522,9 +525,9 @@ void MainWindow::nuevapropiedad(){
 void MainWindow::on_Conectar_clicked()
 {
 
-    menuconectar = new conectar(this);
-    menuconectar->show();
-
+   // menuconectar = new conectar(this);
+    //menuconectar->show();
+nuevodispositivo();
 
 }
 

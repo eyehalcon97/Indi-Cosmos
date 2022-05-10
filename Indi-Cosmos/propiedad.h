@@ -10,6 +10,7 @@
 #include "itemtexto.h"
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
+#include <QVBoxLayout>
 
 using namespace std;
 
@@ -27,6 +28,8 @@ public:
     propiedad(string device,string name,string group,string label,string hints,int state,int type,int perm,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent =nullptr);
     propiedad(indigo_property *property,QWidget *parent = nullptr);
     string getname();
+    QWidget **mostrarpropiedades();
+    int getcount();
 
 private:
     Ui::propiedad *ui;
@@ -49,6 +52,7 @@ private:
     itemnumero** itemsnumero;
     itemswitch** itemsswitch;
     itemtexto** itemstexto;
+    QWidget **itemswidgets;
 };
 
 #endif // PROPIEDAD_H

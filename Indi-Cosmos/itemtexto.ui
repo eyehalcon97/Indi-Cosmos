@@ -1,8 +1,5 @@
-<?xml version='1.0'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>itemtexto</class>
  <widget class="QWidget" name="itemtexto">
   <property name="geometry">
@@ -10,13 +7,90 @@
     <x>0</x>
     <y>0</y>
     <width>240</width>
-    <height>320</height>
+    <height>145</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="menu">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>10</y>
+     <width>57</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Menu</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="etiqueta">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>30</y>
+     <width>57</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>etiqueta</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="valor">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>50</y>
+     <width>104</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="nuevovalor">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>80</y>
+     <width>104</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="poner">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>110</y>
+     <width>80</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Poner</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>
