@@ -36,7 +36,20 @@ void device::nuevapropiedad(indigo_property* property){
 }
 
 QVBoxLayout* device::mostrarpropiedades(){
-QWidget *widget;
+QWidget *widget = new QWidget;
+
+if ( widget->layout() != NULL )
+{
+    QLayoutItem* item;
+    while ( ( item = widget->layout()->takeAt( 0 ) ) != NULL )
+    {
+        delete item->widget();
+        delete item;
+    }
+    delete widget->layout();
+}
+
+
 QVBoxLayout* layout = new QVBoxLayout;
     for(int i=1;i<npropiedades;i++){
         widget = new QWidget;

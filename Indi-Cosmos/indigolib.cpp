@@ -22,8 +22,8 @@
 
 
 
-int npropiedades=0;
-indigo_property* lista_propiedades[130];
+bool utilizado=false;
+indigo_property* propiedad;
 
 
 static indigo_result client_attach(indigo_client *client) {
@@ -38,8 +38,11 @@ static indigo_result client_attach(indigo_client *client) {
 static indigo_result client_define_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message) {
 
 
-        npropiedades++;
-        lista_propiedades[npropiedades]=property;
+        while(utilizado==false){
+            propiedad=property;
+            utilizado=true;
+        }
+
 
 
 
@@ -132,13 +135,14 @@ static indigo_client client = {
 
 
 
+
+
 indigolib::indigolib(){
 
 }
 
 
-void indigolib::conectar(MainWindow *parent,string name,string hosts,int port){
-    padre = parent;
+void indigolib::conectar(string name,string hosts,int port){
     host = hosts;
     nombre = name;
     puerto = port;
@@ -148,26 +152,17 @@ void indigolib::conectar(MainWindow *parent,string name,string hosts,int port){
     indigo_attach_client(&client);
     indigo_connect_server(nombre.c_str(), host.c_str() , puerto , &server);
 
-    QThread::sleep(2);
-
-    nuevapropiedad();
-
+    while(true){
+        if(utilizado==true){
+            nuevapropiedad(propiedad);
+            utilizado=false;
+        }
+    }
 
 
 }
 
 
-
-indigo_property* indigolib::getpropiedad(int id){
-    //indigo_log((to_string(npropiedades)).c_str());
-    return lista_propiedades[id];
-}
-indigo_property** indigolib::getpropiedades(){
-    return lista_propiedades;
-}
-int indigolib::getnpropiedades(){
-    return npropiedades;
-}
 int indigolib::getpuerto(){
     return puerto;
 }

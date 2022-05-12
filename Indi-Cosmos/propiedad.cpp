@@ -4,6 +4,8 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QComboBox>
+#include <QPlainTextEdit>
+#include <QPushButton>
 
 using namespace std;
 propiedad::propiedad(QWidget *parent) :
@@ -45,59 +47,110 @@ int propiedad::gettype(){
 }
 QVBoxLayout *propiedad::getlayout(){
     QVBoxLayout *layout = new QVBoxLayout;
-    QLabel *nombre;
+    QHBoxLayout *layouthorizontal = new QHBoxLayout;
+    QWidget *nombreluz = new QWidget;
+    QLabel *nombre= new QLabel;;
+
 
     nombre = new QLabel;
-    nombre->setText(QString::fromStdString(device));
-    layout->addWidget(nombre,0);
+    switch(state){
+        case 0:
 
+        nombre->setStyleSheet("background-color:blue;");
+
+        break;
+        case 1:
+
+        nombre->setStyleSheet("background-color:green;");
+        break;
+        case 2:
+
+        nombre->setStyleSheet("background-color:orange;");
+        break;
+        case 3:
+
+        nombre->setStyleSheet("background-color:red;");
+        break;
+    }
+
+    layouthorizontal->addWidget(nombre);
     nombre = new QLabel;
     nombre->setText(QString::fromStdString(name));
-    layout->addWidget(nombre,1);
+    layouthorizontal->addWidget(nombre);
+
+    nombreluz->setLayout(layouthorizontal);
+
+    layout->addWidget(nombreluz);
 
 
     nombre = new QLabel;
     nombre->setText(QString::fromStdString(group));
-    layout->addWidget(nombre,2);
+    layout->addWidget(nombre);
 
 
     nombre = new QLabel;
     nombre->setText(QString::fromStdString(label));
-    layout->addWidget(nombre,3);
+    layout->addWidget(nombre);
 
     nombre = new QLabel;
     nombre->setText("hints " + QString::fromStdString(hints));
-    layout->addWidget(nombre,3);
+    layout->addWidget(nombre);
 
+    nombre = new QLabel;
 
-
-    switch(state){
-        case 0:
-            nombre->setText("valor luz: INDIGO_IDLE_STATE");
-        break;
-        case 1:
-            nombre->setText("valor luz: INDIGO_OK_STATE");
-        break;
-        case 2:
-            nombre->setText("valor luz: INDIGO_BUSY_STATE");
-        break;
-        case 3:
-            nombre->setText("valor luz: INDIGO_ALERT_STATE");
-        break;
-    }
         layout->addWidget(nombre,4);
         QComboBox *seleccion = new QComboBox;
+        QLabel *menu = new QLabel;
+        QLabel *etiqueta = new QLabel;
+        QPlainTextEdit *valor = new QPlainTextEdit;
+        QPlainTextEdit *nuevovalor = new QPlainTextEdit;
+        QVBoxLayout *layoutitems = new QVBoxLayout;
+        QWidget *item = new QWidget;
+        QPushButton *boton = new QPushButton;
+        boton->setText("Poner");
+
 switch(type){
     case 1:
         for(int j=0;j<count;j++){
-            layout->addWidget(itemstexto[j],j+5);
+            menu->setText(QString::fromStdString(itemstexto[j]->getname()));
+            etiqueta->setText(QString::fromStdString(itemstexto[j]->getlabel()));
+            valor->insertPlainText(QString::fromStdString(itemstexto[j]->getvalue()));
+            valor->setReadOnly(true);
+
+            layoutitems->addWidget(menu);
+            layoutitems->addWidget(etiqueta);
+            layoutitems->addWidget(valor);
+            if(perm != 1){
+                layoutitems->addWidget(nuevovalor);
+                layoutitems->addWidget(boton);
+            }
+
+            item->setLayout(layoutitems);
+
         }
+        layout->addWidget(item);
+
     break;
 
     case 2:
-        for(int j=0;j<count;j++){
-            layout->addWidget(itemsnumero[j],j+5);
-         }
+    for(int j=0;j<count;j++){
+        menu->setText(QString::fromStdString(itemsnumero[j]->getname()));
+        etiqueta->setText(QString::fromStdString(itemsnumero[j]->getlabel()));
+        valor->insertPlainText(QString::number(itemsnumero[j]->getvalue()));
+        valor->setReadOnly(true);
+
+        layoutitems->addWidget(menu);
+        layoutitems->addWidget(etiqueta);
+        layoutitems->addWidget(valor);
+        if(perm != 1){
+            layoutitems->addWidget(nuevovalor);
+            layoutitems->addWidget(boton);
+        }
+
+        item->setLayout(layoutitems);
+
+    }
+    layout->addWidget(item);
 
         break;
     case 3:
@@ -110,18 +163,34 @@ switch(type){
 
 
         }
-        layout->addWidget(seleccion,5);
+        layoutitems->addWidget(seleccion);
+        item->setLayout(layoutitems);
+
+        layout->addWidget(item);
 
         break;
     case 4:
         for(int j=0;j<count;j++){
-            layout->addWidget(itemslight[j],j+5);
+            switch(itemslight[j]->getvalue()){
+                case 0:
+                item->setStyleSheet("background-color:blue;");
+                break;
+                case 1:
+                item->setStyleSheet("background-color:green;");
+                break;
+                case 2:
+                item->setStyleSheet("background-color:orange;");
+                break;
+                case 3:
+                item->setStyleSheet("background-color:red;");
+                break;
+            }
         }
 
         break;
     case 5:
         for(int j=0;j<count;j++){
-            layout->addWidget(itemsblob[j],j+5);
+            layout->addWidget(itemsblob[j]);
         }
 
         break;
@@ -137,7 +206,7 @@ propiedad::propiedad(indigo_property *property,QWidget *parent){
 
     device= string(property->device);
     name = string(property->name);
-
+    perm = property->perm;
     group= string(property->group);
     label= string(property->label);
     hints= string(property->hints);
@@ -157,7 +226,7 @@ propiedad::propiedad(indigo_property *property,QWidget *parent){
 
             itemstexto = new itemtexto*[count];
             for(int i=0;i<count;i++){
-                itemstexto[i] = new itemtexto(property->items[i],property->perm,this);
+                itemstexto[i] = new itemtexto(property->items[i],this);
             }
         break;
 

@@ -2,9 +2,13 @@
 #define INDIGOLIB_H
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
-#include "mainwindow.h"
+#include <string>
+
+
 #include <QObject>
 #include <QThread>
+
+using namespace std;
 
 class indigolib : public QObject
 {
@@ -12,7 +16,6 @@ class indigolib : public QObject
 private:
 
 
-    MainWindow *padre;
     int puerto;
     string host;
     string nombre;
@@ -20,7 +23,7 @@ private:
 
 
 signals:
-void nuevapropiedad();
+void nuevapropiedad(indigo_property *propiedad);
 
 public:
 
@@ -30,9 +33,7 @@ static indigo_result client_define_property(indigo_client *client, indigo_device
 static indigo_result client_attach(indigo_client *client);
 
 indigolib();
-indigo_property* getpropiedad(int id);
-indigo_property** getpropiedades();
-int getnpropiedades();
+
 
 int getpuerto();
 string gethost();
@@ -40,7 +41,7 @@ string getnombre();
 void setpuerto(int port);
 void sethost(string hosts);
 void setnombre(string name);
-void conectar(MainWindow *parent,string nombre,string host,int puerto);
+void conectar(string nombre,string host,int puerto);
 
 
 

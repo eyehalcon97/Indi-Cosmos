@@ -1,18 +1,25 @@
 #include "itemnumero.h"
-#include "ui_itemnumero.h"
+
 
 itemnumero::itemnumero(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::itemnumero)
+    QWidget(parent)
 {
-    ui->setupUi(this);
+
 }
 
 itemnumero::~itemnumero()
 {
-    delete ui;
-}
 
+}
+string itemnumero::getname(){
+    return name;
+}
+string itemnumero::getlabel(){
+    return label;
+}
+double itemnumero::getvalue(){
+    return value;
+}
 
 
 itemnumero::itemnumero(string nombre,string etiqueta,string gui,string format,double min,double max,double step,double value,double target,QWidget *parent){
@@ -29,8 +36,8 @@ itemnumero::itemnumero(string nombre,string etiqueta,string gui,string format,do
 
 }
 
-itemnumero::itemnumero(indigo_item item,int perm,QWidget *parent):QWidget(parent), ui(new Ui::itemnumero){
-    ui->setupUi(this);
+itemnumero::itemnumero(indigo_item item,int perm,QWidget *parent):QWidget(parent){
+
     padre=parent;
     this->name=string(item.name);
     this->label=string(item.label);
@@ -44,23 +51,5 @@ itemnumero::itemnumero(indigo_item item,int perm,QWidget *parent):QWidget(parent
     this->value=item.number.value;
     this->target=item.number.target;
 
-    switch(this->perm){
-        case 1:
-            ui->nuevovalor->hide();
-            ui->poner->hide();
-            this->setMinimumHeight(100);
-
-        break;
-        case 2:
-
-        break;
-        case 3:
-
-        break;
-    }
-
-    ui->menu->setText(QString::fromStdString(this->name));
-    ui->etiqueta->setText(QString::fromStdString(this->label));
-    ui->valor->insertPlainText(QString::number(value));
 
 }

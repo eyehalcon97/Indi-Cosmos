@@ -35,7 +35,7 @@ public:
 
 public slots:
     void nuevodispositivo();
-    void nuevapropiedad();
+    void nuevapropiedad(indigo_property *propiedad);
 
 private slots:
 
@@ -69,6 +69,8 @@ private slots:
     int indexofdevice(string id);
 
     void on_Conectar_clicked();
+    signals:
+    void conectar(string nombre,string host,int puerto);
 
 private:
     Ui::MainWindow *ui;

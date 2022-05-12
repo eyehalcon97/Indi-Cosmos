@@ -1,17 +1,16 @@
 #include "itemblob.h"
-#include "ui_itemblob.h"
+
 
 using namespace std;
 
-itemblob::itemblob(QWidget *parent) : QWidget(parent), ui(new Ui::itemblob)
+itemblob::itemblob(QWidget *parent) : QWidget(parent)
 {
 
-    ui->setupUi(this);
 }
 
 itemblob::~itemblob()
 {
-    delete ui;
+
 }
 
 itemblob::itemblob(string nombre,string etiqueta,string gui,string format,string urls,long tam,void *valor,QWidget *parent){
@@ -26,8 +25,8 @@ itemblob::itemblob(string nombre,string etiqueta,string gui,string format,string
 }
 
 
-itemblob::itemblob(indigo_item item,QWidget *parent): QWidget(parent), ui(new Ui::itemblob){
-    ui->setupUi(this);
+itemblob::itemblob(indigo_item item,QWidget *parent): QWidget(parent){
+
     padre=parent;
     this->name=string(item.name);
     this->label=string(item.label);

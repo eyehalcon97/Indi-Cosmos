@@ -1,5 +1,5 @@
 #include "itemswitch.h"
-#include "ui_itemswitch.h"
+
 
 itemswitch::itemswitch(QWidget *parent) :
     QWidget(parent)

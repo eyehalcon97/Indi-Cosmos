@@ -6,9 +6,7 @@
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
 using namespace std;
-namespace Ui {
-class itemblob;
-}
+
 
 class itemblob : public QWidget
 {
@@ -21,7 +19,6 @@ public:
     itemblob(indigo_item item,QWidget *parent = nullptr);
 
 private:
-    Ui::itemblob *ui;
     string name;
     string label;
     string hints;

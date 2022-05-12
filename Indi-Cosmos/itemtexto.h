@@ -7,9 +7,6 @@
 #include <indigo/indigo_client.h>
 using namespace std;
 
-namespace Ui {
-class itemtexto;
-}
 
 class itemtexto : public QWidget
 {
@@ -19,17 +16,19 @@ public:
     explicit itemtexto(QWidget *parent = nullptr);
     ~itemtexto();
     itemtexto(string nombre,string etiqueta,string gui,string value,QWidget *parent = nullptr);
-    itemtexto(indigo_item item,int perm,QWidget *parent );
+    itemtexto(indigo_item item,QWidget *parent );
     void mostrarpropiedad();
+    string getname();
+    string getlabel();
+    string getvalue();
 
 private slots:
     void on_poner_clicked();
 
 private:
-    Ui::itemtexto *ui;
+
     string name;
     string label;
-    int perm;
     string hints;
     QWidget* padre;
     string value;  ///< item value (for text properties)

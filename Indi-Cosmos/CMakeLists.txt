@@ -42,18 +42,14 @@ set(PROJECT_SOURCES
         indigolib.cpp
         itemtexto.h
         itemtexto.cpp
-        itemtexto.ui
         itemnumero.h
         itemnumero.cpp
-        itemnumero.ui
         itemswitch.h
         itemswitch.cpp
         itemlight.h
         itemlight.cpp
-        itemlight.ui
         itemblob.h
         itemblob.cpp
-        itemblob.ui
         propiedad.h
         propiedad.cpp
         propiedad.ui

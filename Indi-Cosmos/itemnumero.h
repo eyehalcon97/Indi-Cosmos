@@ -7,9 +7,7 @@
 #include <indigo/indigo_client.h>
 using namespace std;
 
-namespace Ui {
-class itemnumero;
-}
+
 
 class itemnumero : public QWidget
 {
@@ -20,9 +18,12 @@ public:
     ~itemnumero();
     itemnumero(string nombre,string etiqueta,string gui,string format,double min,double max,double step,double value,double target,QWidget *parent =nullptr);
     itemnumero(indigo_item item,int perm,QWidget *parent = nullptr);
+    string getname();
+    string getlabel();
+    double getvalue();
 
 private:
-    Ui::itemnumero *ui;
+
     string name;
     string label;
     string hints;

@@ -48,6 +48,7 @@ private:
     short version;
     bool hidden;
     int count;
+    int perm;
 
     itemblob** itemsblob;
     itemlight** itemslight;

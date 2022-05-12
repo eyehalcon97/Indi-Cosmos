@@ -18,7 +18,7 @@
 #include "conectar.h"
 
 conectar *menuconectar;
-indigolib *libreria = new indigolib;
+
 
 
 
@@ -212,8 +212,7 @@ void MainWindow::botones_clicked()
 
     QLabel *nombre = new QLabel;
     layoutpropiedades = new QGridLayout;
-    QWidget *device = new QWidget;
-    device->setStyleSheet("background-color:red");
+
     QLayout *layoutdevice = new QGridLayout;
 
     if ( ui->propiedades->layout() != NULL )
@@ -263,9 +262,11 @@ void MainWindow::botones_clicked()
         QWidget *deviceproperty = new QWidget;
         QVBoxLayout *layoutpropiedad = devices[devicesseleccionados[i]]->mostrarpropiedades();
         deviceproperty->setLayout(layoutpropiedad);
+
         layoutpropiedades->addWidget(deviceproperty);
 
-        ui->propiedades->setLayout(layoutpropiedades);
+
+
 
 
 
@@ -454,7 +455,7 @@ void MainWindow::botones_clicked()
         }*/
     }
 
-
+    ui->propiedades->setLayout(layoutpropiedades);
 
 
 }
@@ -502,11 +503,15 @@ void MainWindow::nuevodispositivo(){
     //int puerto = menuconectar->getpuerto();
     //if(!nombre.empty() && !host.empty() ){
         workerThread = new QThread;
+        indigolib *libreria = new indigolib;
         libreria->moveToThread(workerThread);
+        connect(this, &MainWindow::conectar, libreria, &indigolib::conectar);
         connect(libreria, &indigolib::nuevapropiedad, this, &MainWindow::nuevapropiedad);
         workerThread->start();
+
+        conectar("nombremolon","localhost",7777);
         //menuconectar->hide();
-        libreria->conectar(this,"nombremolon","localhost",7777);
+
         //libreria->conectar(this,nombre,host,puerto);
 
     //}else{
@@ -516,26 +521,24 @@ void MainWindow::nuevodispositivo(){
 
 }
 
-void MainWindow::nuevapropiedad(){
+void MainWindow::nuevapropiedad(indigo_property *propiedad){
     indigo_log("señal de la libreria");
 
     contador++;
 
-    indigo_property** propiedades = libreria->getpropiedades();
-    string id = libreria->getnombre() + " - " + libreria->gethost() + " - " + to_string(libreria->getpuerto());
-    int npropiedades = libreria->getnpropiedades();
 
-    for(int i=1;i<npropiedades;i++){
+    string id = string(propiedad->device);
+
         int posicion =indexofdevice(id);
         if(posicion > 0){
-            devices[posicion]->nuevapropiedad(propiedades[i]);
+            devices[posicion]->nuevapropiedad(propiedad);
         }
         else{
             creardevice(id);
-            devices[idbotones]->nuevapropiedad(propiedades[i]);
+            devices[idbotones]->nuevapropiedad(propiedad);
         }
 
-    }
+
 }
 
 void MainWindow::on_Conectar_clicked()

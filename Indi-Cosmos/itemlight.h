@@ -7,9 +7,7 @@
 #include <indigo/indigo_client.h>
 using namespace std;
 
-namespace Ui {
-class itemlight;
-}
+
 
 class itemlight : public QWidget
 {
@@ -20,9 +18,8 @@ public:
     ~itemlight();
     itemlight(string nombre,string etiqueta,string gui ,int valor,QWidget *parent =nullptr);
     itemlight(indigo_item item,QWidget *parent = nullptr);
-
+    int getvalue();
 private:
-    Ui::itemlight *ui;
     string name;
     string label;
     string hints;
