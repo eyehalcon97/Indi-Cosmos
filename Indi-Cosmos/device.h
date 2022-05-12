@@ -17,16 +17,19 @@ class device : public QWidget
     Q_OBJECT
 
 public:
-    explicit device(QWidget *parent = nullptr,string id = nullptr);
+    explicit device(string id,indigo_client *cliente, QWidget *parent = nullptr);
 
     ~device();
     void cambiartamanio(int altura,int anchura);
     void nuevapropiedad(indigo_property* property);
+    void eliminarpropiedad(indigo_property* property);
+    void cambiarpropiedad(indigo_property* property);
 
     propiedad* getpropiedad(int num);
     string getDeviceID();
     int getnpropiedades();
     QVBoxLayout* mostrarpropiedades();
+    indigo_client *cliente;
 
 
 

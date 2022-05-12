@@ -23,7 +23,11 @@
 
 
 bool utilizado=false;
+bool utilizadocambiar=false;
+bool utilizadoborrar=false;
 indigo_property* propiedad;
+indigo_property* propiedadeliminar;
+indigo_property* propiedadcambiar;
 
 
 static indigo_result client_attach(indigo_client *client) {
@@ -42,6 +46,7 @@ static indigo_result client_define_property(indigo_client *client, indigo_device
             propiedad=property;
             utilizado=true;
         }
+
 
 
 
@@ -92,6 +97,14 @@ static indigo_result client_define_property(indigo_client *client, indigo_device
 
 static indigo_result client_update_property(indigo_client *client,indigo_device *device,indigo_property *property,const char *message)
 {
+
+
+    while(utilizadocambiar==false){
+        propiedadcambiar=property;
+        utilizadocambiar=true;
+
+    }
+
 /*
     if(property == mipropiedad){
         cout << "ES LA MISMA" << endl;
@@ -107,6 +120,23 @@ static indigo_result client_update_property(indigo_client *client,indigo_device 
         return INDIGO_OK;
     }*/
     return INDIGO_OK;
+
+}
+
+
+static	indigo_result client_delete_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message){
+
+    while(utilizadoborrar==false){
+        propiedadeliminar=property;
+        utilizadoborrar=true;
+    }
+
+        return INDIGO_OK;
+
+
+
+
+
 
 }
 static indigo_result client_detach(indigo_client *client) {
@@ -127,7 +157,7 @@ static indigo_client client = {
         client_attach,
         client_define_property,
         client_update_property,
-        NULL,
+        client_delete_property,
         NULL,
         client_detach
 };
@@ -153,10 +183,25 @@ void indigolib::conectar(string name,string hosts,int port){
     indigo_connect_server(nombre.c_str(), host.c_str() , puerto , &server);
 
     while(true){
-        if(utilizado==true){
-            nuevapropiedad(propiedad);
+        if(utilizado){
+            nuevapropiedad(propiedad,&client);
             utilizado=false;
         }
+
+        if(utilizadocambiar){
+            cambiarpropiedad(propiedadcambiar);
+            utilizadocambiar=false;
+        }
+
+        if(utilizadoborrar){
+            indigo_log("borrar");
+            indigo_log(propiedadeliminar->device);
+            eliminarpropiedad(propiedadeliminar);
+            utilizadoborrar=false;
+
+        }
+
+
     }
 
 

@@ -11,6 +11,11 @@
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
 #include <QVBoxLayout>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QComboBox>
+#include <QPlainTextEdit>
+#include <QPushButton>
 
 using namespace std;
 
@@ -26,12 +31,19 @@ public:
     explicit propiedad(QWidget *parent = nullptr);
     ~propiedad();
     propiedad(string device,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent =nullptr);
-    propiedad(indigo_property *property,QWidget *parent = nullptr);
+    propiedad(indigo_property *property,indigo_client *cliente,QWidget *parent = nullptr);
     string getname();
     QWidget **mostrarpropiedades();
     int getcount();
     int gettype();
     QVBoxLayout *getlayout();
+
+private slots:
+
+    void combobox_cambio(int index);
+
+
+
 
 private:
     Ui::propiedad *ui;
@@ -49,6 +61,7 @@ private:
     bool hidden;
     int count;
     int perm;
+    indigo_client *cliente;
 
     itemblob** itemsblob;
     itemlight** itemslight;
@@ -56,70 +69,18 @@ private:
     itemswitch** itemsswitch;
     itemtexto** itemstexto;
     QWidget **itemswidgets;
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 #endif // PROPIEDAD_H
-
-/*
-            indigo_property* propiedad = devices[devicesseleccionados[i]]->getpropiedad(j);
-
-            nombre = new QLabel;
-            nombre->setText("Nombre de device");
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            nombre->setText(propiedad->device);
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            nombre->setText("Nombre de la propiedad");
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            nombre->setText(propiedad->name);
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            nombre->setText("Nombre del grupo");
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            nombre->setText(propiedad->group);
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            nombre->setText("descripcion");
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            nombre->setText(propiedad->label);
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            nombre->setText("GUI");
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            nombre->setText(QString(propiedad->hints));
-            layoutpropiedades->addWidget(nombre);
-
-
-            nombre = new QLabel;
-            nombre->setText(QString("valor luz"));
-            layoutpropiedades->addWidget(nombre);
-
-            nombre = new QLabel;
-            if(propiedad->state == 0){
-                nombre->setText("INDIGO_IDLE_STATE");
-            }
-            if(propiedad->state == 1){
-                nombre->setText("INDIGO_OK_STATE");
-            }
-            if(propiedad->state == 2){
-                nombre->setText("INDIGO_BUSY_STATE");
-            }
-            if(propiedad->state == 3){
-               nombre->setText("INDIGO_ALERT_STATE");
-            }
-            layoutpropiedades->addWidget(nombre);
-*/

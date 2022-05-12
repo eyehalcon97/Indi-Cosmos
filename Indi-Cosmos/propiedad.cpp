@@ -1,11 +1,9 @@
 #include "propiedad.h"
 #include "ui_propiedad.h"
 #include <string>
-#include <QVBoxLayout>
-#include <QLabel>
-#include <QComboBox>
-#include <QPlainTextEdit>
-#include <QPushButton>
+#include <indigo/indigo_bus.h>
+#include <indigo/indigo_client.h>
+
 
 using namespace std;
 propiedad::propiedad(QWidget *parent) :
@@ -17,6 +15,7 @@ propiedad::propiedad(QWidget *parent) :
 
 propiedad::~propiedad()
 {
+    indigo_device_disconnect(cliente, (char*)device.c_str());
     delete ui;
 }
 
@@ -49,7 +48,27 @@ QVBoxLayout *propiedad::getlayout(){
     QVBoxLayout *layout = new QVBoxLayout;
     QHBoxLayout *layouthorizontal = new QHBoxLayout;
     QWidget *nombreluz = new QWidget;
-    QLabel *nombre= new QLabel;;
+    QLabel *nombre= new QLabel;
+    QPushButton *conexion = new QPushButton;
+
+
+    nombre = new QLabel;
+    nombre->setText(QString::fromStdString(group));
+    layout->addWidget(nombre);
+
+
+    nombre = new QLabel;/*
+    if(conectado){
+
+        nombre->setText("Conexion: conectado");
+        conexion->setText("Desconectar");
+
+    }else{
+        nombre->setText("Conexion: desconectado");
+        conexion->setText("Conectar");
+    }
+    layout->addWidget(nombre);
+    layout->addWidget(conexion);*/
 
 
     nombre = new QLabel;
@@ -83,9 +102,7 @@ QVBoxLayout *propiedad::getlayout(){
     layout->addWidget(nombreluz);
 
 
-    nombre = new QLabel;
-    nombre->setText(QString::fromStdString(group));
-    layout->addWidget(nombre);
+
 
 
     nombre = new QLabel;
@@ -99,6 +116,7 @@ QVBoxLayout *propiedad::getlayout(){
     nombre = new QLabel;
 
         layout->addWidget(nombre,4);
+
         QComboBox *seleccion = new QComboBox;
         QLabel *menu = new QLabel;
         QLabel *etiqueta = new QLabel;
@@ -107,7 +125,12 @@ QVBoxLayout *propiedad::getlayout(){
         QVBoxLayout *layoutitems = new QVBoxLayout;
         QWidget *item = new QWidget;
         QPushButton *boton = new QPushButton;
+
+
         boton->setText("Poner");
+        //connect(seleccion, SIGNAL (&QComboBox::currentIndexChanged(int)),this, SLOT (combobox_cambio(int)));
+
+
 
 switch(type){
     case 1:
@@ -162,6 +185,7 @@ switch(type){
             }
 
 
+
         }
         layoutitems->addWidget(seleccion);
         item->setLayout(layoutitems);
@@ -188,22 +212,52 @@ switch(type){
         }
 
         break;
-    case 5:
+    /*case 5:
         for(int j=0;j<count;j++){
             layout->addWidget(itemsblob[j]);
         }
 
-        break;
+        break;*/
 }
+    connect(seleccion,SIGNAL (currentIndexChanged(int)),this,SLOT(combobox_cambio(int)));
 
 
     return layout;
 }
+/*
+void propiedad::conectar(){
+    if(conectado){
+        indigo_device_disconnect(cliente, (char*)device.c_str());
+        conectado=false;
+    }else{
+        indigo_device_connect(cliente, (char*)device.c_str());
+        conectado=true;
+    }
+}*/
 
-propiedad::propiedad(indigo_property *property,QWidget *parent){
+void propiedad::combobox_cambio(int index){
+
+
+
+
+    indigo_log("cambiado");
+    int numero = sender()->objectName().toInt();
+    if (name == "CONNECTION"){
+        if(itemsswitch[index]->getname() == "CONNECTED"){
+            indigo_device_connect(cliente, (char*)device.c_str());
+        }else{
+            indigo_device_disconnect(cliente, (char*)device.c_str());
+        }
+    }
+    indigo_log(itemsswitch[index]->getname().c_str());
+
+
+}
+
+propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *parent){
     parent= parent;
 
-
+    this->cliente=cliente;
     device= string(property->device);
     name = string(property->name);
     perm = property->perm;
@@ -217,6 +271,7 @@ propiedad::propiedad(indigo_property *property,QWidget *parent){
     access_token= property->access_token;
     version= property->version;
     hidden= property->hidden;
+
 
 
     indigo_log(name.c_str());

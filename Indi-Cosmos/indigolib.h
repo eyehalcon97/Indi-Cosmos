@@ -23,13 +23,16 @@ private:
 
 
 signals:
-void nuevapropiedad(indigo_property *propiedad);
+void nuevapropiedad(indigo_property *propiedad,indigo_client *cliente);
+void eliminarpropiedad(indigo_property *propiedad);
+void cambiarpropiedad(indigo_property *propiedad);
 
 public:
 
 static indigo_result client_detach(indigo_client *client);
 static indigo_result client_update_property(indigo_client *client,indigo_device *device,indigo_property *property,const char *message);
 static indigo_result client_define_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message);
+static indigo_result client_delete_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message);
 static indigo_result client_attach(indigo_client *client);
 
 indigolib();
@@ -42,13 +45,6 @@ void setpuerto(int port);
 void sethost(string hosts);
 void setnombre(string name);
 void conectar(string nombre,string host,int puerto);
-
-
-
-
-
-
-
 
 
 

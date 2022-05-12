@@ -28,14 +28,16 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void creardevice(string id);
+    void creardevice(string id,indigo_client *cliente);
     QThread *workerThread;
 
 
 
 public slots:
     void nuevodispositivo();
-    void nuevapropiedad(indigo_property *propiedad);
+    void nuevapropiedad(indigo_property *propiedad,indigo_client *cliente);
+    void eliminarpropiedad(indigo_property *propiedad);
+    void cambiarpropiedad(indigo_property *propiedad);
 
 private slots:
 
@@ -83,7 +85,7 @@ private:
     bool modoseleccion=false;
     int idbotones=0;
     int columnasmaxima =4;
-    int contador=0;
+
 
 
 };

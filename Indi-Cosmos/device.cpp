@@ -8,9 +8,10 @@
 using namespace std;
 
 
-device::device(QWidget *parent , string id) :QWidget(parent),ui(new Ui::device)
+device::device(string id,indigo_client *cliente, QWidget *parent) :QWidget(parent),ui(new Ui::device)
 {
   deviceid = id ;
+  this->cliente=cliente;
   conectar w;
   w.show();
 
@@ -29,9 +30,39 @@ propiedad* device::getpropiedad(int num){
 int device::getnpropiedades(){
     return npropiedades;
 }
+void device::eliminarpropiedad(indigo_property* property){
+
+    propiedad* propiedadesaux[130];
+   int j=1;
+
+    for(int i=1;i<=npropiedades;i++){
+       if(propiedades[i]->getname() != string(property->name)){
+          propiedadesaux[j] = propiedades[i];
+          j++;
+       }else{
+           delete propiedades[i];
+       }
+    }
+    npropiedades--;
+    for(int i=1;i<=npropiedades;i++){
+        propiedades[i] = propiedadesaux[i];
+    }
+
+}
+
+void device::cambiarpropiedad(indigo_property* property){
+    for(int i=1;i<=npropiedades;i++){
+       if(propiedades[i]->getname() == string(property->name)){
+          propiedades[i] = new propiedad(property,cliente,this);
+       }
+
+    }
+}
+
+
 void device::nuevapropiedad(indigo_property* property){
     npropiedades++;
-    propiedades[npropiedades] = new propiedad(property,this);
+    propiedades[npropiedades] = new propiedad(property,cliente,this);
 
 }
 
@@ -51,7 +82,7 @@ if ( widget->layout() != NULL )
 
 
 QVBoxLayout* layout = new QVBoxLayout;
-    for(int i=1;i<npropiedades;i++){
+    for(int i=1;i<=npropiedades;i++){
         widget = new QWidget;
         widget->setLayout(propiedades[i]->getlayout());
         layout->addWidget(widget,i);
