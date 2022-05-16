@@ -7,6 +7,9 @@
 #include <string>
 #include "propiedad.h"
 #include <QVBoxLayout>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 namespace Ui {
 class device;
@@ -36,8 +39,7 @@ public:
 private:
     Ui::device *ui;
     string deviceid;
-    propiedad* propiedades[130];
-    int npropiedades=0;
+    vector<propiedad*> propiedades;
 
 
 };

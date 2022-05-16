@@ -57,19 +57,6 @@ QVBoxLayout *propiedad::getlayout(){
     layout->addWidget(nombre);
 
 
-    nombre = new QLabel;/*
-    if(conectado){
-
-        nombre->setText("Conexion: conectado");
-        conexion->setText("Desconectar");
-
-    }else{
-        nombre->setText("Conexion: desconectado");
-        conexion->setText("Conectar");
-    }
-    layout->addWidget(nombre);
-    layout->addWidget(conexion);*/
-
 
     nombre = new QLabel;
     switch(state){
@@ -224,16 +211,6 @@ switch(type){
 
     return layout;
 }
-/*
-void propiedad::conectar(){
-    if(conectado){
-        indigo_device_disconnect(cliente, (char*)device.c_str());
-        conectado=false;
-    }else{
-        indigo_device_connect(cliente, (char*)device.c_str());
-        conectado=true;
-    }
-}*/
 
 void propiedad::combobox_cambio(int index){
 

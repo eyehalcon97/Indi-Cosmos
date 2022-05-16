@@ -5,6 +5,7 @@
 #include <QString>
 #include <QVBoxLayout>
 
+
 using namespace std;
 
 
@@ -28,30 +29,24 @@ propiedad* device::getpropiedad(int num){
     return propiedades[num];
 }
 int device::getnpropiedades(){
-    return npropiedades;
+    return propiedades.size();
 }
 void device::eliminarpropiedad(indigo_property* property){
 
-    propiedad* propiedadesaux[130];
-   int j=1;
 
-    for(int i=1;i<=npropiedades;i++){
-       if(propiedades[i]->getname() != string(property->name)){
-          propiedadesaux[j] = propiedades[i];
-          j++;
-       }else{
-           delete propiedades[i];
+    for(int i=0;i<=propiedades.size();i++){
+       if(propiedades[i]->getname() == string(property->name)){
+          propiedades.erase (propiedades.begin()+i);
+
        }
+
     }
-    npropiedades--;
-    for(int i=1;i<=npropiedades;i++){
-        propiedades[i] = propiedadesaux[i];
-    }
+
 
 }
 
 void device::cambiarpropiedad(indigo_property* property){
-    for(int i=1;i<=npropiedades;i++){
+    for(int i=0;i<propiedades.size();i++){
        if(propiedades[i]->getname() == string(property->name)){
           propiedades[i] = new propiedad(property,cliente,this);
        }
@@ -61,8 +56,7 @@ void device::cambiarpropiedad(indigo_property* property){
 
 
 void device::nuevapropiedad(indigo_property* property){
-    npropiedades++;
-    propiedades[npropiedades] = new propiedad(property,cliente,this);
+    propiedades.push_back(new propiedad(property,cliente,this));
 
 }
 
@@ -82,7 +76,7 @@ if ( widget->layout() != NULL )
 
 
 QVBoxLayout* layout = new QVBoxLayout;
-    for(int i=1;i<=npropiedades;i++){
+    for(int i=0;i<propiedades.size();i++){
         widget = new QWidget;
         widget->setLayout(propiedades[i]->getlayout());
         layout->addWidget(widget,i);

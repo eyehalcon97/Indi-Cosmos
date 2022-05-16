@@ -9,6 +9,7 @@
 #include <chrono>
 #include <thread>
 #include <string>
+#include <queue>
 
 
 
@@ -22,12 +23,10 @@
 
 
 
-bool utilizado=false;
-bool utilizadocambiar=false;
-bool utilizadoborrar=false;
-indigo_property* propiedad;
-indigo_property* propiedadeliminar;
-indigo_property* propiedadcambiar;
+
+queue<indigo_property*> propiedad;
+queue<indigo_property*> propiedadeliminar;
+queue<indigo_property*> propiedadcambiar;
 
 
 static indigo_result client_attach(indigo_client *client) {
@@ -42,56 +41,11 @@ static indigo_result client_attach(indigo_client *client) {
 static indigo_result client_define_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message) {
 
 
-        while(utilizado==false){
-            propiedad=property;
-            utilizado=true;
-        }
+
+            propiedad.push(property);
 
 
 
-
-
-        //indigo_log(property->items[0].number.value);
-    /*else
-        mipropiedad = property;
-    }
-
-    if(!strcmp(property->name,CCD_EXPOSURE_PROPERTY_NAME)){
-
-    }
-    if (!strcmp(property->name, CONNECTION_PROPERTY_NAME)) {
-        if (indigo_get_switch(property, CONNECTION_CONNECTED_ITEM_NAME)) {
-            connected = true;
-            indigo_log("already connected...");
-            static const char * items[] = { CCD_EXPOSURE_ITEM_NAME };
-            static double values[] = { 3.0 };
-            indigo_change_number_property(client, CCD_SIMULATOR, CCD_EXPOSURE_PROPERTY_NAME, 1, items, values);
-
-        } else {
-            indigo_device_connect(client, CCD_SIMULATOR);
-            return INDIGO_OK;
-        }
-    }
-    if (!strcmp(property->name, "FILE_NAME")) {
-        char value[1024] = { 0 };
-        static const char * items[] = { "PATH" };
-        static const char *values[1];
-        values[0] = value;
-        for (int i = 0 ; i < 1023; i++)
-            value[i] = '0' + i % 10;
-        indigo_change_text_property(client, CCD_SIMULATOR, "FILE_NAME" , 1, items, values);
-    }
-    if (!strcmp(property->name, CCD_IMAGE_PROPERTY_NAME)) {
-        if (device->version >= INDIGO_VERSION_2_0)
-            indigo_enable_blob(client, property, INDIGO_ENABLE_BLOB_URL);
-        else
-            indigo_enable_blob(client, property, INDIGO_ENABLE_BLOB_ALSO);
-    }
-    if (!strcmp(property->name, CCD_IMAGE_FORMAT_PROPERTY_NAME)) {
-        static const char * items[] = { CCD_IMAGE_FORMAT_FITS_ITEM_NAME };
-        static bool values[] = { true };
-        indigo_change_switch_property(client, CCD_SIMULATOR, CCD_IMAGE_FORMAT_PROPERTY_NAME, 1, items, values);
-    }*/
     return INDIGO_OK;
 }
 
@@ -99,37 +53,23 @@ static indigo_result client_update_property(indigo_client *client,indigo_device 
 {
 
 
-    while(utilizadocambiar==false){
-        propiedadcambiar=property;
-        utilizadocambiar=true;
 
-    }
+        propiedadcambiar.push(property);
 
-/*
-    if(property == mipropiedad){
-        cout << "ES LA MISMA" << endl;
-    }
-    cout << "xxx" <<  mipropiedad->name << endl;
-    if (!strcmp(property->name, CCD_EXPOSURE_PROPERTY_NAME)) {
-        if (property->state == INDIGO_BUSY_STATE) {
 
-            indigo_log("exposure %gs...", property->items[0].number.value);
-        } else if (property->state == INDIGO_OK_STATE) {
-            indigo_log("exposure done...");
-        }
-        return INDIGO_OK;
-    }*/
+
+
     return INDIGO_OK;
 
 }
 
 
 static	indigo_result client_delete_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message){
+        indigo_property* propiedad = new indigo_property(*property);
+        propiedadeliminar.push(propiedad);
 
-    while(utilizadoborrar==false){
-        propiedadeliminar=property;
-        utilizadoborrar=true;
-    }
+
+
 
         return INDIGO_OK;
 
@@ -183,21 +123,22 @@ void indigolib::conectar(string name,string hosts,int port){
     indigo_connect_server(nombre.c_str(), host.c_str() , puerto , &server);
 
     while(true){
-        if(utilizado){
-            nuevapropiedad(propiedad,&client);
-            utilizado=false;
+        if(!propiedad.empty()){
+            nuevapropiedad(propiedad.front(),&client);
+            propiedad.pop();
+
         }
 
-        if(utilizadocambiar){
-            cambiarpropiedad(propiedadcambiar);
-            utilizadocambiar=false;
+        if(!propiedadcambiar.empty()){
+            cambiarpropiedad(propiedadcambiar.front());
+            propiedadcambiar.pop();
+
         }
 
-        if(utilizadoborrar){
-            indigo_log("borrar");
-            indigo_log(propiedadeliminar->device);
-            eliminarpropiedad(propiedadeliminar);
-            utilizadoborrar=false;
+        if(!propiedadeliminar.empty()){
+            eliminarpropiedad(propiedadeliminar.front());
+            propiedadeliminar.pop();
+
 
         }
 
