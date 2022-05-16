@@ -9,6 +9,8 @@
 #include <QVBoxLayout>
 #include <iostream>
 #include <vector>
+#include <QTreeWidget>
+
 
 using namespace std;
 namespace Ui {
@@ -33,13 +35,30 @@ public:
     int getnpropiedades();
     QVBoxLayout* mostrarpropiedades();
     indigo_client *cliente;
+    void clearLayout(QLayout* layout, bool deleteWidgets);
+
+
+    public slots:
+
+    void expandir( );
 
 
 
 private:
+    int indexof(vector<string> lista,string value);
+
     Ui::device *ui;
     string deviceid;
     vector<propiedad*> propiedades;
+
+
+    QTreeWidget *arbol= new QTreeWidget;
+
+    vector<string>grupos;
+    vector<QTreeWidgetItem*> raices;
+
+
+
 
 
 };

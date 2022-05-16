@@ -4,6 +4,8 @@
 #include <string>
 #include <QString>
 #include <QVBoxLayout>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 
 
 using namespace std;
@@ -15,6 +17,8 @@ device::device(string id,indigo_client *cliente, QWidget *parent) :QWidget(paren
   this->cliente=cliente;
   conectar w;
   w.show();
+
+
 
 
   ui->setupUi(this);
@@ -58,36 +62,102 @@ void device::cambiarpropiedad(indigo_property* property){
 void device::nuevapropiedad(indigo_property* property){
     propiedades.push_back(new propiedad(property,cliente,this));
 
+
+}
+int device::indexof(vector<string> lista,string value){
+    for(int i=0;i<lista.size();i++){
+        if(lista[i] == value){
+            return i;
+        }
+    }
+    return -1;
 }
 
 QVBoxLayout* device::mostrarpropiedades(){
-QWidget *widget = new QWidget;
+    QTreeWidget *arbol= new QTreeWidget;
+    arbol->setColumnCount(2);
+    QStringList cabecera;
+    cabecera << "propiedades" << "value" ;
+    arbol->setHeaderLabels(cabecera);
+    arbol->setColumnWidth(0,200);
+    arbol->setColumnWidth(1,100);
 
-if ( widget->layout() != NULL )
-{
-    QLayoutItem* item;
-    while ( ( item = widget->layout()->takeAt( 0 ) ) != NULL )
-    {
-        delete item->widget();
-        delete item;
-    }
-    delete widget->layout();
-}
+    QVBoxLayout* layout = new QVBoxLayout;
+    vector<string>grupos;
+    vector<QTreeWidgetItem*> raices;
 
-
-QVBoxLayout* layout = new QVBoxLayout;
     for(int i=0;i<propiedades.size();i++){
-        widget = new QWidget;
-        widget->setLayout(propiedades[i]->getlayout());
-        layout->addWidget(widget,i);
+        int id = indexof(grupos,string(propiedades[i]->getgroup()));
+        if(id == -1){
+            grupos.push_back(string(propiedades[i]->getgroup()));
+            QTreeWidgetItem *raiz = new QTreeWidgetItem(arbol);
+
+            raiz->setText(0,QString::fromStdString(propiedades[i]->getgroup()));
+            raiz->setExpanded(true);
+            arbol->addTopLevelItem(raiz);
+
+
+
+            raices.push_back(raiz);
+            id = raices.size()-1;
+
+
+        }
+        QTreeWidgetItem *child = new QTreeWidgetItem;
+
+        child->setText(0,propiedades[i]->getname().c_str());
+
+        switch(propiedades[i]->getstate()){
+            case 0:
+
+            child->setBackground(1, QColor( 0, 0, 255) );
+
+            break;
+            case 1:
+            child->setBackground(1, QColor( 0, 255, 0 ) );
+
+            break;
+            case 2:
+            child->setBackground(1, QColor( 255, 130, 0 ) );
+            break;
+            case 3:
+            child->setBackground(1, QColor( 255, 0, 0 ) );
+            break;
+        }
+
+         raices[id]->addChild(child);
+         vector<string> itemsname = propiedades[i]->itemsname();
+         vector<QWidget*> itemsWidget = propiedades[i]->itemsWidgets();
+         for(int j=0;j<itemsname.size();j++){
+             QTreeWidgetItem *itemname = new QTreeWidgetItem;
+
+             itemname->setText(0,itemsname[j].c_str());
+             child->addChild(itemname);
+             child->setExpanded(true);
+             arbol->setItemWidget(itemname,1,itemsWidget[j]);
+         }
+
+
+
+
 
     }
 
 
 
+    layout->addWidget(arbol);
     return layout;
+
+
+
 }
 
+
+
+void device::expandir(){
+    //string hola = raiz->text(0).toStdString();
+    indigo_log("hola.c_str()");
+}
 string device::getDeviceID(){
     return deviceid;
 }

@@ -38,184 +38,106 @@ propiedad::propiedad(string device,string name,string group,string label,string 
 string propiedad::getname(){
     return string(name);
 }
+
+string propiedad::getgroup(){
+    return string(group);
+}
+
 int propiedad::getcount(){
     return count;
 }
 int propiedad::gettype(){
     return type;
 }
-QVBoxLayout *propiedad::getlayout(){
-    QVBoxLayout *layout = new QVBoxLayout;
-    QHBoxLayout *layouthorizontal = new QHBoxLayout;
-    QWidget *nombreluz = new QWidget;
-    QLabel *nombre= new QLabel;
-    QPushButton *conexion = new QPushButton;
+int propiedad::getstate(){
+    return state;
+}
+bool propiedad::getexpandido(){
+    return expandido;
+}
+void propiedad::setexpandido(bool expandido){
+    this->expandido = expandido;
+}
 
-
-    nombre = new QLabel;
-    nombre->setText(QString::fromStdString(group));
-    layout->addWidget(nombre);
-
-
-
-    nombre = new QLabel;
-    switch(state){
-        case 0:
-
-        nombre->setStyleSheet("background-color:blue;");
-
-        break;
+vector<string> propiedad::itemsname(){
+    vector<string> solucion;
+    switch(type){
         case 1:
-
-        nombre->setStyleSheet("background-color:green;");
+            for(int j=0;j<count;j++){
+                solucion.push_back(itemstexto[j]->getname());
+            }
         break;
         case 2:
-
-        nombre->setStyleSheet("background-color:orange;");
-        break;
+        for(int j=0;j<count;j++){
+            solucion.push_back(itemsnumero[j]->getname());
+        }
+            break;
         case 3:
+                solucion.push_back(" ");
+            break;
+        case 4:
+            for(int j=0;j<count;j++){
+                solucion.push_back("luz");
+            }
+            break;
+        /*case 5:
+            for(int j=0;j<count;j++){
+                layout->addWidget(itemsblob[j]);
+            }
 
-        nombre->setStyleSheet("background-color:red;");
-        break;
+            break;*/
     }
-
-    layouthorizontal->addWidget(nombre);
-    nombre = new QLabel;
-    nombre->setText(QString::fromStdString(name));
-    layouthorizontal->addWidget(nombre);
-
-    nombreluz->setLayout(layouthorizontal);
-
-    layout->addWidget(nombreluz);
-
-
-
-
-
-    nombre = new QLabel;
-    nombre->setText(QString::fromStdString(label));
-    layout->addWidget(nombre);
-
-    nombre = new QLabel;
-    nombre->setText("hints " + QString::fromStdString(hints));
-    layout->addWidget(nombre);
-
-    nombre = new QLabel;
-
-        layout->addWidget(nombre,4);
-
-        QComboBox *seleccion = new QComboBox;
-        QLabel *menu = new QLabel;
-        QLabel *etiqueta = new QLabel;
-        QPlainTextEdit *valor = new QPlainTextEdit;
-        QPlainTextEdit *nuevovalor = new QPlainTextEdit;
-        QVBoxLayout *layoutitems = new QVBoxLayout;
-        QWidget *item = new QWidget;
-        QPushButton *boton = new QPushButton;
-
-
-        boton->setText("Poner");
-        //connect(seleccion, SIGNAL (&QComboBox::currentIndexChanged(int)),this, SLOT (combobox_cambio(int)));
-
-
-
-switch(type){
-    case 1:
-        for(int j=0;j<count;j++){
-            menu->setText(QString::fromStdString(itemstexto[j]->getname()));
-            etiqueta->setText(QString::fromStdString(itemstexto[j]->getlabel()));
-            valor->insertPlainText(QString::fromStdString(itemstexto[j]->getvalue()));
-            valor->setReadOnly(true);
-
-            layoutitems->addWidget(menu);
-            layoutitems->addWidget(etiqueta);
-            layoutitems->addWidget(valor);
-            if(perm != 1){
-                layoutitems->addWidget(nuevovalor);
-                layoutitems->addWidget(boton);
-            }
-
-            item->setLayout(layoutitems);
-
-        }
-        layout->addWidget(item);
-
-    break;
-
-    case 2:
-    for(int j=0;j<count;j++){
-        menu->setText(QString::fromStdString(itemsnumero[j]->getname()));
-        etiqueta->setText(QString::fromStdString(itemsnumero[j]->getlabel()));
-        valor->insertPlainText(QString::number(itemsnumero[j]->getvalue()));
-        valor->setReadOnly(true);
-
-        layoutitems->addWidget(menu);
-        layoutitems->addWidget(etiqueta);
-        layoutitems->addWidget(valor);
-        if(perm != 1){
-            layoutitems->addWidget(nuevovalor);
-            layoutitems->addWidget(boton);
-        }
-
-        item->setLayout(layoutitems);
-
-    }
-    layout->addWidget(item);
-
-        break;
-    case 3:
-
-        for(int j=0;j<count;j++){
-            seleccion->addItem(QString::fromStdString(itemsswitch[j]->getname()));
-            if(itemsswitch[j]->getvalue() == true){
-                seleccion->	setCurrentIndex(j);
-            }
-
-
-
-        }
-        layoutitems->addWidget(seleccion);
-        item->setLayout(layoutitems);
-
-        layout->addWidget(item);
-
-        break;
-    case 4:
-        for(int j=0;j<count;j++){
-            switch(itemslight[j]->getvalue()){
-                case 0:
-                item->setStyleSheet("background-color:blue;");
-                break;
-                case 1:
-                item->setStyleSheet("background-color:green;");
-                break;
-                case 2:
-                item->setStyleSheet("background-color:orange;");
-                break;
-                case 3:
-                item->setStyleSheet("background-color:red;");
-                break;
-            }
-        }
-
-        break;
-    /*case 5:
-        for(int j=0;j<count;j++){
-            layout->addWidget(itemsblob[j]);
-        }
-
-        break;*/
+    return solucion;
 }
+
+vector<QWidget*> propiedad::itemsWidgets(){
+    vector<QWidget*> solucion;
+    QComboBox *seleccion = new QComboBox();
+
+    switch(type){
+        case 1:
+            for(int j=0;j<count;j++){
+                QPushButton *boton= new QPushButton;
+                boton->setText(QString::fromStdString(itemstexto[j]->getvalue()));
+                solucion.push_back(boton);
+            }
+        break;
+        case 2:
+        for(int j=0;j<count;j++){
+            QPushButton *boton= new QPushButton;
+            boton->setText(QString::number(itemsnumero[j]->getvalue()));
+            solucion.push_back(boton);
+
+        }
+            break;
+        case 3:
+            for(int j=0;j<count;j++){
+            seleccion->addItem(QString::fromStdString(itemsswitch[j]->getname()));
+                if(itemsswitch[j]->getvalue() == true){
+                    seleccion->	setCurrentIndex(j);
+                }
+            }
+            solucion.push_back(seleccion);
+            break;
+        case 4:
+            for(int j=0;j<count;j++){
+                QPushButton *boton= new QPushButton;
+                boton->setText(QString::number(itemslight[j]->getvalue()));
+                solucion.push_back(boton);
+            }
+            break;
+        /*case 5:
+            for(int j=0;j<count;j++){
+                layout->addWidget(itemsblob[j]);
+            }
+
+            break;*/
+    }
     connect(seleccion,SIGNAL (currentIndexChanged(int)),this,SLOT(combobox_cambio(int)));
-
-
-    return layout;
+    return solucion;
 }
 
 void propiedad::combobox_cambio(int index){
-
-
-
 
     indigo_log("cambiado");
     int numero = sender()->objectName().toInt();
@@ -226,10 +148,9 @@ void propiedad::combobox_cambio(int index){
             indigo_device_disconnect(cliente, (char*)device.c_str());
         }
     }
-    indigo_log(itemsswitch[index]->getname().c_str());
-
-
 }
+
+
 
 propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *parent){
     parent= parent;
@@ -248,6 +169,7 @@ propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *p
     access_token= property->access_token;
     version= property->version;
     hidden= property->hidden;
+    expandido=false;
 
 
 

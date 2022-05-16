@@ -16,6 +16,7 @@
 #include <QComboBox>
 #include <QPlainTextEdit>
 #include <QPushButton>
+#include <QTreeWidgetItem>
 
 using namespace std;
 
@@ -33,13 +34,19 @@ public:
     propiedad(string device,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent =nullptr);
     propiedad(indigo_property *property,indigo_client *cliente,QWidget *parent = nullptr);
     string getname();
+    string getgroup();
     QWidget **mostrarpropiedades();
     int getcount();
     int gettype();
     QVBoxLayout *getlayout();
+    int getstate();
+    vector<string> itemsname();
+    vector<QWidget*> itemsWidgets();
+    bool getexpandido();
+    void setexpandido(bool expandido);
+
 
 private slots:
-
     void combobox_cambio(int index);
 
 
@@ -61,6 +68,7 @@ private:
     bool hidden;
     int count;
     int perm;
+    bool expandido=false;
     indigo_client *cliente;
 
     itemblob** itemsblob;

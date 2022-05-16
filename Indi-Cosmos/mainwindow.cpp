@@ -10,7 +10,7 @@
 #include <indigo/indigo_client.h>
 #include <ctime>
 #include "indigolib.h"
-
+#include <QTreeWidget>
 
 #include <iostream>
 #include <chrono>
@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 
     ui->setupUi(this);
     ui->PanelDerecho->setVisible(false);
+
 
     //indigolib *lib = new indigolib(this);
 
@@ -210,8 +211,9 @@ void MainWindow::botones_clicked()
 
 
 
-    QLabel *nombre = new QLabel;
-    layoutpropiedades = new QGridLayout;
+
+     layoutpropiedades = new QGridLayout;
+
 
 
     if ( ui->propiedades->layout() != NULL )
@@ -227,9 +229,12 @@ void MainWindow::botones_clicked()
 
 
 
+
+
     for(int i=1;i<=nseleccionados;i++){
 
-        nombre = new QLabel;
+
+        QLabel *nombre = new QLabel;
         nombre->setText("Nombre del dispositivo");
         layoutpropiedades->addWidget(nombre);
 
@@ -238,15 +243,25 @@ void MainWindow::botones_clicked()
         layoutpropiedades->addWidget(nombre);
 
         QWidget *deviceproperty = new QWidget;
-        QVBoxLayout *layoutpropiedad = devices[devicesseleccionados[i]]->mostrarpropiedades();
+        QVBoxLayout *layoutpropiedad = new QVBoxLayout;
+
+        layoutpropiedad = devices[devicesseleccionados[i]]->mostrarpropiedades();
         deviceproperty->setLayout(layoutpropiedad);
 
         layoutpropiedades->addWidget(deviceproperty);
 
 
+
     }
 
+
+
     ui->propiedades->setLayout(layoutpropiedades);
+
+
+
+
+
 
 
 }
@@ -288,11 +303,6 @@ int MainWindow::indexofdevice(string id){
 void MainWindow::nuevodispositivo(){
 
 
-
-    //string nombre = menuconectar->getnombre();
-    //string host = menuconectar->gethost();
-    //int puerto = menuconectar->getpuerto();
-    //if(!nombre.empty() && !host.empty() ){
         workerThread = new QThread;
         indigolib *libreria = new indigolib;
         libreria->moveToThread(workerThread);
@@ -303,13 +313,7 @@ void MainWindow::nuevodispositivo(){
         workerThread->start();
 
         conectar("nombremolon","localhost",7777);
-        //menuconectar->hide();
 
-        //libreria->conectar(this,nombre,host,puerto);
-
-    //}else{
-    //    menuconectar->error();
-    //}
 
 
 }
