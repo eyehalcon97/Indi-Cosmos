@@ -21,6 +21,11 @@ public:
     string getname();
     string getlabel();
     double getvalue();
+    string getformat();
+    double getmin();
+    double getmax();
+    double getstep();
+    double gettarget();
 
 private:
 

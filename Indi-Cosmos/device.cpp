@@ -74,15 +74,25 @@ int device::indexof(vector<string> lista,string value){
 }
 
 QVBoxLayout* device::mostrarpropiedades(){
+    QVBoxLayout* layout = new QVBoxLayout;
+    QLabel *nombre = new QLabel;
+    nombre->setText("Nombre del dispositivo");
+    layout->addWidget(nombre);
+
+    nombre = new QLabel;
+    nombre->setText(deviceid.c_str());
+    layout->addWidget(nombre);
+
     QTreeWidget *arbol= new QTreeWidget;
     arbol->setColumnCount(2);
     QStringList cabecera;
     cabecera << "propiedades" << "value" ;
     arbol->setHeaderLabels(cabecera);
+
     arbol->setColumnWidth(0,200);
     arbol->setColumnWidth(1,100);
 
-    QVBoxLayout* layout = new QVBoxLayout;
+
     vector<string>grupos;
     vector<QTreeWidgetItem*> raices;
 
@@ -93,7 +103,7 @@ QVBoxLayout* device::mostrarpropiedades(){
             QTreeWidgetItem *raiz = new QTreeWidgetItem(arbol);
 
             raiz->setText(0,QString::fromStdString(propiedades[i]->getgroup()));
-            raiz->setExpanded(true);
+            raiz->setExpanded(estaexpandido(raiz));
             arbol->addTopLevelItem(raiz);
 
 
@@ -133,7 +143,7 @@ QVBoxLayout* device::mostrarpropiedades(){
 
              itemname->setText(0,itemsname[j].c_str());
              child->addChild(itemname);
-             child->setExpanded(true);
+             child->setExpanded(estaexpandido(child));
              arbol->setItemWidget(itemname,1,itemsWidget[j]);
          }
 
@@ -144,7 +154,8 @@ QVBoxLayout* device::mostrarpropiedades(){
     }
 
 
-
+    connect(arbol,SIGNAL (itemExpanded(QTreeWidgetItem *)),this,SLOT(expandir(QTreeWidgetItem *)));
+    connect(arbol,SIGNAL (itemCollapsed(QTreeWidgetItem *)),this,SLOT(disminuir(QTreeWidgetItem *)));
     layout->addWidget(arbol);
     return layout;
 
@@ -153,10 +164,29 @@ QVBoxLayout* device::mostrarpropiedades(){
 }
 
 
+void device::disminuir(QTreeWidgetItem *objeto){
+    for(int i=0;i<expandidos.size();i++){
+        if(expandidos[i] == objeto->text(0).toStdString()){
+            expandidos.erase(expandidos.begin()+i);
 
-void device::expandir(){
-    //string hola = raiz->text(0).toStdString();
-    indigo_log("hola.c_str()");
+        }
+    }
+
+}
+bool device::estaexpandido(QTreeWidgetItem *objeto){
+    for(int i=0;i<expandidos.size();i++){
+        if(expandidos[i] == objeto->text(0).toStdString()){
+            return true;
+
+        }
+    }
+    return false;
+
+}
+
+void device::expandir(QTreeWidgetItem *objeto){
+    expandidos.push_back(objeto->text(0).toStdString());
+
 }
 string device::getDeviceID(){
     return deviceid;

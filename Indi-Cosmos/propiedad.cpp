@@ -3,7 +3,7 @@
 #include <string>
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
-
+#include "cambiarvalor.h"
 
 using namespace std;
 propiedad::propiedad(QWidget *parent) :
@@ -19,7 +19,13 @@ propiedad::~propiedad()
     delete ui;
 }
 
-propiedad::propiedad(string device,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent){
+propiedad::propiedad(string device,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent):
+    QWidget(parent),
+    ui(new Ui::propiedad){
+    ui->setupUi(this);
+
+
+
     this->parent= parent;
     this->device= device;
     this->name= name;
@@ -52,12 +58,7 @@ int propiedad::gettype(){
 int propiedad::getstate(){
     return state;
 }
-bool propiedad::getexpandido(){
-    return expandido;
-}
-void propiedad::setexpandido(bool expandido){
-    this->expandido = expandido;
-}
+
 
 vector<string> propiedad::itemsname(){
     vector<string> solucion;
@@ -93,22 +94,28 @@ vector<string> propiedad::itemsname(){
 vector<QWidget*> propiedad::itemsWidgets(){
     vector<QWidget*> solucion;
     QComboBox *seleccion = new QComboBox();
-
+    QPushButton *boton;
     switch(type){
         case 1:
+
             for(int j=0;j<count;j++){
-                QPushButton *boton= new QPushButton;
+                boton= new QPushButton;
                 boton->setText(QString::fromStdString(itemstexto[j]->getvalue()));
+                boton->setObjectName(QString::fromStdString(itemstexto[j]->getname()));
                 solucion.push_back(boton);
+                connect(boton,SIGNAL (clicked()),this,SLOT(botontexto()));
             }
+
         break;
         case 2:
-        for(int j=0;j<count;j++){
-            QPushButton *boton= new QPushButton;
-            boton->setText(QString::number(itemsnumero[j]->getvalue()));
-            solucion.push_back(boton);
+            for(int j=0;j<count;j++){
+                boton= new QPushButton;
+                boton->setText(QString::number(itemsnumero[j]->getvalue()));
+                boton->setObjectName(QString::fromStdString(itemsnumero[j]->getname()));
+                solucion.push_back(boton);
+                connect(boton,SIGNAL (clicked()),this,SLOT(botonnumero()));
 
-        }
+            }
             break;
         case 3:
             for(int j=0;j<count;j++){
@@ -134,8 +141,45 @@ vector<QWidget*> propiedad::itemsWidgets(){
             break;*/
     }
     connect(seleccion,SIGNAL (currentIndexChanged(int)),this,SLOT(combobox_cambio(int)));
+
     return solucion;
 }
+int propiedad::buscartexto(string id){
+    for(int j=0;j<count;j++){
+        if(itemstexto[j]->getname() == id){
+            return j;
+        }
+    }
+    return -1;
+}
+int propiedad::buscarnumero(string id){
+    for(int j=0;j<count;j++){
+        if(itemsnumero[j]->getname() == id){
+            return j;
+        }
+    }
+    return -1;
+}
+
+void propiedad::botontexto(){
+    int id = buscartexto(sender()->objectName().toStdString());
+    if(id != -1){
+        CambiarValor  *menu = new CambiarValor(itemstexto[id],perm) ;
+        menu->show();
+    }
+
+
+}
+void propiedad::botonnumero(){
+    int id = buscarnumero(sender()->objectName().toStdString());
+    if(id != -1){
+        CambiarValor  *menu = new CambiarValor(itemsnumero[id],perm) ;
+        menu->show();
+    }
+
+
+}
+
 
 void propiedad::combobox_cambio(int index){
 
@@ -169,7 +213,6 @@ propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *p
     access_token= property->access_token;
     version= property->version;
     hidden= property->hidden;
-    expandido=false;
 
 
 
@@ -218,6 +261,12 @@ propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *p
             }
             break;
     }
+
+}
+
+
+void propiedad::on_pushButton_3_clicked()
+{
 
 }
 

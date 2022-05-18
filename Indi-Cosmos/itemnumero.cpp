@@ -20,6 +20,21 @@ string itemnumero::getlabel(){
 double itemnumero::getvalue(){
     return value;
 }
+string itemnumero::getformat(){
+    return format;
+}
+double itemnumero::getmin(){
+    return min;
+}
+double itemnumero::getmax(){
+    return max;
+}
+double itemnumero::getstep(){
+    return step;
+}
+double itemnumero::gettarget(){
+    return target;
+}
 
 
 itemnumero::itemnumero(string nombre,string etiqueta,string gui,string format,double min,double max,double step,double value,double target,QWidget *parent){

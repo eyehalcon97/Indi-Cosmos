@@ -234,13 +234,7 @@ void MainWindow::botones_clicked()
     for(int i=1;i<=nseleccionados;i++){
 
 
-        QLabel *nombre = new QLabel;
-        nombre->setText("Nombre del dispositivo");
-        layoutpropiedades->addWidget(nombre);
 
-        nombre = new QLabel;
-        nombre->setText(devices[devicesseleccionados[i]]->getDeviceID().c_str());
-        layoutpropiedades->addWidget(nombre);
 
         QWidget *deviceproperty = new QWidget;
         QVBoxLayout *layoutpropiedad = new QVBoxLayout;
@@ -330,7 +324,7 @@ void MainWindow::cambiarpropiedad(indigo_property *propiedad){
     //indigo_log(to_string(posicion).c_str());
 
     devices[posicion]->cambiarpropiedad(propiedad);
-    MostrarPropiedades();
+
 
 }
 

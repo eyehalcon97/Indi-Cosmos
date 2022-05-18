@@ -42,15 +42,20 @@ public:
     int getstate();
     vector<string> itemsname();
     vector<QWidget*> itemsWidgets();
-    bool getexpandido();
-    void setexpandido(bool expandido);
+    int buscartexto(string id);
+    int buscarnumero(string id);
+
+
 
 
 private slots:
     void combobox_cambio(int index);
+    void botontexto();
+    void botonnumero();
 
 
 
+    void on_pushButton_3_clicked();
 
 private:
     Ui::propiedad *ui;
@@ -68,7 +73,6 @@ private:
     bool hidden;
     int count;
     int perm;
-    bool expandido=false;
     indigo_client *cliente;
 
     itemblob** itemsblob;

@@ -40,13 +40,14 @@ public:
 
     public slots:
 
-    void expandir( );
+    void expandir( QTreeWidgetItem *objeto);
+    void disminuir( QTreeWidgetItem *objeto);
 
 
 
 private:
     int indexof(vector<string> lista,string value);
-
+    bool estaexpandido(QTreeWidgetItem *objeto);
     Ui::device *ui;
     string deviceid;
     vector<propiedad*> propiedades;
@@ -56,6 +57,7 @@ private:
 
     vector<string>grupos;
     vector<QTreeWidgetItem*> raices;
+    vector<string> expandidos;
 
 
 

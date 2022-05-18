@@ -110,7 +110,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>886</width>
+            <width>736</width>
             <height>617</height>
            </rect>
           </property>
@@ -127,13 +127,13 @@
         <widget class="QScrollArea" name="PanelDerecho">
          <property name="minimumSize">
           <size>
-           <width>350</width>
+           <width>500</width>
            <height>400</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>200</width>
+           <width>500</width>
            <height>16777215</height>
           </size>
          </property>
@@ -145,7 +145,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>348</width>
+            <width>498</width>
             <height>617</height>
            </rect>
           </property>

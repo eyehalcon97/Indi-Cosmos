@@ -53,6 +53,9 @@ set(PROJECT_SOURCES
         propiedad.h
         propiedad.cpp
         propiedad.ui
+        cambiarvalor.h
+        cambiarvalor.cpp
+        cambiarvalor.ui
 
 
 
