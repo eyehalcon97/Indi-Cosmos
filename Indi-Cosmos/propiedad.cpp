@@ -5,6 +5,8 @@
 #include <indigo/indigo_client.h>
 #include "cambiarvalor.h"
 
+
+
 using namespace std;
 propiedad::propiedad(QWidget *parent) :
     QWidget(parent),
@@ -15,19 +17,19 @@ propiedad::propiedad(QWidget *parent) :
 
 propiedad::~propiedad()
 {
-    indigo_device_disconnect(cliente, (char*)device.c_str());
+    indigo_device_disconnect(cliente, (char*)devicename.c_str());
     delete ui;
 }
 
-propiedad::propiedad(string device,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent):
-    QWidget(parent),
+propiedad::propiedad(string devicename,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,device *parent):
+
     ui(new Ui::propiedad){
     ui->setupUi(this);
 
 
 
-    this->parent= parent;
-    this->device= device;
+    this->padre= parent;
+    this->devicename= devicename;
     this->name= name;
     this->group= group;
     this->label= label;
@@ -161,10 +163,14 @@ int propiedad::buscarnumero(string id){
     return -1;
 }
 
+void propiedad::cambiartexto(string nameitem,string valornuevo){
+
+}
+
 void propiedad::botontexto(){
     int id = buscartexto(sender()->objectName().toStdString());
     if(id != -1){
-        CambiarValor  *menu = new CambiarValor(itemstexto[id],perm) ;
+        CambiarValor  *menu = new CambiarValor(itemstexto[id],perm,this) ;
         menu->show();
     }
 
@@ -173,7 +179,7 @@ void propiedad::botontexto(){
 void propiedad::botonnumero(){
     int id = buscarnumero(sender()->objectName().toStdString());
     if(id != -1){
-        CambiarValor  *menu = new CambiarValor(itemsnumero[id],perm) ;
+        CambiarValor  *menu = new CambiarValor(itemsnumero[id],perm,this) ;
         menu->show();
     }
 
@@ -187,9 +193,9 @@ void propiedad::combobox_cambio(int index){
     int numero = sender()->objectName().toInt();
     if (name == "CONNECTION"){
         if(itemsswitch[index]->getname() == "CONNECTED"){
-            indigo_device_connect(cliente, (char*)device.c_str());
+            indigo_device_connect(cliente, (char*)devicename.c_str());
         }else{
-            indigo_device_disconnect(cliente, (char*)device.c_str());
+            indigo_device_disconnect(cliente, (char*)devicename.c_str());
         }
     }
 }
@@ -200,7 +206,7 @@ propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *p
     parent= parent;
 
     this->cliente=cliente;
-    device= string(property->device);
+    devicename= string(property->device);
     name = string(property->name);
     perm = property->perm;
     group= string(property->group);

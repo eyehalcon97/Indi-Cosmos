@@ -17,6 +17,9 @@
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QTreeWidgetItem>
+#include "device.h"
+
+
 
 using namespace std;
 
@@ -31,7 +34,7 @@ class propiedad : public QWidget
 public:
     explicit propiedad(QWidget *parent = nullptr);
     ~propiedad();
-    propiedad(string device,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent =nullptr);
+    propiedad(string devicename,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,device *parent = nullptr);
     propiedad(indigo_property *property,indigo_client *cliente,QWidget *parent = nullptr);
     string getname();
     string getgroup();
@@ -44,6 +47,7 @@ public:
     vector<QWidget*> itemsWidgets();
     int buscartexto(string id);
     int buscarnumero(string id);
+    void cambiartexto(string nameitem,string valornuevo);
 
 
 
@@ -59,8 +63,8 @@ private slots:
 
 private:
     Ui::propiedad *ui;
-    QWidget *parent;
-    string device;
+
+    string devicename;
     string name;
     string group;
     string label;
@@ -73,6 +77,7 @@ private:
     bool hidden;
     int count;
     int perm;
+    device* padre;
     indigo_client *cliente;
 
     itemblob** itemsblob;

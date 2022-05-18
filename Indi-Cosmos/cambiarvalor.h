@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "itemtexto.h"
 #include "itemnumero.h"
+#include "propiedad.h"
 
 namespace Ui {
 class CambiarValor;
@@ -15,9 +16,12 @@ class CambiarValor : public QWidget
 
 public:
     explicit CambiarValor(QWidget *parent = nullptr);
-    CambiarValor(itemtexto* item,int perm,QWidget *parent = nullptr);
-    CambiarValor(itemnumero* item,int perm,QWidget *parent = nullptr);
+    CambiarValor(itemtexto* item,int perm,propiedad *parent = nullptr);
+    CambiarValor(itemnumero* item,int perm,propiedad *parent = nullptr);
     ~CambiarValor();
+
+private slots:
+    void on_boton_clicked();
 
 private:
     Ui::CambiarValor *ui;
@@ -30,8 +34,9 @@ private:
     string valuetexto;
 
 //double
-
+    propiedad *padre;
     string format;
+    int tipo;
     int perm;
     double min;
     double max;
