@@ -7,7 +7,7 @@
 #include <QGridLayout>
 #include <QWidget>
 #include <iostream>
-#include <device.h>
+#include "device.h"
 #include<QThread>
 
 

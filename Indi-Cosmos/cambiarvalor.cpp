@@ -2,11 +2,9 @@
 #include "ui_cambiarvalor.h"
 #include "itemtexto.h"
 #include "itemnumero.h"
-#include "propiedad.h"
 
 using namespace std;
-CambiarValor::CambiarValor(QWidget *parent) :
-    QWidget(parent),
+CambiarValor::CambiarValor(propiedad *parent):
     ui(new Ui::CambiarValor)
 {
     ui->setupUi(this);
@@ -18,7 +16,7 @@ CambiarValor::~CambiarValor()
 }
 
 
-CambiarValor::CambiarValor(itemtexto *item,int perm,propiedad *parent):QWidget(parent),ui(new Ui::CambiarValor){
+CambiarValor::CambiarValor(itemtexto *item,int perm,propiedad *parent):ui(new Ui::CambiarValor){
     ui->setupUi(this);
 
     padre = parent;
@@ -52,7 +50,7 @@ CambiarValor::CambiarValor(itemtexto *item,int perm,propiedad *parent):QWidget(p
 
 
 
-CambiarValor::CambiarValor(itemnumero *item,int perm,propiedad *parent):QWidget(parent),ui(new Ui::CambiarValor){
+CambiarValor::CambiarValor(itemnumero *item,int perm,propiedad *parent):ui(new Ui::CambiarValor){
     ui->setupUi(this);
     padre = parent;
     tipo=1;
@@ -109,7 +107,7 @@ void CambiarValor::on_boton_clicked()
 
             break;
         case 1: // tipo numero
-
+            padre->cambiarnumero(name,ui->cambiarvalordouble->value());
             break;
         }
     }

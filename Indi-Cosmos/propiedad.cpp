@@ -21,7 +21,7 @@ propiedad::~propiedad()
     delete ui;
 }
 
-propiedad::propiedad(string devicename,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,device *parent):
+propiedad::propiedad(string devicename,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent):
 
     ui(new Ui::propiedad){
     ui->setupUi(this);
@@ -164,7 +164,29 @@ int propiedad::buscarnumero(string id){
 }
 
 void propiedad::cambiartexto(string nameitem,string valornuevo){
+    const char * items[] = { (char*)nameitem.c_str() };
+    const char *values[] = {(char*)valornuevo.c_str()};
+    indigo_change_text_property(cliente, (char*)devicename.c_str() , (char*)name.c_str() , 1, items, values);
+}
+void propiedad::cambiarnumero(string nameitem,double valornuevo){
+    const char * items[] = { (char*)nameitem.c_str() };
 
+    const double *values = &valornuevo;
+    indigo_change_number_property(cliente, (char*)devicename.c_str() , (char*)name.c_str() , 1, items, values);
+}
+void propiedad::combobox_cambio(int index){
+    string nameitem = itemsswitch[index]->getname();
+    if (name == "CONNECTION"){
+        if(nameitem == "CONNECTED"){
+            indigo_device_connect(cliente, (char*)devicename.c_str());
+        }else{
+            indigo_device_disconnect(cliente, (char*)devicename.c_str());
+        }
+    }else{
+        static const char * items[] = { (char*)nameitem.c_str()};
+        static bool values[] = { true };
+        indigo_change_switch_property(cliente, (char*)devicename.c_str(), (char*)name.c_str() , 1, items, values);
+    }
 }
 
 void propiedad::botontexto(){
@@ -187,18 +209,7 @@ void propiedad::botonnumero(){
 }
 
 
-void propiedad::combobox_cambio(int index){
 
-    indigo_log("cambiado");
-    int numero = sender()->objectName().toInt();
-    if (name == "CONNECTION"){
-        if(itemsswitch[index]->getname() == "CONNECTED"){
-            indigo_device_connect(cliente, (char*)devicename.c_str());
-        }else{
-            indigo_device_disconnect(cliente, (char*)devicename.c_str());
-        }
-    }
-}
 
 
 

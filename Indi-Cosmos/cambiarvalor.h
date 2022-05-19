@@ -15,7 +15,7 @@ class CambiarValor : public QWidget
     Q_OBJECT
 
 public:
-    explicit CambiarValor(QWidget *parent = nullptr);
+    explicit CambiarValor(propiedad *parent = nullptr);
     CambiarValor(itemtexto* item,int perm,propiedad *parent = nullptr);
     CambiarValor(itemnumero* item,int perm,propiedad *parent = nullptr);
     ~CambiarValor();

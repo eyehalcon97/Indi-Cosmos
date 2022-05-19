@@ -45,6 +45,8 @@ public:
 
 
 
+
+
 private:
     int indexof(vector<string> lista,string value);
     bool estaexpandido(QTreeWidgetItem *objeto);
@@ -58,7 +60,7 @@ private:
     vector<string>grupos;
     vector<QTreeWidgetItem*> raices;
     vector<string> expandidos;
-
+    QScrollBar *nu ;
 
 
 

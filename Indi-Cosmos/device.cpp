@@ -1,4 +1,5 @@
 #include "device.h"
+#include "propiedad.h"
 #include "ui_device.h"
 #include "conectar.h"
 #include <string>
@@ -17,6 +18,7 @@ device::device(string id,indigo_client *cliente, QWidget *parent) :QWidget(paren
   this->cliente=cliente;
   conectar w;
   w.show();
+
 
 
 
@@ -52,18 +54,23 @@ void device::eliminarpropiedad(indigo_property* property){
 void device::cambiarpropiedad(indigo_property* property){
     for(int i=0;i<propiedades.size();i++){
        if(propiedades[i]->getname() == string(property->name)){
-          propiedades[i] = new propiedad(property,cliente,this);
+           propiedad *nueva = new propiedad(property,cliente,this);
+          propiedades[i] = nueva;
        }
 
     }
+
 }
 
 
 void device::nuevapropiedad(indigo_property* property){
-    propiedades.push_back(new propiedad(property,cliente,this));
+    propiedad *nueva = new propiedad(property,cliente,this);
+    propiedades.push_back(nueva);
 
 
 }
+
+
 int device::indexof(vector<string> lista,string value){
     for(int i=0;i<lista.size();i++){
         if(lista[i] == value){
@@ -72,6 +79,7 @@ int device::indexof(vector<string> lista,string value){
     }
     return -1;
 }
+
 
 QVBoxLayout* device::mostrarpropiedades(){
     QVBoxLayout* layout = new QVBoxLayout;
@@ -156,6 +164,7 @@ QVBoxLayout* device::mostrarpropiedades(){
 
     connect(arbol,SIGNAL (itemExpanded(QTreeWidgetItem *)),this,SLOT(expandir(QTreeWidgetItem *)));
     connect(arbol,SIGNAL (itemCollapsed(QTreeWidgetItem *)),this,SLOT(disminuir(QTreeWidgetItem *)));
+
     layout->addWidget(arbol);
     return layout;
 
@@ -173,6 +182,7 @@ void device::disminuir(QTreeWidgetItem *objeto){
     }
 
 }
+
 bool device::estaexpandido(QTreeWidgetItem *objeto){
     for(int i=0;i<expandidos.size();i++){
         if(expandidos[i] == objeto->text(0).toStdString()){

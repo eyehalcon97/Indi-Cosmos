@@ -325,6 +325,8 @@ void MainWindow::cambiarpropiedad(indigo_property *propiedad){
 
     devices[posicion]->cambiarpropiedad(propiedad);
 
+     MostrarPropiedades();
+
 
 }
 
