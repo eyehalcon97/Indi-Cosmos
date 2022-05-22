@@ -148,10 +148,12 @@ void MainWindow::creardevice(string id,indigo_client *cliente){
         fila--;
     }
 
-    devices[idbotones] = new device(id,cliente,this);
+    devices[idbotones] = new device(id,cliente);
     botones[idbotones] = new QPushButton();
     botones[idbotones]->setObjectName(QString::number(idbotones));
     connect(botones[idbotones], SIGNAL (clicked()),this, SLOT (botones_clicked()));
+    //connect(devices[idbotones], SIGNAL (recargarpanelderecho()),this, SLOT (on_pushButton_clicked()));
+
 
     if(idbotones < 5){
         for(int i=1;i<=idbotones;i++){
@@ -171,9 +173,12 @@ void MainWindow::creardevice(string id,indigo_client *cliente){
     layoutdevice->addWidget(botones[idbotones],fila,columna);
 
 
+
     ui->PanelPrincipal->widget()->setLayout(layoutdevice);
 
 }
+
+
 
 
 
@@ -210,7 +215,7 @@ void MainWindow::botones_clicked()
  void MainWindow::MostrarPropiedades(){
 
 
-
+ indigo_log("llego");
 
      layoutpropiedades = new QGridLayout;
 
@@ -226,13 +231,13 @@ void MainWindow::botones_clicked()
         }
         delete ui->propiedades->layout();
     }
-
+ indigo_log("llego2");
 
 
 
 
     for(int i=1;i<=nseleccionados;i++){
-
+ indigo_log("llego3");
 
 
 
@@ -242,15 +247,17 @@ void MainWindow::botones_clicked()
         layoutpropiedad = devices[devicesseleccionados[i]]->mostrarpropiedades();
         deviceproperty->setLayout(layoutpropiedad);
 
+
         layoutpropiedades->addWidget(deviceproperty);
 
 
 
     }
 
-
+ indigo_log("llego4");
 
     ui->propiedades->setLayout(layoutpropiedades);
+     indigo_log("llego5");
 
 
 
@@ -372,5 +379,11 @@ void MainWindow::on_Conectar_clicked()
     //menuconectar->show();
 nuevodispositivo();
 
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    MostrarPropiedades();
 }
 

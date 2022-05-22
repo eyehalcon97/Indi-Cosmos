@@ -43,13 +43,15 @@ public:
     void expandir( QTreeWidgetItem *objeto);
     void disminuir( QTreeWidgetItem *objeto);
 
+ signals:
+    void recargarpanelderecho();
 
 
 
 
 private:
     int indexof(vector<string> lista,string value);
-    bool estaexpandido(QTreeWidgetItem *objeto);
+    bool estaexpandido(string objeto);
     Ui::device *ui;
     string deviceid;
     vector<propiedad*> propiedades;
@@ -61,6 +63,7 @@ private:
     vector<QTreeWidgetItem*> raices;
     vector<string> expandidos;
     QScrollBar *nu ;
+    int elements=0;
 
 
 

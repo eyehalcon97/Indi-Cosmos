@@ -38,9 +38,12 @@ public slots:
     void nuevapropiedad(indigo_property *propiedad,indigo_client *cliente);
     void eliminarpropiedad(indigo_property *propiedad);
     void cambiarpropiedad(indigo_property *propiedad);
+    void MostrarPropiedades();
+
 
 private slots:
 
+    void repintar();
     void on_boolpanelderecho_changed();
 
     void on_actionSalir_triggered();
@@ -59,8 +62,8 @@ private slots:
 
     void on_checkBox_stateChanged(int arg1);
     //void resizeEvent(QResizeEvent* event);
-    void repintar();
-    void MostrarPropiedades();
+
+
     void resizeEvent(QResizeEvent*);
 
 
@@ -71,7 +74,9 @@ private slots:
     int indexofdevice(string id);
 
     void on_Conectar_clicked();
-    signals:
+    void on_pushButton_clicked();
+
+signals:
     void conectar(string nombre,string host,int puerto);
 
 private:
