@@ -36,12 +36,15 @@ public:
     QVBoxLayout* mostrarpropiedades();
     indigo_client *cliente;
     void clearLayout(QLayout* layout, bool deleteWidgets);
+    bool estaseleccionado(string objeto);
 
 
     public slots:
 
     void expandir( QTreeWidgetItem *objeto);
     void disminuir( QTreeWidgetItem *objeto);
+    void cambiarseleccion(QTreeWidgetItem *objeto,int numero);
+
 
  signals:
     void recargarpanelderecho();
@@ -62,6 +65,7 @@ private:
     vector<string>grupos;
     vector<QTreeWidgetItem*> raices;
     vector<string> expandidos;
+    string seleccionado = "-1";
     QScrollBar *nu ;
     int elements=0;
 

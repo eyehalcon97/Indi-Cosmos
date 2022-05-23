@@ -152,8 +152,6 @@ void MainWindow::creardevice(string id,indigo_client *cliente){
     botones[idbotones] = new QPushButton();
     botones[idbotones]->setObjectName(QString::number(idbotones));
     connect(botones[idbotones], SIGNAL (clicked()),this, SLOT (botones_clicked()));
-    //connect(devices[idbotones], SIGNAL (recargarpanelderecho()),this, SLOT (on_pushButton_clicked()));
-
 
     if(idbotones < 5){
         for(int i=1;i<=idbotones;i++){
