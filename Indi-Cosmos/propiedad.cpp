@@ -4,7 +4,7 @@
 #include <indigo/indigo_bus.h>
 #include <indigo/indigo_client.h>
 #include "cambiarvalor.h"
-
+#include "foto.h"
 
 
 using namespace std;
@@ -83,12 +83,12 @@ vector<string> propiedad::itemsname(){
                 solucion.push_back("luz");
             }
             break;
-        /*case 5:
+        case 5:
             for(int j=0;j<count;j++){
-                layout->addWidget(itemsblob[j]);
+                solucion.push_back(itemsblob[j]->getname());
             }
 
-            break;*/
+            break;
     }
     return solucion;
 }
@@ -100,7 +100,7 @@ vector<QWidget*> propiedad::itemsWidgets(){
     switch(type){
         case 1:
 
-            for(int j=0;j<count;j++){
+            for(int j=0;j<itemstexto.size();j++){
                 boton= new QPushButton;
                 boton->setText(QString::fromStdString(itemstexto[j]->getvalue()));
                 boton->setObjectName(QString::fromStdString(itemstexto[j]->getname()));
@@ -110,7 +110,7 @@ vector<QWidget*> propiedad::itemsWidgets(){
 
         break;
         case 2:
-            for(int j=0;j<count;j++){
+            for(int j=0;j<itemsnumero.size();j++){
                 boton= new QPushButton;
                 boton->setText(QString::number(itemsnumero[j]->getvalue()));
                 boton->setObjectName(QString::fromStdString(itemsnumero[j]->getname()));
@@ -120,7 +120,7 @@ vector<QWidget*> propiedad::itemsWidgets(){
             }
             break;
         case 3:
-            for(int j=0;j<count;j++){
+            for(int j=0;j<itemsswitch.size();j++){
             seleccion->addItem(QString::fromStdString(itemsswitch[j]->getname()));
                 if(itemsswitch[j]->getvalue() == true){
                     seleccion->	setCurrentIndex(j);
@@ -129,25 +129,34 @@ vector<QWidget*> propiedad::itemsWidgets(){
             solucion.push_back(seleccion);
             break;
         case 4:
-            for(int j=0;j<count;j++){
+            for(int j=0;j<itemslight.size();j++){
                 QPushButton *boton= new QPushButton;
                 boton->setText(QString::number(itemslight[j]->getvalue()));
+                boton->setObjectName(QString::number(itemslight[j]->getvalue()));
                 solucion.push_back(boton);
             }
             break;
-        /*case 5:
-            for(int j=0;j<count;j++){
-                layout->addWidget(itemsblob[j]);
+        case 5:
+            for(int j=0;j<itemsblob.size();j++){
+
+                    QPushButton *boton= new QPushButton;
+                    boton->setText(QString::fromStdString(itemsblob[j]->getname()));
+                    boton->setObjectName(QString::fromStdString(itemsblob[j]->getname()));
+                    solucion.push_back(boton);
+                    if(itemsblob[j]->getname() != ""){
+                    connect(boton,SIGNAL (clicked()),this,SLOT(botonblob()));
+                    }
+
             }
 
-            break;*/
+            break;
     }
     connect(seleccion,SIGNAL (currentIndexChanged(int)),this,SLOT(combobox_cambio(int)));
 
     return solucion;
 }
 int propiedad::buscartexto(string id){
-    for(int j=0;j<count;j++){
+    for(int j=0;j<itemstexto.size();j++){
         if(itemstexto[j]->getname() == id){
             return j;
         }
@@ -155,12 +164,22 @@ int propiedad::buscartexto(string id){
     return -1;
 }
 int propiedad::buscarnumero(string id){
-    for(int j=0;j<count;j++){
+    for(int j=0;j<itemsnumero.size();j++){
         if(itemsnumero[j]->getname() == id){
             return j;
         }
     }
     return -1;
+}
+
+
+void propiedad::setnameblob(string name){
+    itemsblobname.push_back(name);
+     for(int j=0;j<itemsblob.size();j++){
+         itemsblob[j]->setname(itemsblobname[j]);
+     }
+
+
 }
 
 void propiedad::cambiartexto(string nameitem,string valornuevo){
@@ -208,6 +227,12 @@ void propiedad::botonnumero(){
 
 }
 
+void propiedad::botonblob(){
+    foto *nueva = new foto(sender()->objectName().toStdString());
+    nueva->setWindowTitle(QString::fromStdString(sender()->objectName().toStdString()));
+    nueva->show();
+}
+
 
 
 
@@ -238,43 +263,39 @@ propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *p
         case 1:
         indigo_log("crear tipo 1");
 
-            itemstexto = new itemtexto*[count];
+
             for(int i=0;i<count;i++){
-                itemstexto[i] = new itemtexto(property->items[i],this);
+                itemstexto.push_back(new itemtexto(property->items[i],this));
             }
         break;
 
         case 2:
         indigo_log("crear tipo 2");
 
-            itemsnumero = new itemnumero*[count];
             for(int i=0;i<count;i++){
-                itemsnumero[i] = new itemnumero(property->items[i],property->perm,this);
+                itemsnumero.push_back( new itemnumero(property->items[i],property->perm,this));
             }
             break;
         case 3:
         indigo_log("crear tipo 3");
 
-            itemsswitch = new itemswitch*[count];
 
             for(int i=0;i<count;i++){
-                itemsswitch[i] = new itemswitch(property->items[i],this);
+                itemsswitch.push_back( new itemswitch(property->items[i],this));
             }
             break;
         case 4:
        indigo_log("crear tipo 4");
 
-            itemslight = new itemlight*[count];
             for(int i=0;i<count;i++){
-                itemslight[i] = new itemlight(property->items[i],this);
+                itemslight.push_back( new itemlight(property->items[i],this));
             }
             break;
         case 5:
         indigo_log("crear tipo 5");
 
-            itemsblob = new itemblob*[count];
             for(int i=0;i<count;i++){
-                itemsblob[i] = new itemblob(property->items[i],this);
+                itemsblob.push_back( new itemblob(property->items[i],this));
             }
             break;
     }

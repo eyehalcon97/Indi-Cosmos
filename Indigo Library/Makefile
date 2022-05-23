@@ -8,8 +8,8 @@ all:  remote_server_client
 
 
 remote_server_client: remote_server_client.cpp
-	g++ -c remote_server_client.cpp -o remote_server_client.o
-	g++ -g -lindigo remote_server_client.o -o hola
+	g++ remote_server_client.cpp -lindigo
+
 
 .PHONY: clean
 

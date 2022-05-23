@@ -76,7 +76,7 @@
         <string>Modo Seleccion Multiple</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="Conectar">
+      <widget class="QPushButton" name="ButtonConectar">
        <property name="geometry">
         <rect>
          <x>40</x>

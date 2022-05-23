@@ -13,8 +13,18 @@ itemblob::~itemblob()
 
 }
 
+string itemblob::getname(){
+    return name;
+}
+
+
+void itemblob::setname(string name){
+    this->name=name;
+}
+
+
 itemblob::itemblob(string nombre,string etiqueta,string gui,string format,string urls,long tam,void *valor,QWidget *parent){
-    name=nombre;
+    name="fotoquetal";
     label=etiqueta;
     hints=gui;
     padre=parent;
@@ -28,7 +38,7 @@ itemblob::itemblob(string nombre,string etiqueta,string gui,string format,string
 itemblob::itemblob(indigo_item item,QWidget *parent): QWidget(parent){
 
     padre=parent;
-    this->name=string(item.name);
+    this->name="";
     this->label=string(item.label);
     this->hints=string(item.hints);
 

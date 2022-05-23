@@ -10,7 +10,10 @@
 #include <thread>
 #include <string>
 #include <queue>
+#include <string>
+#include <time.h>
 
+using namespace std;
 
 
 #if defined(INDIGO_LINUX) || defined(INDIGO_MACOS)
@@ -27,6 +30,10 @@
 queue<indigo_property*> propiedad;
 queue<indigo_property*> propiedadeliminar;
 queue<indigo_property*> propiedadcambiar;
+queue<indigo_property*> propiedadblob;
+queue<string> nameblob;
+
+string tipofoto;
 
 
 static indigo_result client_attach(indigo_client *client) {
@@ -40,7 +47,21 @@ static indigo_result client_attach(indigo_client *client) {
 
 static indigo_result client_define_property(indigo_client *client, indigo_device *device, indigo_property *property, const char *message) {
 
+    if (string(property->name) == "CCD_IMAGE_FORMAT")  {
+        for(int i=0;i<property->count;i++){
+            if(property->items[i].sw.value){
+            tipofoto = string(property->items[i].name);
+            }
+        }
 
+    }
+
+    if (!strcmp(property->name, CCD_IMAGE_PROPERTY_NAME)) {
+        if (device->version >= INDIGO_VERSION_2_0)
+            indigo_enable_blob(client, property, INDIGO_ENABLE_BLOB_URL);
+        else
+            indigo_enable_blob(client, property, INDIGO_ENABLE_BLOB_ALSO);
+    }
 
             propiedad.push(property);
 
@@ -51,11 +72,52 @@ static indigo_result client_define_property(indigo_client *client, indigo_device
 
 static indigo_result client_update_property(indigo_client *client,indigo_device *device,indigo_property *property,const char *message)
 {
+    if (string(property->name) == "CCD_IMAGE_FORMAT")  {
+        for(int i=0;i<property->count;i++){
+            if(property->items[i].sw.value){
+            tipofoto = string(property->items[i].name);
+            }
+        }
+
+    }
+
+    if (!strcmp(property->name, CCD_IMAGE_PROPERTY_NAME) && property->state == INDIGO_OK_STATE) {
+        indigo_log("imagenrecibida");
 
 
+        if (*property->items[0].blob.url && indigo_populate_http_blob_item(&property->items[0]))
+            indigo_log("image URL received (%s, %d bytes)...", property->items[0].blob.url, property->items[0].blob.size);
+
+        if (property->items[0].blob.value) {
+
+            time_t rawtime;
+            struct tm * timeinfo;
+            char buffer[80];
+
+            time (&rawtime);
+            timeinfo = localtime(&rawtime);
+
+            strftime(buffer,sizeof(buffer),"%d-%m-%Y %H-%M-%S",timeinfo);
+            string fecha(buffer);
+
+
+
+            string nombre= "images/img" + fecha  + "." + tipofoto;
+
+            FILE *f = fopen(nombre.c_str(), "wb");
+            fwrite(property->items[0].blob.value, property->items[0].blob.size, 1, f);
+            fclose(f);
+            indigo_log("image saved to %s...", nombre.c_str());
+
+            nameblob.push(nombre);
+            propiedadblob.push(property);
+
+
+        }
+    }else{
 
         propiedadcambiar.push(property);
-
+    }
 
 
 
@@ -128,6 +190,13 @@ void indigolib::conectar(string name,string hosts,int port){
             propiedad.pop();
 
         }
+        if(!propiedadblob.empty()){
+            cambiarpropiedadnameblob(propiedadblob.front(),&client,nameblob.front());
+            nameblob.pop();
+            propiedadblob.pop();
+
+        }
+
 
         if(!propiedadcambiar.empty()){
             cambiarpropiedad(propiedadcambiar.front());

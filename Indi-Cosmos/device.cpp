@@ -51,6 +51,14 @@ void device::eliminarpropiedad(indigo_property* property){
 
 }
 
+void device::setlistanameblob(vector<string> nameblob){
+    namesblob=nameblob;
+}
+
+void device::setnameblob(){
+vector<string> nameblob;
+}
+
 void device::cambiarpropiedad(indigo_property* property){
     for(int i=0;i<propiedades.size();i++){
        if(propiedades[i]->getname() == string(property->name)){
@@ -58,6 +66,17 @@ void device::cambiarpropiedad(indigo_property* property){
           propiedades[i] = nueva;
        }
 
+    }
+
+}
+
+void device::cambiarpropiedad(indigo_property* property,string nameblob){
+    for(int i=0;i<propiedades.size();i++){
+       if(propiedades[i]->getname() == string(property->name)){
+           propiedad *nueva = new propiedad(property,cliente,this);
+           nueva->setnameblob(nameblob);
+           propiedades[i] = nueva;
+       }
     }
 
 }

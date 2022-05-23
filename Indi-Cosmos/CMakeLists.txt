@@ -56,6 +56,9 @@ set(PROJECT_SOURCES
         cambiarvalor.h
         cambiarvalor.cpp
         cambiarvalor.ui
+        foto.h
+        foto.cpp
+        foto.ui
 
 
 

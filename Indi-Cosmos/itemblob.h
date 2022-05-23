@@ -17,6 +17,8 @@ public:
     ~itemblob();
     itemblob(string nombre,string etiqueta,string gui,string formato,string url,long size,void *value,QWidget *parent =nullptr);
     itemblob(indigo_item item,QWidget *parent = nullptr);
+    void setname(string name);
+    string getname();
 
 private:
     string name;

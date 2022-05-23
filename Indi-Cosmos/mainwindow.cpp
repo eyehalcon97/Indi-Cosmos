@@ -12,6 +12,7 @@
 #include "indigolib.h"
 #include <QTreeWidget>
 
+
 #include <iostream>
 #include <chrono>
 #include <QThread>
@@ -301,17 +302,28 @@ int MainWindow::indexofdevice(string id){
 
 void MainWindow::nuevodispositivo(){
 
+   string nombre = menuconectar->getnombre();
 
+   string host = menuconectar->gethost();
+   int puerto =  menuconectar->getpuerto();
+    if(!nombre.empty() && !host.empty()){
+        menuconectar->hide();
         workerThread = new QThread;
         indigolib *libreria = new indigolib;
         libreria->moveToThread(workerThread);
-        connect(this, &MainWindow::conectar, libreria, &indigolib::conectar);
+        connect(this, &MainWindow::conectarlib, libreria, &indigolib::conectar);
         connect(libreria, &indigolib::nuevapropiedad, this, &MainWindow::nuevapropiedad);
+        connect(libreria, &indigolib::cambiarpropiedadnameblob, this, &MainWindow::cambiarpropiedadnameblob);
         connect(libreria, &indigolib::eliminarpropiedad, this, &MainWindow::eliminarpropiedad);
         connect(libreria, &indigolib::cambiarpropiedad, this, &MainWindow::cambiarpropiedad);
         workerThread->start();
 
-        conectar("nombremolon","localhost",7777);
+        conectarlib(nombre,host,puerto);
+
+    }else{
+        menuconectar->error();
+
+    }
 
 
 
@@ -350,6 +362,22 @@ void MainWindow::eliminarpropiedad(indigo_property *propiedad){
     MostrarPropiedades();
 
 }
+void MainWindow::cambiarpropiedadnameblob(indigo_property *propiedad,indigo_client *cliente,string nameblob){
+    //indigo_log("señal de la libreria nueva");
+//indigo_log(propiedad->device);
+
+
+
+    string id = string(propiedad->device);
+
+    int posicion =indexofdevice(id);
+    //indigo_log(to_string(posicion).c_str());
+
+    devices[posicion]->cambiarpropiedad(propiedad,nameblob);
+
+     MostrarPropiedades();
+
+}
 
 void MainWindow::nuevapropiedad(indigo_property *propiedad,indigo_client *cliente){
     //indigo_log("señal de la libreria nueva");
@@ -370,18 +398,19 @@ void MainWindow::nuevapropiedad(indigo_property *propiedad,indigo_client *client
 
 }
 
-void MainWindow::on_Conectar_clicked()
-{
-
-    //menuconectar = new conectar(this);
-    //menuconectar->show();
-nuevodispositivo();
-
-}
-
 
 void MainWindow::on_pushButton_clicked()
 {
     MostrarPropiedades();
+}
+
+
+void MainWindow::on_ButtonConectar_clicked()
+{
+    menuconectar = new conectar(this);
+    menuconectar->setWindowTitle("Conectar");
+    menuconectar->show();
+//uevodispositivo();
+
 }
 

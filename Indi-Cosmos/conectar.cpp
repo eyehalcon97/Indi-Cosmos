@@ -5,6 +5,7 @@
 conectar::conectar(MainWindow *parent) : QDialog(parent), ui(new Ui::conectar)
 {
     MainWindow *padre = parent;
+
     ui->setupUi(this);
     ui->alertanombre->setVisible(false);
     ui->alertahost->setVisible(false);

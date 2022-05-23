@@ -36,6 +36,7 @@ public:
 public slots:
     void nuevodispositivo();
     void nuevapropiedad(indigo_property *propiedad,indigo_client *cliente);
+    void cambiarpropiedadnameblob(indigo_property *propiedad,indigo_client *cliente,string nameblob);
     void eliminarpropiedad(indigo_property *propiedad);
     void cambiarpropiedad(indigo_property *propiedad);
     void MostrarPropiedades();
@@ -73,11 +74,13 @@ private slots:
 
     int indexofdevice(string id);
 
-    void on_Conectar_clicked();
+
+    void on_ButtonConectar_clicked();
+
     void on_pushButton_clicked();
 
 signals:
-    void conectar(string nombre,string host,int puerto);
+    void conectarlib(string nombre,string host,int puerto);
 
 private:
     Ui::MainWindow *ui;

@@ -24,6 +24,7 @@ private:
 
 signals:
 void nuevapropiedad(indigo_property *propiedad,indigo_client *cliente);
+void cambiarpropiedadnameblob(indigo_property *propiedad,indigo_client *cliente,string nameblob);
 void eliminarpropiedad(indigo_property *propiedad);
 void cambiarpropiedad(indigo_property *propiedad);
 

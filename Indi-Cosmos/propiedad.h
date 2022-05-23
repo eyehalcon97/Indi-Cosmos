@@ -50,6 +50,7 @@ public:
     int buscarnumero(string id);
     void cambiartexto(string nameitem,string valornuevo);
     void cambiarnumero(string nameitem,double valornuevo);
+    void setnameblob(string name);
 
 
 
@@ -58,6 +59,7 @@ private slots:
     void combobox_cambio(int index);
     void botontexto();
     void botonnumero();
+    void botonblob();
     void on_pushButton_3_clicked();
 
 
@@ -82,12 +84,13 @@ private:
     QWidget* padre;
     indigo_client *cliente;
 
-    itemblob** itemsblob;
-    itemlight** itemslight;
-    itemnumero** itemsnumero;
-    itemswitch** itemsswitch;
-    itemtexto** itemstexto;
-    QWidget **itemswidgets;
+    vector<itemblob*> itemsblob;
+    vector<string> itemsblobname;
+    vector<itemlight*> itemslight;
+    vector<itemnumero*> itemsnumero;
+    vector<itemswitch*> itemsswitch;
+    vector<itemtexto*> itemstexto;
+    vector<QWidget*>itemswidgets;
 
 
 
