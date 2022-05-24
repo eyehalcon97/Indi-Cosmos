@@ -21,28 +21,7 @@ propiedad::~propiedad()
     delete ui;
 }
 
-propiedad::propiedad(string devicename,string name,string group,string label,string hints,int state,int type,int count,int rule,indigo_token access_token,short version,bool hidden,QWidget *parent):
 
-    ui(new Ui::propiedad){
-    ui->setupUi(this);
-
-
-
-    this->padre= parent;
-    this->devicename= devicename;
-    this->name= name;
-    this->group= group;
-    this->label= label;
-    this->hints= hints;
-    this->state= state;
-    this->type= type;
-    this->rule= rule;
-    this->access_token= access_token;
-    this->version= version;
-    this->hidden= hidden;
-
-
-}
 string propiedad::getname(){
     return string(name);
 }
@@ -255,13 +234,8 @@ propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *p
     access_token= property->access_token;
     version= property->version;
     hidden= property->hidden;
-
-
-
-    indigo_log(name.c_str());
     switch(type){
         case 1:
-        indigo_log("crear tipo 1");
 
 
             for(int i=0;i<count;i++){
@@ -270,14 +244,12 @@ propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *p
         break;
 
         case 2:
-        indigo_log("crear tipo 2");
 
             for(int i=0;i<count;i++){
                 itemsnumero.push_back( new itemnumero(property->items[i],property->perm,this));
             }
             break;
         case 3:
-        indigo_log("crear tipo 3");
 
 
             for(int i=0;i<count;i++){
@@ -285,14 +257,12 @@ propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *p
             }
             break;
         case 4:
-       indigo_log("crear tipo 4");
 
             for(int i=0;i<count;i++){
                 itemslight.push_back( new itemlight(property->items[i],this));
             }
             break;
         case 5:
-        indigo_log("crear tipo 5");
 
             for(int i=0;i<count;i++){
                 itemsblob.push_back( new itemblob(property->items[i],this));
@@ -302,9 +272,4 @@ propiedad::propiedad(indigo_property *property,indigo_client *cliente,QWidget *p
 
 }
 
-
-void propiedad::on_pushButton_3_clicked()
-{
-
-}
 

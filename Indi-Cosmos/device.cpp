@@ -55,9 +55,6 @@ void device::setlistanameblob(vector<string> nameblob){
     namesblob=nameblob;
 }
 
-void device::setnameblob(){
-vector<string> nameblob;
-}
 
 void device::cambiarpropiedad(indigo_property* property){
     for(int i=0;i<propiedades.size();i++){
@@ -236,7 +233,7 @@ QVBoxLayout* device::mostrarpropiedades(){
 void device::cambiarseleccion(QTreeWidgetItem *objeto,int num){
         if(objeto->text(0).toStdString() != " "){
             seleccionado = objeto->text(0).toStdString();
-            indigo_log(seleccionado.c_str());
+
         }else{
             seleccionado = "-1";
         }

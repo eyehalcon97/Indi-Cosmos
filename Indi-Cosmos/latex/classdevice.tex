@@ -1,0 +1,308 @@
+\hypertarget{classdevice}{}\doxysection{device Class Reference}
+\label{classdevice}\index{device@{device}}
+
+
+{\ttfamily \#include $<$device.\+h$>$}
+
+Inheritance diagram for device\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdevice}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classdevice_a86d030d38a9e6c73016228e5710a9805}{expandir}} (QTree\+Widget\+Item $\ast$objeto)
+\begin{DoxyCompactList}\small\item\em Se ejecuta al expandir un elemento del arbol de propiedades. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevice_a82410745264b3492eb5577108f0e7b05}{disminuir}} (QTree\+Widget\+Item $\ast$objeto)
+\begin{DoxyCompactList}\small\item\em Se ejecuta al contraer un elemento del arbol de propiedades. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevice_a4364dabbb6d63b8751bbe09dd91d3721}{cambiarseleccion}} (QTree\+Widget\+Item $\ast$objeto, int numero)
+\begin{DoxyCompactList}\small\item\em Se ejecuta al cambiar la seleccion de un elemento del arbol de propiedades. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdevice_aa85bdc6dc7dae4072da77eb29f0fd294}{device}} (string id, indigo\+\_\+client $\ast$cliente, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdevice_a08545ac77231c68a27c32633a9730a33}\label{classdevice_a08545ac77231c68a27c32633a9730a33}} 
+{\bfseries $\sim$device} ()
+\begin{DoxyCompactList}\small\item\em Destructor por defecto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevice_ae04551fc9e5236dd4bbe235c1686b2d6}{cambiartamanio}} (int altura, int anchura)
+\begin{DoxyCompactList}\small\item\em Cambiar tamaño visual del dispositivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevice_afd77749fc65062d7af2f18616134ce00}{nuevapropiedad}} (indigo\+\_\+property $\ast$property)
+\begin{DoxyCompactList}\small\item\em Creamos una nueva propiedad del dispositivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevice_ae26880454ff630716f30606f21ba52fb}{cambiarpropiedad}} (indigo\+\_\+property $\ast$property, string nameblob)
+\begin{DoxyCompactList}\small\item\em Modificamos una propiedad del dispositivo de tipo blob. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevice_a44abee67c1d934dc9562158c9258075f}{eliminarpropiedad}} (indigo\+\_\+property $\ast$property)
+\begin{DoxyCompactList}\small\item\em Eliminamos una propiedad del dispositivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevice_a78dbd7c45bcb24dbb4c66a076726e28b}{cambiarpropiedad}} (indigo\+\_\+property $\ast$property)
+\begin{DoxyCompactList}\small\item\em Modificamos una propiedad del dispositivo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpropiedad}{propiedad}} $\ast$ \mbox{\hyperlink{classdevice_ae3e3e4479ca3be38e275c2a24913c0dd}{getpropiedad}} (int num)
+\begin{DoxyCompactList}\small\item\em devuelve la propiedad \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classdevice_ab7096dcd9400e9630ebcb6ca25f3c07e}{get\+Device\+ID}} ()
+\begin{DoxyCompactList}\small\item\em devuelve el nombre del dispositivo \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdevice_a4d9319bf96d8e6271096babc89c66765}{getnpropiedades}} ()
+\begin{DoxyCompactList}\small\item\em devuelve el numero de propiedades del dispositivo \end{DoxyCompactList}\item 
+QVBox\+Layout $\ast$ \mbox{\hyperlink{classdevice_a8eab6664a0d409d09bea132cafdc2ca9}{mostrarpropiedades}} ()
+\begin{DoxyCompactList}\small\item\em devuelve el layout de todas las propiedades \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevice_a7c9f3eebf21fb96c175d62a50dbdb56f}{estaseleccionado}} (string objeto)
+\begin{DoxyCompactList}\small\item\em devuelve si un objeto esta seleccionado \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevice_a8958eca0626877eca8dd3217041f61f4}{setlistanameblob}} (vector$<$ string $>$ nameblob)
+\begin{DoxyCompactList}\small\item\em añade el nombre del ultimo nameblob \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdevice_a4640afdd1e3d425aa14d2b4ed75f564c}\label{classdevice_a4640afdd1e3d425aa14d2b4ed75f564c}} 
+indigo\+\_\+client $\ast$ {\bfseries cliente}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+eyehalcon97 Clase dispositivo que almacena las distintas propiedades 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdevice_aa85bdc6dc7dae4072da77eb29f0fd294}\label{classdevice_aa85bdc6dc7dae4072da77eb29f0fd294}} 
+\index{device@{device}!device@{device}}
+\index{device@{device}!device@{device}}
+\doxysubsubsection{\texorpdfstring{device()}{device()}}
+{\footnotesize\ttfamily device\+::device (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{indigo\+\_\+client $\ast$}]{cliente,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor por defecto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Nombre del dispositivo \\
+\hline
+{\em cliente} & Cliente al que esta asociado el dispositivo \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdevice_a78dbd7c45bcb24dbb4c66a076726e28b}\label{classdevice_a78dbd7c45bcb24dbb4c66a076726e28b}} 
+\index{device@{device}!cambiarpropiedad@{cambiarpropiedad}}
+\index{cambiarpropiedad@{cambiarpropiedad}!device@{device}}
+\doxysubsubsection{\texorpdfstring{cambiarpropiedad()}{cambiarpropiedad()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void device\+::cambiarpropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{property }\end{DoxyParamCaption})}
+
+
+
+Modificamos una propiedad del dispositivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & propiedad a modificar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevice_ae26880454ff630716f30606f21ba52fb}\label{classdevice_ae26880454ff630716f30606f21ba52fb}} 
+\index{device@{device}!cambiarpropiedad@{cambiarpropiedad}}
+\index{cambiarpropiedad@{cambiarpropiedad}!device@{device}}
+\doxysubsubsection{\texorpdfstring{cambiarpropiedad()}{cambiarpropiedad()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void device\+::cambiarpropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{property,  }\item[{string}]{nameblob }\end{DoxyParamCaption})}
+
+
+
+Modificamos una propiedad del dispositivo de tipo blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & propiedad a modificar \\
+\hline
+{\em nameblob} & nombre del blob \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevice_a4364dabbb6d63b8751bbe09dd91d3721}\label{classdevice_a4364dabbb6d63b8751bbe09dd91d3721}} 
+\index{device@{device}!cambiarseleccion@{cambiarseleccion}}
+\index{cambiarseleccion@{cambiarseleccion}!device@{device}}
+\doxysubsubsection{\texorpdfstring{cambiarseleccion}{cambiarseleccion}}
+{\footnotesize\ttfamily void device\+::cambiarseleccion (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{objeto,  }\item[{int}]{numero }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Se ejecuta al cambiar la seleccion de un elemento del arbol de propiedades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objeto} & objeto que se ha seleccionado \\
+\hline
+{\em numero} & posicion de la columna del objeto \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevice_ae04551fc9e5236dd4bbe235c1686b2d6}\label{classdevice_ae04551fc9e5236dd4bbe235c1686b2d6}} 
+\index{device@{device}!cambiartamanio@{cambiartamanio}}
+\index{cambiartamanio@{cambiartamanio}!device@{device}}
+\doxysubsubsection{\texorpdfstring{cambiartamanio()}{cambiartamanio()}}
+{\footnotesize\ttfamily void device\+::cambiartamanio (\begin{DoxyParamCaption}\item[{int}]{altura,  }\item[{int}]{anchura }\end{DoxyParamCaption})}
+
+
+
+Cambiar tamaño visual del dispositivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em altura} & altura deseada \\
+\hline
+{\em anchura} & anchura deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevice_a82410745264b3492eb5577108f0e7b05}\label{classdevice_a82410745264b3492eb5577108f0e7b05}} 
+\index{device@{device}!disminuir@{disminuir}}
+\index{disminuir@{disminuir}!device@{device}}
+\doxysubsubsection{\texorpdfstring{disminuir}{disminuir}}
+{\footnotesize\ttfamily void device\+::disminuir (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{objeto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Se ejecuta al contraer un elemento del arbol de propiedades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objeto} & objeto que se ha contraido \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevice_a44abee67c1d934dc9562158c9258075f}\label{classdevice_a44abee67c1d934dc9562158c9258075f}} 
+\index{device@{device}!eliminarpropiedad@{eliminarpropiedad}}
+\index{eliminarpropiedad@{eliminarpropiedad}!device@{device}}
+\doxysubsubsection{\texorpdfstring{eliminarpropiedad()}{eliminarpropiedad()}}
+{\footnotesize\ttfamily void device\+::eliminarpropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{property }\end{DoxyParamCaption})}
+
+
+
+Eliminamos una propiedad del dispositivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & propiedad a eliminar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevice_a7c9f3eebf21fb96c175d62a50dbdb56f}\label{classdevice_a7c9f3eebf21fb96c175d62a50dbdb56f}} 
+\index{device@{device}!estaseleccionado@{estaseleccionado}}
+\index{estaseleccionado@{estaseleccionado}!device@{device}}
+\doxysubsubsection{\texorpdfstring{estaseleccionado()}{estaseleccionado()}}
+{\footnotesize\ttfamily bool device\+::estaseleccionado (\begin{DoxyParamCaption}\item[{string}]{objeto }\end{DoxyParamCaption})}
+
+
+
+devuelve si un objeto esta seleccionado 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objeto} & nombre del objeto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuevle true si esta seleccionado, false en caso contrario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevice_a86d030d38a9e6c73016228e5710a9805}\label{classdevice_a86d030d38a9e6c73016228e5710a9805}} 
+\index{device@{device}!expandir@{expandir}}
+\index{expandir@{expandir}!device@{device}}
+\doxysubsubsection{\texorpdfstring{expandir}{expandir}}
+{\footnotesize\ttfamily void device\+::expandir (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{objeto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Se ejecuta al expandir un elemento del arbol de propiedades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objeto} & objeto que se ha expandido \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevice_ab7096dcd9400e9630ebcb6ca25f3c07e}\label{classdevice_ab7096dcd9400e9630ebcb6ca25f3c07e}} 
+\index{device@{device}!getDeviceID@{getDeviceID}}
+\index{getDeviceID@{getDeviceID}!device@{device}}
+\doxysubsubsection{\texorpdfstring{getDeviceID()}{getDeviceID()}}
+{\footnotesize\ttfamily string device\+::get\+Device\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+devuelve el nombre del dispositivo 
+
+\begin{DoxyReturn}{Returns}
+deviceid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevice_a4d9319bf96d8e6271096babc89c66765}\label{classdevice_a4d9319bf96d8e6271096babc89c66765}} 
+\index{device@{device}!getnpropiedades@{getnpropiedades}}
+\index{getnpropiedades@{getnpropiedades}!device@{device}}
+\doxysubsubsection{\texorpdfstring{getnpropiedades()}{getnpropiedades()}}
+{\footnotesize\ttfamily int device\+::getnpropiedades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+devuelve el numero de propiedades del dispositivo 
+
+\begin{DoxyReturn}{Returns}
+npropiedades 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevice_ae3e3e4479ca3be38e275c2a24913c0dd}\label{classdevice_ae3e3e4479ca3be38e275c2a24913c0dd}} 
+\index{device@{device}!getpropiedad@{getpropiedad}}
+\index{getpropiedad@{getpropiedad}!device@{device}}
+\doxysubsubsection{\texorpdfstring{getpropiedad()}{getpropiedad()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpropiedad}{propiedad}} $\ast$ device\+::getpropiedad (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+devuelve la propiedad 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & id de la propiedad que pedimos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+propiedad 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevice_a8eab6664a0d409d09bea132cafdc2ca9}\label{classdevice_a8eab6664a0d409d09bea132cafdc2ca9}} 
+\index{device@{device}!mostrarpropiedades@{mostrarpropiedades}}
+\index{mostrarpropiedades@{mostrarpropiedades}!device@{device}}
+\doxysubsubsection{\texorpdfstring{mostrarpropiedades()}{mostrarpropiedades()}}
+{\footnotesize\ttfamily QVBox\+Layout $\ast$ device\+::mostrarpropiedades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+devuelve el layout de todas las propiedades 
+
+\begin{DoxyReturn}{Returns}
+QVBox\+Layout 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevice_afd77749fc65062d7af2f18616134ce00}\label{classdevice_afd77749fc65062d7af2f18616134ce00}} 
+\index{device@{device}!nuevapropiedad@{nuevapropiedad}}
+\index{nuevapropiedad@{nuevapropiedad}!device@{device}}
+\doxysubsubsection{\texorpdfstring{nuevapropiedad()}{nuevapropiedad()}}
+{\footnotesize\ttfamily void device\+::nuevapropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{property }\end{DoxyParamCaption})}
+
+
+
+Creamos una nueva propiedad del dispositivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & propiedad a crear \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevice_a8958eca0626877eca8dd3217041f61f4}\label{classdevice_a8958eca0626877eca8dd3217041f61f4}} 
+\index{device@{device}!setlistanameblob@{setlistanameblob}}
+\index{setlistanameblob@{setlistanameblob}!device@{device}}
+\doxysubsubsection{\texorpdfstring{setlistanameblob()}{setlistanameblob()}}
+{\footnotesize\ttfamily void device\+::setlistanameblob (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{nameblob }\end{DoxyParamCaption})}
+
+
+
+añade el nombre del ultimo nameblob 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nameblob} & lista de nombres del nameblob \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+device.\+h\item 
+device.\+cpp\end{DoxyCompactItemize}

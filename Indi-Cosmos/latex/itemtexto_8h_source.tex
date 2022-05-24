@@ -1,0 +1,40 @@
+\hypertarget{itemtexto_8h_source}{}\doxysection{itemtexto.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef itemTEXTO\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define itemTEXTO\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <indigo/indigo\_bus.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <indigo/indigo\_client.h>}}
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classitemtexto}{itemtexto}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     Q\_OBJECT}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{keyword}{explicit} \mbox{\hyperlink{classitemtexto_ad174f00fb7f3d250a611139d497c34e6}{itemtexto}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{30     \mbox{\hyperlink{classitemtexto_a434ab9dbeac6f6071a911d1b59e3d82f}{\string~itemtexto}}();}
+\DoxyCodeLine{36     \mbox{\hyperlink{classitemtexto_ad174f00fb7f3d250a611139d497c34e6}{itemtexto}}(indigo\_item item,QWidget *parent );}
+\DoxyCodeLine{42     \textcolor{keywordtype}{string} \mbox{\hyperlink{classitemtexto_a8db0973b8f10f6ca260a2953289d3de3}{getname}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{string} \mbox{\hyperlink{classitemtexto_aa1533bae8d6394fa31d1dd3ae3462688}{getlabel}}();}
+\DoxyCodeLine{54     \textcolor{keywordtype}{string} \mbox{\hyperlink{classitemtexto_a93b4cd7b86fff0d5143f4678625ce30d}{getvalue}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{61     \textcolor{keywordtype}{string} label;}
+\DoxyCodeLine{62     \textcolor{keywordtype}{string} hints;}
+\DoxyCodeLine{63     QWidget* padre;}
+\DoxyCodeLine{64     \textcolor{keywordtype}{string} value;  }
+\DoxyCodeLine{65     QWidget widget;}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// itemTEXTO\_H}}
+
+\end{DoxyCode}

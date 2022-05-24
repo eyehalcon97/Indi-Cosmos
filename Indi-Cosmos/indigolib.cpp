@@ -82,7 +82,6 @@ static indigo_result client_update_property(indigo_client *client,indigo_device 
     }
 
     if (!strcmp(property->name, CCD_IMAGE_PROPERTY_NAME) && property->state == INDIGO_OK_STATE) {
-        indigo_log("imagenrecibida");
 
 
         if (*property->items[0].blob.url && indigo_populate_http_blob_item(&property->items[0]))

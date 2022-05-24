@@ -1,0 +1,108 @@
+\hypertarget{propiedad_8h_source}{}\doxysection{propiedad.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PROPIEDAD\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PROPIEDAD\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}itemblob.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}itemlight.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}itemnumero.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}itemswitch.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}itemtexto.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <indigo/indigo\_bus.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <indigo/indigo\_client.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <QVBoxLayout>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <QVBoxLayout>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <QComboBox>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <QPlainTextEdit>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <QPushButton>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <QTreeWidgetItem>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }Ui \{}
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classpropiedad}{propiedad}};}
+\DoxyCodeLine{29 \}}
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classpropiedad}{propiedad}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     Q\_OBJECT}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     \textcolor{keyword}{explicit} \mbox{\hyperlink{classpropiedad_a4744b6f3a936a8bcc64cd53b0edd9bb2}{propiedad}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{49     \mbox{\hyperlink{classpropiedad_a88201df89ff0e533e2baeec08b3852de}{\string~propiedad}}();}
+\DoxyCodeLine{56     \mbox{\hyperlink{classpropiedad_a4744b6f3a936a8bcc64cd53b0edd9bb2}{propiedad}}(indigo\_property *property,indigo\_client *cliente,QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{62     \textcolor{keywordtype}{string} \mbox{\hyperlink{classpropiedad_aa4081c9fbcfa1b30533439dd72ba0f0e}{getname}}();}
+\DoxyCodeLine{68     \textcolor{keywordtype}{string} \mbox{\hyperlink{classpropiedad_ad83507abe5ce4a3f28f9508b2d998ec3}{getgroup}}();}
+\DoxyCodeLine{74     QWidget **\mbox{\hyperlink{classpropiedad_ac6153772826a28664b6513d7e025616f}{mostrarpropiedades}}();}
+\DoxyCodeLine{80     \textcolor{keywordtype}{int} \mbox{\hyperlink{classpropiedad_a037ff8b4cfd86faaa27bcb2c23e87406}{getcount}}();}
+\DoxyCodeLine{86     \textcolor{keywordtype}{int} \mbox{\hyperlink{classpropiedad_ac55ed40e2f29c140b26f3a507b991a53}{gettype}}();}
+\DoxyCodeLine{92     QVBoxLayout *\mbox{\hyperlink{classpropiedad_a846e38474447e30df424d4a21b2eba19}{getlayout}}();}
+\DoxyCodeLine{98     \textcolor{keywordtype}{int} \mbox{\hyperlink{classpropiedad_a86385fe5ca4b52bfa067fe08b2a88041}{getstate}}();}
+\DoxyCodeLine{99     vector<string> itemsname();}
+\DoxyCodeLine{100     vector<QWidget*> itemsWidgets();}
+\DoxyCodeLine{107     \textcolor{keywordtype}{int} \mbox{\hyperlink{classpropiedad_a9a3e04a9ea05824fcbc6fec16735d101}{buscartexto}}(\textcolor{keywordtype}{string} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} \mbox{\hyperlink{classpropiedad_ab6fadb708cb35bb653c69586ff3f0841}{buscarnumero}}(\textcolor{keywordtype}{string} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{121     \textcolor{keywordtype}{void} \mbox{\hyperlink{classpropiedad_ab5812b16246089a055a133a44972332d}{cambiartexto}}(\textcolor{keywordtype}{string} nameitem,\textcolor{keywordtype}{string} valornuevo);}
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} \mbox{\hyperlink{classpropiedad_ae4b3ddb646b52fa6b02ce0ff8e4940bc}{cambiarnumero}}(\textcolor{keywordtype}{string} nameitem,\textcolor{keywordtype}{double} valornuevo);}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} \mbox{\hyperlink{classpropiedad_a8ad22eb2ddc8fdcb8cbdb118f2835b57}{setnameblob}}(\textcolor{keywordtype}{string} name);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{145     \textcolor{keywordtype}{void} combobox\_cambio(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{150     \textcolor{keywordtype}{void} botontexto();}
+\DoxyCodeLine{155     \textcolor{keywordtype}{void} botonnumero();}
+\DoxyCodeLine{160     \textcolor{keywordtype}{void} botonblob();}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{keyword}{private}:}
+\DoxyCodeLine{164     Ui::propiedad *ui;}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \textcolor{keywordtype}{string} devicename;}
+\DoxyCodeLine{167     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{168     \textcolor{keywordtype}{string} group;}
+\DoxyCodeLine{169     \textcolor{keywordtype}{string} label;}
+\DoxyCodeLine{170     \textcolor{keywordtype}{string} hints;}
+\DoxyCodeLine{171     \textcolor{keywordtype}{int} state;}
+\DoxyCodeLine{172     \textcolor{keywordtype}{int} type;}
+\DoxyCodeLine{173     \textcolor{keywordtype}{int} rule;}
+\DoxyCodeLine{174     indigo\_token access\_token;}
+\DoxyCodeLine{175     \textcolor{keywordtype}{short} version;}
+\DoxyCodeLine{176     \textcolor{keywordtype}{bool} hidden;}
+\DoxyCodeLine{177     \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{178     \textcolor{keywordtype}{int} perm;}
+\DoxyCodeLine{179     QWidget* padre;}
+\DoxyCodeLine{180     indigo\_client *cliente;}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     vector<itemblob*> itemsblob;}
+\DoxyCodeLine{183     vector<string> itemsblobname;}
+\DoxyCodeLine{184     vector<itemlight*> itemslight;}
+\DoxyCodeLine{185     vector<itemnumero*> itemsnumero;}
+\DoxyCodeLine{186     vector<itemswitch*> itemsswitch;}
+\DoxyCodeLine{187     vector<itemtexto*> itemstexto;}
+\DoxyCodeLine{188     vector<QWidget*>itemswidgets;}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 \};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PROPIEDAD\_H}}
+
+\end{DoxyCode}

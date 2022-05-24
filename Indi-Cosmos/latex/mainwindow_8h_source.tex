@@ -1,0 +1,81 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MAINWINDOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MAINWINDOW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QPushButton>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QButtonGroup>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QGridLayout>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}device.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include<QThread>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <indigo/indigo\_bus.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <indigo/indigo\_client.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{17 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }Ui \{ \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}}; \}}
+\DoxyCodeLine{22 QT\_END\_NAMESPACE}
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     Q\_OBJECT}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{42     \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ad29af8b697022c280b7cf7d044026206}{creardevice}}(\textcolor{keywordtype}{string} \textcolor{keywordtype}{id},indigo\_client *cliente);}
+\DoxyCodeLine{50     QThread *workerThread;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a5583758b3ed5da0c2805c9578310f733}{nuevodispositivo}}();}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a23f144a82996bdc19f651c112f8fd3b2}{nuevapropiedad}}(indigo\_property *\mbox{\hyperlink{classpropiedad}{propiedad}},indigo\_client *cliente);}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ada0b8943047ba4af05e99a335a373954}{cambiarpropiedadnameblob}}(indigo\_property *\mbox{\hyperlink{classpropiedad}{propiedad}},indigo\_client *cliente,\textcolor{keywordtype}{string} nameblob);}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a93407e9a3c7ab8a4621bf647a9329742}{eliminarpropiedad}}(indigo\_property *\mbox{\hyperlink{classpropiedad}{propiedad}});}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a87d48f217344e5b0a09258756e5f478e}{cambiarpropiedad}}(indigo\_property *\mbox{\hyperlink{classpropiedad}{propiedad}});}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_af2e526b71cc1ebb4dd413e1e4f7bf05e}{MostrarPropiedades}}();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} repintar();}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} on\_boolpanelderecho\_changed();}
+\DoxyCodeLine{112     \textcolor{keywordtype}{void} on\_actionSalir\_triggered();}
+\DoxyCodeLine{117     \textcolor{keywordtype}{void} on\_boolpanelsuperior\_changed();}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} botones\_clicked();}
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} limpiar();}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} on\_checkBox\_stateChanged(\textcolor{keywordtype}{int} arg1);}
+\DoxyCodeLine{140     \textcolor{keywordtype}{void} resizeEvent(QResizeEvent*);}
+\DoxyCodeLine{146     \textcolor{keywordtype}{int} indexofdevice(\textcolor{keywordtype}{string} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{153     \textcolor{keywordtype}{void} on\_ButtonConectar\_clicked();}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 signals:}
+\DoxyCodeLine{163     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a85a64fbef4227ee3dffbd72a9e39fbca}{conectarlib}}(\textcolor{keywordtype}{string} nombre,\textcolor{keywordtype}{string} host,\textcolor{keywordtype}{int} puerto);}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{keyword}{private}:}
+\DoxyCodeLine{166     Ui::MainWindow *ui;}
+\DoxyCodeLine{167     QPushButton **botones  = \textcolor{keyword}{new} QPushButton*[100];}
+\DoxyCodeLine{168     QGridLayout *layoutdevice = \textcolor{keyword}{new} QGridLayout;}
+\DoxyCodeLine{169     QGridLayout *layoutpropiedades;}
+\DoxyCodeLine{170     \mbox{\hyperlink{classdevice}{device}} **devices  = \textcolor{keyword}{new} \mbox{\hyperlink{classdevice}{device}}*[100];}
+\DoxyCodeLine{171     \textcolor{keywordtype}{int} *devicesseleccionados = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[100];}
+\DoxyCodeLine{172     \textcolor{keywordtype}{int} nseleccionados=0;}
+\DoxyCodeLine{173     \textcolor{keywordtype}{bool} modoseleccion=\textcolor{keyword}{false};}
+\DoxyCodeLine{174     \textcolor{keywordtype}{int} idbotones=0;}
+\DoxyCodeLine{175     \textcolor{keywordtype}{int} columnasmaxima =4;}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \};}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MAINWINDOW\_H}}
+\DoxyCodeLine{181 }
+
+\end{DoxyCode}

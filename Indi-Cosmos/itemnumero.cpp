@@ -37,20 +37,6 @@ double itemnumero::gettarget(){
 }
 
 
-itemnumero::itemnumero(string nombre,string etiqueta,string gui,string format,double min,double max,double step,double value,double target,QWidget *parent){
-    name=nombre;
-    label=etiqueta;
-    hints=gui;
-    padre=parent;
-    this->format=format;
-    this->min=min;
-    this->max=max;
-    this->step=step;
-    this->value=value;
-    this->target=target;
-
-}
-
 itemnumero::itemnumero(indigo_item item,int perm,QWidget *parent):QWidget(parent){
 
     padre=parent;

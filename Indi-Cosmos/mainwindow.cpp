@@ -92,12 +92,7 @@ void MainWindow::on_boolpanelsuperior_changed()
 }
 
 
-void MainWindow::on_Nobjetos_valueChanged(int arg1)
-{
 
-
-
-}
 
 void MainWindow::resizeEvent(QResizeEvent* event)
 {
@@ -214,7 +209,6 @@ void MainWindow::botones_clicked()
  void MainWindow::MostrarPropiedades(){
 
 
- indigo_log("llego");
 
      layoutpropiedades = new QGridLayout;
 
@@ -230,13 +224,13 @@ void MainWindow::botones_clicked()
         }
         delete ui->propiedades->layout();
     }
- indigo_log("llego2");
+
 
 
 
 
     for(int i=1;i<=nseleccionados;i++){
- indigo_log("llego3");
+
 
 
 
@@ -253,10 +247,10 @@ void MainWindow::botones_clicked()
 
     }
 
- indigo_log("llego4");
+
 
     ui->propiedades->setLayout(layoutpropiedades);
-     indigo_log("llego5");
+
 
 
 
@@ -348,13 +342,11 @@ void MainWindow::cambiarpropiedad(indigo_property *propiedad){
 }
 
 void MainWindow::eliminarpropiedad(indigo_property *propiedad){
-    indigo_log("señal de la libreria eliminar");
-    indigo_log(propiedad->device);
 
     string id = string(propiedad->device);
 
     int posicion =indexofdevice(id);
-    indigo_log(to_string(posicion).c_str());
+
     if(posicion > 0 && posicion <=idbotones ){
         devices[posicion]->eliminarpropiedad(propiedad);
     }
@@ -399,10 +391,6 @@ void MainWindow::nuevapropiedad(indigo_property *propiedad,indigo_client *client
 }
 
 
-void MainWindow::on_pushButton_clicked()
-{
-    MostrarPropiedades();
-}
 
 
 void MainWindow::on_ButtonConectar_clicked()

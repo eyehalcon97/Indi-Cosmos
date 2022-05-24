@@ -13,13 +13,7 @@ itemswitch::~itemswitch()
 
 }
 
-itemswitch::itemswitch(string nombre,string etiqueta,string gui,bool valor,QWidget *parent){
-    name=nombre;
-    label=etiqueta;
-    hints=gui;
-    padre=parent;
-    value=valor;
-}
+
 string itemswitch::getname(){
     return name;
 }

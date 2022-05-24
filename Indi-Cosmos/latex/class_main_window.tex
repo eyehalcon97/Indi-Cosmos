@@ -1,0 +1,168 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_a5583758b3ed5da0c2805c9578310f733}\label{class_main_window_a5583758b3ed5da0c2805c9578310f733}} 
+void {\bfseries nuevodispositivo} ()
+\begin{DoxyCompactList}\small\item\em Crea un nuevo dispositivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a23f144a82996bdc19f651c112f8fd3b2}{nuevapropiedad}} (indigo\+\_\+property $\ast$\mbox{\hyperlink{classpropiedad}{propiedad}}, indigo\+\_\+client $\ast$cliente)
+\begin{DoxyCompactList}\small\item\em Crea una nueva propiedad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ada0b8943047ba4af05e99a335a373954}{cambiarpropiedadnameblob}} (indigo\+\_\+property $\ast$\mbox{\hyperlink{classpropiedad}{propiedad}}, indigo\+\_\+client $\ast$cliente, string nameblob)
+\begin{DoxyCompactList}\small\item\em Modifica una propiedad de tipo blob. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a93407e9a3c7ab8a4621bf647a9329742}{eliminarpropiedad}} (indigo\+\_\+property $\ast$\mbox{\hyperlink{classpropiedad}{propiedad}})
+\begin{DoxyCompactList}\small\item\em Elimina una propiedad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a87d48f217344e5b0a09258756e5f478e}{cambiarpropiedad}} (indigo\+\_\+property $\ast$\mbox{\hyperlink{classpropiedad}{propiedad}})
+\begin{DoxyCompactList}\small\item\em Modifica una propiedad. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_af2e526b71cc1ebb4dd413e1e4f7bf05e}\label{class_main_window_af2e526b71cc1ebb4dd413e1e4f7bf05e}} 
+void {\bfseries Mostrar\+Propiedades} ()
+\begin{DoxyCompactList}\small\item\em Redibuja el panel derecho de la aplicacion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a85a64fbef4227ee3dffbd72a9e39fbca}{conectarlib}} (string nombre, string host, int puerto)
+\begin{DoxyCompactList}\small\item\em funcion que envia señal a la libreria con los datos para conectarse con indigo \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+{\bfseries Main\+Window} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+{\bfseries $\sim$\+Main\+Window} ()
+\begin{DoxyCompactList}\small\item\em Destructor por defecto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ad29af8b697022c280b7cf7d044026206}{creardevice}} (string id, indigo\+\_\+client $\ast$cliente)
+\begin{DoxyCompactList}\small\item\em Crea un nuevo display de dispositivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_aaef85ed4b22dd2241b10de58a46278f8}\label{class_main_window_aaef85ed4b22dd2241b10de58a46278f8}} 
+QThread $\ast$ {\bfseries worker\+Thread}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+eyehalcon97 Clase \mbox{\hyperlink{class_main_window}{Main\+Window}} es la clase ventana Principal del programa 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_a87d48f217344e5b0a09258756e5f478e}\label{class_main_window_a87d48f217344e5b0a09258756e5f478e}} 
+\index{MainWindow@{MainWindow}!cambiarpropiedad@{cambiarpropiedad}}
+\index{cambiarpropiedad@{cambiarpropiedad}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{cambiarpropiedad}{cambiarpropiedad}}
+{\footnotesize\ttfamily void Main\+Window\+::cambiarpropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{propiedad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modifica una propiedad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propiedad} & propiedad a modificar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_ada0b8943047ba4af05e99a335a373954}\label{class_main_window_ada0b8943047ba4af05e99a335a373954}} 
+\index{MainWindow@{MainWindow}!cambiarpropiedadnameblob@{cambiarpropiedadnameblob}}
+\index{cambiarpropiedadnameblob@{cambiarpropiedadnameblob}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{cambiarpropiedadnameblob}{cambiarpropiedadnameblob}}
+{\footnotesize\ttfamily void Main\+Window\+::cambiarpropiedadnameblob (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{propiedad,  }\item[{indigo\+\_\+client $\ast$}]{cliente,  }\item[{string}]{nameblob }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modifica una propiedad de tipo blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propiedad} & propiedad a modificar \\
+\hline
+{\em cliente} & cliente del dispositivo \\
+\hline
+{\em nameblob} & nombre del item blob \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a85a64fbef4227ee3dffbd72a9e39fbca}\label{class_main_window_a85a64fbef4227ee3dffbd72a9e39fbca}} 
+\index{MainWindow@{MainWindow}!conectarlib@{conectarlib}}
+\index{conectarlib@{conectarlib}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{conectarlib}{conectarlib}}
+{\footnotesize\ttfamily void Main\+Window\+::conectarlib (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{string}]{host,  }\item[{int}]{puerto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+funcion que envia señal a la libreria con los datos para conectarse con indigo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & nombre del dispositivo \\
+\hline
+{\em host} & nombre del host del dispositivo \\
+\hline
+{\em puero} & numero del puerto \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_ad29af8b697022c280b7cf7d044026206}\label{class_main_window_ad29af8b697022c280b7cf7d044026206}} 
+\index{MainWindow@{MainWindow}!creardevice@{creardevice}}
+\index{creardevice@{creardevice}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{creardevice()}{creardevice()}}
+{\footnotesize\ttfamily void Main\+Window\+::creardevice (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{indigo\+\_\+client $\ast$}]{cliente }\end{DoxyParamCaption})}
+
+
+
+Crea un nuevo display de dispositivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & nombre del dispositivo \\
+\hline
+{\em cliente} & cliente del dispositivo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a93407e9a3c7ab8a4621bf647a9329742}\label{class_main_window_a93407e9a3c7ab8a4621bf647a9329742}} 
+\index{MainWindow@{MainWindow}!eliminarpropiedad@{eliminarpropiedad}}
+\index{eliminarpropiedad@{eliminarpropiedad}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{eliminarpropiedad}{eliminarpropiedad}}
+{\footnotesize\ttfamily void Main\+Window\+::eliminarpropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{propiedad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Elimina una propiedad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propiedad} & propiedad a eliminar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a23f144a82996bdc19f651c112f8fd3b2}\label{class_main_window_a23f144a82996bdc19f651c112f8fd3b2}} 
+\index{MainWindow@{MainWindow}!nuevapropiedad@{nuevapropiedad}}
+\index{nuevapropiedad@{nuevapropiedad}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{nuevapropiedad}{nuevapropiedad}}
+{\footnotesize\ttfamily void Main\+Window\+::nuevapropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{propiedad,  }\item[{indigo\+\_\+client $\ast$}]{cliente }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Crea una nueva propiedad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propiedad} & propiedad nueva \\
+\hline
+{\em cliente} & cliente del dispositivo \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mainwindow.\+h\item 
+mainwindow.\+cpp\end{DoxyCompactItemize}

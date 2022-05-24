@@ -1,0 +1,55 @@
+\hypertarget{cambiarvalor_8h_source}{}\doxysection{cambiarvalor.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CAMBIARVALOR\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CAMBIARVALOR\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}itemtexto.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}itemnumero.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}propiedad.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }Ui \{}
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_cambiar_valor}{CambiarValor}};}
+\DoxyCodeLine{11 \}}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_cambiar_valor}{CambiarValor}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     Q\_OBJECT}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_cambiar_valor_ab6e999704db74d0f65d1d36158a24415}{CambiarValor}}(\mbox{\hyperlink{classpropiedad}{propiedad}} *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{33     \mbox{\hyperlink{class_cambiar_valor_ab6e999704db74d0f65d1d36158a24415}{CambiarValor}}(\mbox{\hyperlink{classitemtexto}{itemtexto}}* item,\textcolor{keywordtype}{int} perm,\mbox{\hyperlink{classpropiedad}{propiedad}} *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{40     \mbox{\hyperlink{class_cambiar_valor_ab6e999704db74d0f65d1d36158a24415}{CambiarValor}}(\mbox{\hyperlink{classitemnumero}{itemnumero}}* item,\textcolor{keywordtype}{int} perm,\mbox{\hyperlink{classpropiedad}{propiedad}} *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{45     \mbox{\hyperlink{class_cambiar_valor_aa84ac0b5dfe286d3790fe2a72440b651}{\string~CambiarValor}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} on\_boton\_clicked();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55     Ui::CambiarValor *ui;}
+\DoxyCodeLine{56 \textcolor{comment}{// general}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{58     \textcolor{keywordtype}{string} label;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{//texto}}
+\DoxyCodeLine{62     \textcolor{keywordtype}{string} valuetexto;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{//double}}
+\DoxyCodeLine{65     \mbox{\hyperlink{classpropiedad}{propiedad}} *padre;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{string} format;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} tipo;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} perm;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{double} min;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{double} max;}
+\DoxyCodeLine{71     \textcolor{keywordtype}{double} step;}
+\DoxyCodeLine{72     \textcolor{keywordtype}{double} valuenumero;}
+\DoxyCodeLine{73     \textcolor{keywordtype}{double} target;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CAMBIARVALOR\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,76 @@
+\hypertarget{device_8h_source}{}\doxysection{device.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DEVICE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DEVICE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <indigo/indigo\_bus.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <indigo/indigo\_client.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}propiedad.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <QVBoxLayout>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <QTreeWidget>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{16 \textcolor{keyword}{namespace }Ui \{}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classdevice}{device}};}
+\DoxyCodeLine{18 \}}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classdevice}{device}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     Q\_OBJECT}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \textcolor{keyword}{explicit} \mbox{\hyperlink{classdevice_aa85bdc6dc7dae4072da77eb29f0fd294}{device}}(\textcolor{keywordtype}{string} \textcolor{keywordtype}{id},indigo\_client *cliente, QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{42     \mbox{\hyperlink{classdevice_a08545ac77231c68a27c32633a9730a33}{\string~device}}();}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdevice_ae04551fc9e5236dd4bbe235c1686b2d6}{cambiartamanio}}(\textcolor{keywordtype}{int} altura,\textcolor{keywordtype}{int} anchura);}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdevice_afd77749fc65062d7af2f18616134ce00}{nuevapropiedad}}(indigo\_property* property);}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdevice_ae26880454ff630716f30606f21ba52fb}{cambiarpropiedad}}(indigo\_property* property,\textcolor{keywordtype}{string} nameblob);}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdevice_a44abee67c1d934dc9562158c9258075f}{eliminarpropiedad}}(indigo\_property* property);}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdevice_ae26880454ff630716f30606f21ba52fb}{cambiarpropiedad}}(indigo\_property* property);}
+\DoxyCodeLine{88     \mbox{\hyperlink{classpropiedad}{propiedad}}* \mbox{\hyperlink{classdevice_ae3e3e4479ca3be38e275c2a24913c0dd}{getpropiedad}}(\textcolor{keywordtype}{int} num);}
+\DoxyCodeLine{94     \textcolor{keywordtype}{string} \mbox{\hyperlink{classdevice_ab7096dcd9400e9630ebcb6ca25f3c07e}{getDeviceID}}();}
+\DoxyCodeLine{101     \textcolor{keywordtype}{int} \mbox{\hyperlink{classdevice_a4d9319bf96d8e6271096babc89c66765}{getnpropiedades}}();}
+\DoxyCodeLine{108     QVBoxLayout* \mbox{\hyperlink{classdevice_a8eab6664a0d409d09bea132cafdc2ca9}{mostrarpropiedades}}();}
+\DoxyCodeLine{109     indigo\_client *cliente;}
+\DoxyCodeLine{116     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classdevice_a7c9f3eebf21fb96c175d62a50dbdb56f}{estaseleccionado}}(\textcolor{keywordtype}{string} objeto);}
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdevice_a8958eca0626877eca8dd3217041f61f4}{setlistanameblob}}(vector<string> nameblob);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdevice_a86d030d38a9e6c73016228e5710a9805}{expandir}}( QTreeWidgetItem *objeto);}
+\DoxyCodeLine{141     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdevice_a82410745264b3492eb5577108f0e7b05}{disminuir}}( QTreeWidgetItem *objeto);}
+\DoxyCodeLine{148     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdevice_a4364dabbb6d63b8751bbe09dd91d3721}{cambiarseleccion}}(QTreeWidgetItem *objeto,\textcolor{keywordtype}{int} numero);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{keyword}{private}:}
+\DoxyCodeLine{160     \textcolor{keywordtype}{int} indexof(vector<string> lista,\textcolor{keywordtype}{string} value);}
+\DoxyCodeLine{167     \textcolor{keywordtype}{bool} estaexpandido(\textcolor{keywordtype}{string} objeto);}
+\DoxyCodeLine{168     Ui::device *ui;}
+\DoxyCodeLine{169     \textcolor{keywordtype}{string} deviceid;}
+\DoxyCodeLine{170     vector<propiedad*> propiedades;}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     QTreeWidget *arbol= \textcolor{keyword}{new} QTreeWidget;}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175     vector<string>grupos;}
+\DoxyCodeLine{176     vector<QTreeWidgetItem*> raices;}
+\DoxyCodeLine{177     vector<string> namesblob;}
+\DoxyCodeLine{178     vector<string> expandidos;}
+\DoxyCodeLine{179     \textcolor{keywordtype}{string} seleccionado = \textcolor{stringliteral}{"{}-\/1"{}};}
+\DoxyCodeLine{180     QScrollBar *nu ;}
+\DoxyCodeLine{181     \textcolor{keywordtype}{int} elements=0;}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DEVICE\_H}}
+
+\end{DoxyCode}

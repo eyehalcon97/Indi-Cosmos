@@ -7,17 +7,43 @@
 #include <indigo/indigo_client.h>
 using namespace std;
 
-
+/**
+ *
+ * @author eyehalcon97
+ * Clase itemblob almacena el item de tipo blob
+ */
 class itemblob : public QWidget
 {
     Q_OBJECT
 
 public:
+/**
+ *
+ * @brief Constructor por defecto
+ */
     explicit itemblob(QWidget *parent = nullptr);
+/**
+ *
+ * @brief Destructor por defecto
+ */
     ~itemblob();
-    itemblob(string nombre,string etiqueta,string gui,string formato,string url,long size,void *value,QWidget *parent =nullptr);
+/**
+ *
+ * @brief Constructor con un item
+ * @param item indigo item
+ */
     itemblob(indigo_item item,QWidget *parent = nullptr);
+/**
+ *
+ * @brief Insertar nombre del item blob
+ * @param name nombre del item
+ */
     void setname(string name);
+/**
+ *
+ * @brief Devuelve el nombre del item blob
+ * @return name
+ */
     string getname();
 
 private:

@@ -1,0 +1,59 @@
+\hypertarget{indigolib_8h_source}{}\doxysection{indigolib.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INDIGOLIB\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INDIGOLIB\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <indigo/indigo\_bus.h>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <indigo/indigo\_client.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <QThread>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classindigolib}{indigolib}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19      Q\_OBJECT}
+\DoxyCodeLine{20 \textcolor{keyword}{private}:}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} puerto;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{string} host;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{string} nombre;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 signals:}
+\DoxyCodeLine{37 \textcolor{keywordtype}{void} \mbox{\hyperlink{classindigolib_a3eb07171dec2d0506d21868cc1926ba8}{nuevapropiedad}}(indigo\_property *\mbox{\hyperlink{classpropiedad}{propiedad}},indigo\_client *cliente);}
+\DoxyCodeLine{45 \textcolor{keywordtype}{void} \mbox{\hyperlink{classindigolib_ae54084f90c916d4790f348cd30b709d1}{cambiarpropiedadnameblob}}(indigo\_property *\mbox{\hyperlink{classpropiedad}{propiedad}},indigo\_client *cliente,\textcolor{keywordtype}{string} nameblob);}
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{classindigolib_a114e382aa7a2f367a26605b699515a10}{eliminarpropiedad}}(indigo\_property *\mbox{\hyperlink{classpropiedad}{propiedad}});}
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} \mbox{\hyperlink{classindigolib_addaf556f57766a7684f73a919ee26a00}{cambiarpropiedad}}(indigo\_property *\mbox{\hyperlink{classpropiedad}{propiedad}});}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{68 \textcolor{keyword}{static} indigo\_result \mbox{\hyperlink{classindigolib_ac7e00267e2c8a7c06cafe8652fa7fdf4}{client\_detach}}(indigo\_client *client);}
+\DoxyCodeLine{77 \textcolor{keyword}{static} indigo\_result \mbox{\hyperlink{classindigolib_a179212a3ae79a959a925b592e6d0adb4}{client\_update\_property}}(indigo\_client *client,indigo\_device *\mbox{\hyperlink{classdevice}{device}},indigo\_property *property,\textcolor{keyword}{const} \textcolor{keywordtype}{char} *message);}
+\DoxyCodeLine{86 \textcolor{keyword}{static} indigo\_result \mbox{\hyperlink{classindigolib_a4a4950150fb08b1dd36476230515b885}{client\_define\_property}}(indigo\_client *client, indigo\_device *\mbox{\hyperlink{classdevice}{device}}, indigo\_property *property, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *message);}
+\DoxyCodeLine{95 \textcolor{keyword}{static} indigo\_result \mbox{\hyperlink{classindigolib_afb5e6b52972c13759c0e18d328f5ca7c}{client\_delete\_property}}(indigo\_client *client, indigo\_device *\mbox{\hyperlink{classdevice}{device}}, indigo\_property *property, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *message);}
+\DoxyCodeLine{102 \textcolor{keyword}{static} indigo\_result \mbox{\hyperlink{classindigolib_a4204c3d6c0788871531c0ee2b2d418b0}{client\_attach}}(indigo\_client *client);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \mbox{\hyperlink{classindigolib}{indigolib}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{112 \textcolor{keywordtype}{int} \mbox{\hyperlink{classindigolib_af980054d5beb2b4fe86e21ac47b892c7}{getpuerto}}();}
+\DoxyCodeLine{119 \textcolor{keywordtype}{string} \mbox{\hyperlink{classindigolib_a6b589d2400da7bf140812e0ec3229c1d}{gethost}}();}
+\DoxyCodeLine{126 \textcolor{keywordtype}{string} \mbox{\hyperlink{classindigolib_ae9de370435a1460ec5b875722ae8b7dc}{getnombre}}();}
+\DoxyCodeLine{127 \textcolor{keywordtype}{void} setpuerto(\textcolor{keywordtype}{int} port);}
+\DoxyCodeLine{128 \textcolor{keywordtype}{void} sethost(\textcolor{keywordtype}{string} hosts);}
+\DoxyCodeLine{129 \textcolor{keywordtype}{void} setnombre(\textcolor{keywordtype}{string} name);}
+\DoxyCodeLine{138 \textcolor{keywordtype}{void} \mbox{\hyperlink{classindigolib_a0c049412dd8a8723b92064f64e997af7}{conectar}}(\textcolor{keywordtype}{string} nombre,\textcolor{keywordtype}{string} host,\textcolor{keywordtype}{int} puerto);}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INDIGOLIB\_H}}
+
+\end{DoxyCode}

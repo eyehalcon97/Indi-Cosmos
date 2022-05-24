@@ -1,0 +1,264 @@
+\hypertarget{classpropiedad}{}\doxysection{propiedad Class Reference}
+\label{classpropiedad}\index{propiedad@{propiedad}}
+
+
+{\ttfamily \#include $<$propiedad.\+h$>$}
+
+Inheritance diagram for propiedad\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpropiedad}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpropiedad_a4744b6f3a936a8bcc64cd53b0edd9bb2}\label{classpropiedad_a4744b6f3a936a8bcc64cd53b0edd9bb2}} 
+{\bfseries propiedad} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classpropiedad_a88201df89ff0e533e2baeec08b3852de}\label{classpropiedad_a88201df89ff0e533e2baeec08b3852de}} 
+{\bfseries $\sim$propiedad} ()
+\begin{DoxyCompactList}\small\item\em Destructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpropiedad_a4495d9242761ca627e1582a4fc5be0e4}{propiedad}} (indigo\+\_\+property $\ast$property, indigo\+\_\+client $\ast$cliente, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor con una propiedad. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classpropiedad_aa4081c9fbcfa1b30533439dd72ba0f0e}{getname}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el nombre del item. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classpropiedad_ad83507abe5ce4a3f28f9508b2d998ec3}{getgroup}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el grupo del item. \end{DoxyCompactList}\item 
+QWidget $\ast$$\ast$ \mbox{\hyperlink{classpropiedad_ac6153772826a28664b6513d7e025616f}{mostrarpropiedades}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el Widget de la propiedad. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpropiedad_a037ff8b4cfd86faaa27bcb2c23e87406}{getcount}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el numero de items. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpropiedad_ac55ed40e2f29c140b26f3a507b991a53}{gettype}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el tipo de propiedad. \end{DoxyCompactList}\item 
+QVBox\+Layout $\ast$ \mbox{\hyperlink{classpropiedad_a846e38474447e30df424d4a21b2eba19}{getlayout}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el layout de la propiedad. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpropiedad_a86385fe5ca4b52bfa067fe08b2a88041}{getstate}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el state de la propiedad. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classpropiedad_ac8d61840ddafb8c2f2d9094ac3f91d46}\label{classpropiedad_ac8d61840ddafb8c2f2d9094ac3f91d46}} 
+vector$<$ string $>$ {\bfseries itemsname} ()
+\item 
+\mbox{\Hypertarget{classpropiedad_a550df1e36abd809e3373924763507f5b}\label{classpropiedad_a550df1e36abd809e3373924763507f5b}} 
+vector$<$ QWidget $\ast$ $>$ {\bfseries items\+Widgets} ()
+\item 
+int \mbox{\hyperlink{classpropiedad_a9a3e04a9ea05824fcbc6fec16735d101}{buscartexto}} (string id)
+\begin{DoxyCompactList}\small\item\em Devuelve el indice del item texto con el texto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpropiedad_ab6fadb708cb35bb653c69586ff3f0841}{buscarnumero}} (string id)
+\begin{DoxyCompactList}\small\item\em Devuelve el indice del item numero con el texto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpropiedad_ab5812b16246089a055a133a44972332d}{cambiartexto}} (string nameitem, string valornuevo)
+\begin{DoxyCompactList}\small\item\em Cambiar el valor del item texto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpropiedad_ae4b3ddb646b52fa6b02ce0ff8e4940bc}{cambiarnumero}} (string nameitem, double valornuevo)
+\begin{DoxyCompactList}\small\item\em Cambiar el valor del item numero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpropiedad_a8ad22eb2ddc8fdcb8cbdb118f2835b57}{setnameblob}} (string name)
+\begin{DoxyCompactList}\small\item\em Cambiar el nombre del item blob. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+eyehalcon97 Clase propiedad almacena los datos de una propiedad 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpropiedad_a4495d9242761ca627e1582a4fc5be0e4}\label{classpropiedad_a4495d9242761ca627e1582a4fc5be0e4}} 
+\index{propiedad@{propiedad}!propiedad@{propiedad}}
+\index{propiedad@{propiedad}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{propiedad()}{propiedad()}}
+{\footnotesize\ttfamily propiedad\+::propiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{property,  }\item[{indigo\+\_\+client $\ast$}]{cliente,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructor con una propiedad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & propiedad \\
+\hline
+{\em cliente} & cliente de la propiedad \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpropiedad_ab6fadb708cb35bb653c69586ff3f0841}\label{classpropiedad_ab6fadb708cb35bb653c69586ff3f0841}} 
+\index{propiedad@{propiedad}!buscarnumero@{buscarnumero}}
+\index{buscarnumero@{buscarnumero}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{buscarnumero()}{buscarnumero()}}
+{\footnotesize\ttfamily int propiedad\+::buscarnumero (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Devuelve el indice del item numero con el texto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & nombre del item que buscamos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+numero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpropiedad_a9a3e04a9ea05824fcbc6fec16735d101}\label{classpropiedad_a9a3e04a9ea05824fcbc6fec16735d101}} 
+\index{propiedad@{propiedad}!buscartexto@{buscartexto}}
+\index{buscartexto@{buscartexto}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{buscartexto()}{buscartexto()}}
+{\footnotesize\ttfamily int propiedad\+::buscartexto (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Devuelve el indice del item texto con el texto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & nombre del item que buscamos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+numero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpropiedad_ae4b3ddb646b52fa6b02ce0ff8e4940bc}\label{classpropiedad_ae4b3ddb646b52fa6b02ce0ff8e4940bc}} 
+\index{propiedad@{propiedad}!cambiarnumero@{cambiarnumero}}
+\index{cambiarnumero@{cambiarnumero}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{cambiarnumero()}{cambiarnumero()}}
+{\footnotesize\ttfamily void propiedad\+::cambiarnumero (\begin{DoxyParamCaption}\item[{string}]{nameitem,  }\item[{double}]{valornuevo }\end{DoxyParamCaption})}
+
+
+
+Cambiar el valor del item numero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & nombre del item \\
+\hline
+{\em valornuevo} & nuevo valor del numero \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpropiedad_ab5812b16246089a055a133a44972332d}\label{classpropiedad_ab5812b16246089a055a133a44972332d}} 
+\index{propiedad@{propiedad}!cambiartexto@{cambiartexto}}
+\index{cambiartexto@{cambiartexto}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{cambiartexto()}{cambiartexto()}}
+{\footnotesize\ttfamily void propiedad\+::cambiartexto (\begin{DoxyParamCaption}\item[{string}]{nameitem,  }\item[{string}]{valornuevo }\end{DoxyParamCaption})}
+
+
+
+Cambiar el valor del item texto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & nombre del item \\
+\hline
+{\em valornuevo} & nuevo valor del texto \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpropiedad_a037ff8b4cfd86faaa27bcb2c23e87406}\label{classpropiedad_a037ff8b4cfd86faaa27bcb2c23e87406}} 
+\index{propiedad@{propiedad}!getcount@{getcount}}
+\index{getcount@{getcount}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{getcount()}{getcount()}}
+{\footnotesize\ttfamily int propiedad\+::getcount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve el numero de items. 
+
+\begin{DoxyReturn}{Returns}
+nitems 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpropiedad_ad83507abe5ce4a3f28f9508b2d998ec3}\label{classpropiedad_ad83507abe5ce4a3f28f9508b2d998ec3}} 
+\index{propiedad@{propiedad}!getgroup@{getgroup}}
+\index{getgroup@{getgroup}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{getgroup()}{getgroup()}}
+{\footnotesize\ttfamily string propiedad\+::getgroup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve el grupo del item. 
+
+\begin{DoxyReturn}{Returns}
+group 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpropiedad_a846e38474447e30df424d4a21b2eba19}\label{classpropiedad_a846e38474447e30df424d4a21b2eba19}} 
+\index{propiedad@{propiedad}!getlayout@{getlayout}}
+\index{getlayout@{getlayout}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{getlayout()}{getlayout()}}
+{\footnotesize\ttfamily QVBox\+Layout $\ast$ propiedad\+::getlayout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve el layout de la propiedad. 
+
+\begin{DoxyReturn}{Returns}
+QVBox\+Layout 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpropiedad_aa4081c9fbcfa1b30533439dd72ba0f0e}\label{classpropiedad_aa4081c9fbcfa1b30533439dd72ba0f0e}} 
+\index{propiedad@{propiedad}!getname@{getname}}
+\index{getname@{getname}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{getname()}{getname()}}
+{\footnotesize\ttfamily string propiedad\+::getname (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve el nombre del item. 
+
+\begin{DoxyReturn}{Returns}
+nombre 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpropiedad_a86385fe5ca4b52bfa067fe08b2a88041}\label{classpropiedad_a86385fe5ca4b52bfa067fe08b2a88041}} 
+\index{propiedad@{propiedad}!getstate@{getstate}}
+\index{getstate@{getstate}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{getstate()}{getstate()}}
+{\footnotesize\ttfamily int propiedad\+::getstate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve el state de la propiedad. 
+
+\begin{DoxyReturn}{Returns}
+numero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpropiedad_ac55ed40e2f29c140b26f3a507b991a53}\label{classpropiedad_ac55ed40e2f29c140b26f3a507b991a53}} 
+\index{propiedad@{propiedad}!gettype@{gettype}}
+\index{gettype@{gettype}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{gettype()}{gettype()}}
+{\footnotesize\ttfamily int propiedad\+::gettype (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve el tipo de propiedad. 
+
+\begin{DoxyReturn}{Returns}
+type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpropiedad_ac6153772826a28664b6513d7e025616f}\label{classpropiedad_ac6153772826a28664b6513d7e025616f}} 
+\index{propiedad@{propiedad}!mostrarpropiedades@{mostrarpropiedades}}
+\index{mostrarpropiedades@{mostrarpropiedades}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{mostrarpropiedades()}{mostrarpropiedades()}}
+{\footnotesize\ttfamily QWidget $\ast$$\ast$ propiedad\+::mostrarpropiedades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve el Widget de la propiedad. 
+
+\begin{DoxyReturn}{Returns}
+QWidget 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpropiedad_a8ad22eb2ddc8fdcb8cbdb118f2835b57}\label{classpropiedad_a8ad22eb2ddc8fdcb8cbdb118f2835b57}} 
+\index{propiedad@{propiedad}!setnameblob@{setnameblob}}
+\index{setnameblob@{setnameblob}!propiedad@{propiedad}}
+\doxysubsubsection{\texorpdfstring{setnameblob()}{setnameblob()}}
+{\footnotesize\ttfamily void propiedad\+::setnameblob (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Cambiar el nombre del item blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nombre del blob \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+propiedad.\+h\item 
+propiedad.\+cpp\end{DoxyCompactItemize}

@@ -8,22 +8,52 @@
 using namespace std;
 
 
+/**
+ *
+ * @author eyehalcon97
+ * Clase itemtexto  almacena el item de tipo itemtexto 
+ */
 class itemtexto : public QWidget
 {
     Q_OBJECT
 
 public:
+/**
+ *
+ * @brief Constructor por defecto
+ */
     explicit itemtexto(QWidget *parent = nullptr);
+/**
+ *
+ * @brief Destructor por defecto
+ */
     ~itemtexto();
-    itemtexto(string nombre,string etiqueta,string gui,string value,QWidget *parent = nullptr);
+/**
+ *
+ * @brief Constructor con un item
+ * @param item indigo item
+ */
     itemtexto(indigo_item item,QWidget *parent );
-    void mostrarpropiedad();
+/**
+ *
+ * @brief Devuelve el nombre del item
+ * @return nombre
+ */
     string getname();
+/**
+ *
+ * @brief Devuelve el nombre de la etiqueta del item
+ * @return label
+ */
     string getlabel();
+/**
+ *
+ * @brief Devuelve el valor del item
+ * @return value
+ */
     string getvalue();
 
-private slots:
-    void on_poner_clicked();
+
 
 private:
 

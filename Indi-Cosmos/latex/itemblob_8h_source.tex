@@ -1,0 +1,37 @@
+\hypertarget{itemblob_8h_source}{}\doxysection{itemblob.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef itemBLOB\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define itemBLOB\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <indigo/indigo\_bus.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <indigo/indigo\_client.h>}}
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classitemblob}{itemblob}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     Q\_OBJECT}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \textcolor{keyword}{explicit} \mbox{\hyperlink{classitemblob_a0d00b05916a7d722e24e7d5e12b1ae99}{itemblob}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{29     \mbox{\hyperlink{classitemblob_a0a189304ae1fe4b447d0c86324cb4cce}{\string~itemblob}}();}
+\DoxyCodeLine{35     \mbox{\hyperlink{classitemblob_a0d00b05916a7d722e24e7d5e12b1ae99}{itemblob}}(indigo\_item item,QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classitemblob_a8540cf73453adce826b0a9b136000da9}{setname}}(\textcolor{keywordtype}{string} name);}
+\DoxyCodeLine{47     \textcolor{keywordtype}{string} \mbox{\hyperlink{classitemblob_aa99dccce4abdbfdc4d01a198e25794a4}{getname}}();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{51     \textcolor{keywordtype}{string} label;}
+\DoxyCodeLine{52     \textcolor{keywordtype}{string} hints;}
+\DoxyCodeLine{53     QWidget* padre;}
+\DoxyCodeLine{54     \textcolor{keywordtype}{string} formato;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{string} url;}
+\DoxyCodeLine{56     \textcolor{keywordtype}{long} size;}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} *value;}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// itemBLOB\_H}}
+
+\end{DoxyCode}

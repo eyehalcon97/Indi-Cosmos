@@ -1,0 +1,48 @@
+\hypertarget{itemnumero_8h_source}{}\doxysection{itemnumero.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef itemNUMERO\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define itemNUMERO\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <indigo/indigo\_bus.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <indigo/indigo\_client.h>}}
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classitemnumero}{itemnumero}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     Q\_OBJECT}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{keyword}{explicit} \mbox{\hyperlink{classitemnumero_ad7e3810dfa95f187c3052c0e55c22b26}{itemnumero}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{30     \mbox{\hyperlink{classitemnumero_a9976ce594fd441bab87c65cf821f1cc4}{\string~itemnumero}}();}
+\DoxyCodeLine{36     \mbox{\hyperlink{classitemnumero_ad7e3810dfa95f187c3052c0e55c22b26}{itemnumero}}(indigo\_item item,\textcolor{keywordtype}{int} perm,QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{42     \textcolor{keywordtype}{string} \mbox{\hyperlink{classitemnumero_a658fda5bb70f8b6e83793d73e87b2d70}{getname}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{string} \mbox{\hyperlink{classitemnumero_ac004778ccef119eba9943fccd61db343}{getlabel}}();}
+\DoxyCodeLine{54     \textcolor{keywordtype}{double} \mbox{\hyperlink{classitemnumero_a1db95f62208f0820288747555133a1ae}{getvalue}}();}
+\DoxyCodeLine{60     \textcolor{keywordtype}{string} \mbox{\hyperlink{classitemnumero_a3d30612fccd7a995706f9fe4171ba56d}{getformat}}();}
+\DoxyCodeLine{66     \textcolor{keywordtype}{double} \mbox{\hyperlink{classitemnumero_a20404cc56bd46ee4f221a34bc8dab77c}{getmin}}();}
+\DoxyCodeLine{72     \textcolor{keywordtype}{double} \mbox{\hyperlink{classitemnumero_aa3d00abeae6503a16044e583f016dd21}{getmax}}();}
+\DoxyCodeLine{78     \textcolor{keywordtype}{double} \mbox{\hyperlink{classitemnumero_a128aae761029b976951c865df0c62ab1}{getstep}}();}
+\DoxyCodeLine{84     \textcolor{keywordtype}{double} \mbox{\hyperlink{classitemnumero_a1a4f999ed942f177538cd46f821b86b4}{gettarget}}();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{private}:}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{string} label;}
+\DoxyCodeLine{90     \textcolor{keywordtype}{string} hints;}
+\DoxyCodeLine{91     QWidget* padre;}
+\DoxyCodeLine{92     \textcolor{keywordtype}{string} format;}
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} perm;}
+\DoxyCodeLine{94     \textcolor{keywordtype}{double} min;}
+\DoxyCodeLine{95     \textcolor{keywordtype}{double} max;}
+\DoxyCodeLine{96     \textcolor{keywordtype}{double} step;}
+\DoxyCodeLine{97     \textcolor{keywordtype}{double} value;}
+\DoxyCodeLine{98     \textcolor{keywordtype}{double} target;}
+\DoxyCodeLine{99 \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// itemNUMERO\_H}}
+
+\end{DoxyCode}

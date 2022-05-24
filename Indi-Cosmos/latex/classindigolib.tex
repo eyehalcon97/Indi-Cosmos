@@ -1,0 +1,288 @@
+\hypertarget{classindigolib}{}\doxysection{indigolib Class Reference}
+\label{classindigolib}\index{indigolib@{indigolib}}
+
+
+{\ttfamily \#include $<$indigolib.\+h$>$}
+
+Inheritance diagram for indigolib\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classindigolib}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classindigolib_a3eb07171dec2d0506d21868cc1926ba8}{nuevapropiedad}} (indigo\+\_\+property $\ast$\mbox{\hyperlink{classpropiedad}{propiedad}}, indigo\+\_\+client $\ast$cliente)
+\begin{DoxyCompactList}\small\item\em funcion que llama a la ventana principal con una propiedad nueva \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classindigolib_ae54084f90c916d4790f348cd30b709d1}{cambiarpropiedadnameblob}} (indigo\+\_\+property $\ast$\mbox{\hyperlink{classpropiedad}{propiedad}}, indigo\+\_\+client $\ast$cliente, string nameblob)
+\begin{DoxyCompactList}\small\item\em funcion que llama a la ventana principal para modificar una propiedad con nombre nameblob \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classindigolib_a114e382aa7a2f367a26605b699515a10}{eliminarpropiedad}} (indigo\+\_\+property $\ast$\mbox{\hyperlink{classpropiedad}{propiedad}})
+\begin{DoxyCompactList}\small\item\em funcion que llama a la ventana principal con una propiedad a eliminar \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classindigolib_addaf556f57766a7684f73a919ee26a00}{cambiarpropiedad}} (indigo\+\_\+property $\ast$\mbox{\hyperlink{classpropiedad}{propiedad}})
+\begin{DoxyCompactList}\small\item\em funcion que llama a la ventana principal para modificar una propiedad \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classindigolib_af980054d5beb2b4fe86e21ac47b892c7}{getpuerto}} ()
+\begin{DoxyCompactList}\small\item\em devuelve el numero de puerto \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classindigolib_a6b589d2400da7bf140812e0ec3229c1d}{gethost}} ()
+\begin{DoxyCompactList}\small\item\em devuelve el nombre de host \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classindigolib_ae9de370435a1460ec5b875722ae8b7dc}{getnombre}} ()
+\begin{DoxyCompactList}\small\item\em devuelve el nombre del dispositivo \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindigolib_a165e63e3ee9225d469aa646d86d1baee}\label{classindigolib_a165e63e3ee9225d469aa646d86d1baee}} 
+void {\bfseries setpuerto} (int port)
+\item 
+\mbox{\Hypertarget{classindigolib_add535c18e2b4854559b4535fc631b65a}\label{classindigolib_add535c18e2b4854559b4535fc631b65a}} 
+void {\bfseries sethost} (string hosts)
+\item 
+\mbox{\Hypertarget{classindigolib_a2611a72ad093ff2d005763fe72b447d9}\label{classindigolib_a2611a72ad093ff2d005763fe72b447d9}} 
+void {\bfseries setnombre} (string name)
+\item 
+void \mbox{\hyperlink{classindigolib_a0c049412dd8a8723b92064f64e997af7}{conectar}} (string nombre, string host, int puerto)
+\begin{DoxyCompactList}\small\item\em funcion que inicializa y escucha la libreria indigo \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static indigo\+\_\+result \mbox{\hyperlink{classindigolib_ac7e00267e2c8a7c06cafe8652fa7fdf4}{client\+\_\+detach}} (indigo\+\_\+client $\ast$client)
+\begin{DoxyCompactList}\small\item\em funcion que se llama al desconectar la libreria indigo \end{DoxyCompactList}\item 
+static indigo\+\_\+result \mbox{\hyperlink{classindigolib_a179212a3ae79a959a925b592e6d0adb4}{client\+\_\+update\+\_\+property}} (indigo\+\_\+client $\ast$client, indigo\+\_\+device $\ast$\mbox{\hyperlink{classdevice}{device}}, indigo\+\_\+property $\ast$property, const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em funcion que se llama al llegar una propiedad a actualizar \end{DoxyCompactList}\item 
+static indigo\+\_\+result \mbox{\hyperlink{classindigolib_a4a4950150fb08b1dd36476230515b885}{client\+\_\+define\+\_\+property}} (indigo\+\_\+client $\ast$client, indigo\+\_\+device $\ast$\mbox{\hyperlink{classdevice}{device}}, indigo\+\_\+property $\ast$property, const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em funcion que se llama al llegar una nueva propiedad \end{DoxyCompactList}\item 
+static indigo\+\_\+result \mbox{\hyperlink{classindigolib_afb5e6b52972c13759c0e18d328f5ca7c}{client\+\_\+delete\+\_\+property}} (indigo\+\_\+client $\ast$client, indigo\+\_\+device $\ast$\mbox{\hyperlink{classdevice}{device}}, indigo\+\_\+property $\ast$property, const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em funcion que se llama al llegar una propiedad a eliminar \end{DoxyCompactList}\item 
+static indigo\+\_\+result \mbox{\hyperlink{classindigolib_a4204c3d6c0788871531c0ee2b2d418b0}{client\+\_\+attach}} (indigo\+\_\+client $\ast$client)
+\begin{DoxyCompactList}\small\item\em funcion que se llama al conectar la libreria indigo \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+eyehalcon97 Clase que utiliza la libreria de indigo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classindigolib_addaf556f57766a7684f73a919ee26a00}\label{classindigolib_addaf556f57766a7684f73a919ee26a00}} 
+\index{indigolib@{indigolib}!cambiarpropiedad@{cambiarpropiedad}}
+\index{cambiarpropiedad@{cambiarpropiedad}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{cambiarpropiedad}{cambiarpropiedad}}
+{\footnotesize\ttfamily void indigolib\+::cambiarpropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{propiedad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+funcion que llama a la ventana principal para modificar una propiedad 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propiedad} & propiedad a modificar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classindigolib_ae54084f90c916d4790f348cd30b709d1}\label{classindigolib_ae54084f90c916d4790f348cd30b709d1}} 
+\index{indigolib@{indigolib}!cambiarpropiedadnameblob@{cambiarpropiedadnameblob}}
+\index{cambiarpropiedadnameblob@{cambiarpropiedadnameblob}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{cambiarpropiedadnameblob}{cambiarpropiedadnameblob}}
+{\footnotesize\ttfamily void indigolib\+::cambiarpropiedadnameblob (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{propiedad,  }\item[{indigo\+\_\+client $\ast$}]{cliente,  }\item[{string}]{nameblob }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+funcion que llama a la ventana principal para modificar una propiedad con nombre nameblob 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propiedad} & propiedad a modificar \\
+\hline
+{\em cliente} & cliente de la propiedad \\
+\hline
+{\em nameblob} & nombre de la propiedad nameblob \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classindigolib_a4204c3d6c0788871531c0ee2b2d418b0}\label{classindigolib_a4204c3d6c0788871531c0ee2b2d418b0}} 
+\index{indigolib@{indigolib}!client\_attach@{client\_attach}}
+\index{client\_attach@{client\_attach}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{client\_attach()}{client\_attach()}}
+{\footnotesize\ttfamily static indigo\+\_\+result indigolib\+::client\+\_\+attach (\begin{DoxyParamCaption}\item[{indigo\+\_\+client $\ast$}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+funcion que se llama al conectar la libreria indigo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & cliente de indigo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classindigolib_a4a4950150fb08b1dd36476230515b885}\label{classindigolib_a4a4950150fb08b1dd36476230515b885}} 
+\index{indigolib@{indigolib}!client\_define\_property@{client\_define\_property}}
+\index{client\_define\_property@{client\_define\_property}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{client\_define\_property()}{client\_define\_property()}}
+{\footnotesize\ttfamily static indigo\+\_\+result indigolib\+::client\+\_\+define\+\_\+property (\begin{DoxyParamCaption}\item[{indigo\+\_\+client $\ast$}]{client,  }\item[{indigo\+\_\+device $\ast$}]{device,  }\item[{indigo\+\_\+property $\ast$}]{property,  }\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+funcion que se llama al llegar una nueva propiedad 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & cliente de indigo \\
+\hline
+{\em device} & dispositivo de indigo \\
+\hline
+{\em property} & propiedad nueva \\
+\hline
+{\em message} & mensaje del servidor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classindigolib_afb5e6b52972c13759c0e18d328f5ca7c}\label{classindigolib_afb5e6b52972c13759c0e18d328f5ca7c}} 
+\index{indigolib@{indigolib}!client\_delete\_property@{client\_delete\_property}}
+\index{client\_delete\_property@{client\_delete\_property}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{client\_delete\_property()}{client\_delete\_property()}}
+{\footnotesize\ttfamily static indigo\+\_\+result indigolib\+::client\+\_\+delete\+\_\+property (\begin{DoxyParamCaption}\item[{indigo\+\_\+client $\ast$}]{client,  }\item[{indigo\+\_\+device $\ast$}]{device,  }\item[{indigo\+\_\+property $\ast$}]{property,  }\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+funcion que se llama al llegar una propiedad a eliminar 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & cliente de indigo \\
+\hline
+{\em device} & dispositivo de indigo \\
+\hline
+{\em property} & propiedad a eliminar \\
+\hline
+{\em message} & mensaje del servidor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classindigolib_ac7e00267e2c8a7c06cafe8652fa7fdf4}\label{classindigolib_ac7e00267e2c8a7c06cafe8652fa7fdf4}} 
+\index{indigolib@{indigolib}!client\_detach@{client\_detach}}
+\index{client\_detach@{client\_detach}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{client\_detach()}{client\_detach()}}
+{\footnotesize\ttfamily static indigo\+\_\+result indigolib\+::client\+\_\+detach (\begin{DoxyParamCaption}\item[{indigo\+\_\+client $\ast$}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+funcion que se llama al desconectar la libreria indigo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & cliente de indigo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classindigolib_a179212a3ae79a959a925b592e6d0adb4}\label{classindigolib_a179212a3ae79a959a925b592e6d0adb4}} 
+\index{indigolib@{indigolib}!client\_update\_property@{client\_update\_property}}
+\index{client\_update\_property@{client\_update\_property}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{client\_update\_property()}{client\_update\_property()}}
+{\footnotesize\ttfamily static indigo\+\_\+result indigolib\+::client\+\_\+update\+\_\+property (\begin{DoxyParamCaption}\item[{indigo\+\_\+client $\ast$}]{client,  }\item[{indigo\+\_\+device $\ast$}]{device,  }\item[{indigo\+\_\+property $\ast$}]{property,  }\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+funcion que se llama al llegar una propiedad a actualizar 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & cliente de indigo \\
+\hline
+{\em device} & dispositivo de indigo \\
+\hline
+{\em property} & propiedad a actualizar \\
+\hline
+{\em message} & mensaje del servidor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classindigolib_a0c049412dd8a8723b92064f64e997af7}\label{classindigolib_a0c049412dd8a8723b92064f64e997af7}} 
+\index{indigolib@{indigolib}!conectar@{conectar}}
+\index{conectar@{conectar}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{conectar()}{conectar()}}
+{\footnotesize\ttfamily void indigolib\+::conectar (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{string}]{host,  }\item[{int}]{puerto }\end{DoxyParamCaption})}
+
+
+
+funcion que inicializa y escucha la libreria indigo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & nombre del dispositivo \\
+\hline
+{\em host} & nombre del host \\
+\hline
+{\em puerto} & numero de puerto \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classindigolib_a114e382aa7a2f367a26605b699515a10}\label{classindigolib_a114e382aa7a2f367a26605b699515a10}} 
+\index{indigolib@{indigolib}!eliminarpropiedad@{eliminarpropiedad}}
+\index{eliminarpropiedad@{eliminarpropiedad}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{eliminarpropiedad}{eliminarpropiedad}}
+{\footnotesize\ttfamily void indigolib\+::eliminarpropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{propiedad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+funcion que llama a la ventana principal con una propiedad a eliminar 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propiedad} & propiedad a eliminar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classindigolib_a6b589d2400da7bf140812e0ec3229c1d}\label{classindigolib_a6b589d2400da7bf140812e0ec3229c1d}} 
+\index{indigolib@{indigolib}!gethost@{gethost}}
+\index{gethost@{gethost}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{gethost()}{gethost()}}
+{\footnotesize\ttfamily string indigolib\+::gethost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+devuelve el nombre de host 
+
+\begin{DoxyReturn}{Returns}
+host 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindigolib_ae9de370435a1460ec5b875722ae8b7dc}\label{classindigolib_ae9de370435a1460ec5b875722ae8b7dc}} 
+\index{indigolib@{indigolib}!getnombre@{getnombre}}
+\index{getnombre@{getnombre}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{getnombre()}{getnombre()}}
+{\footnotesize\ttfamily string indigolib\+::getnombre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+devuelve el nombre del dispositivo 
+
+\begin{DoxyReturn}{Returns}
+nombre 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindigolib_af980054d5beb2b4fe86e21ac47b892c7}\label{classindigolib_af980054d5beb2b4fe86e21ac47b892c7}} 
+\index{indigolib@{indigolib}!getpuerto@{getpuerto}}
+\index{getpuerto@{getpuerto}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{getpuerto()}{getpuerto()}}
+{\footnotesize\ttfamily int indigolib\+::getpuerto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+devuelve el numero de puerto 
+
+\begin{DoxyReturn}{Returns}
+puerto 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindigolib_a3eb07171dec2d0506d21868cc1926ba8}\label{classindigolib_a3eb07171dec2d0506d21868cc1926ba8}} 
+\index{indigolib@{indigolib}!nuevapropiedad@{nuevapropiedad}}
+\index{nuevapropiedad@{nuevapropiedad}!indigolib@{indigolib}}
+\doxysubsubsection{\texorpdfstring{nuevapropiedad}{nuevapropiedad}}
+{\footnotesize\ttfamily void indigolib\+::nuevapropiedad (\begin{DoxyParamCaption}\item[{indigo\+\_\+property $\ast$}]{propiedad,  }\item[{indigo\+\_\+client $\ast$}]{cliente }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+funcion que llama a la ventana principal con una propiedad nueva 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propiedad} & propiedad nueva \\
+\hline
+{\em cliente} & cliente de la propiedad \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+indigolib.\+h\item 
+indigolib.\+cpp\end{DoxyCompactItemize}

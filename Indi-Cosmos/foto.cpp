@@ -16,7 +16,7 @@ foto::foto(string ruta):ui(new Ui::foto){
     ui->setupUi(this);
 
     this->ruta = "./" + ruta;
-    indigo_log(this->ruta.c_str());
+
 
     QPixmap pixmap(QString::fromStdString(this->ruta));
     ui->label->setPixmap(pixmap);

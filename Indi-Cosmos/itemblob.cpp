@@ -23,17 +23,6 @@ void itemblob::setname(string name){
 }
 
 
-itemblob::itemblob(string nombre,string etiqueta,string gui,string format,string urls,long tam,void *valor,QWidget *parent){
-    name="fotoquetal";
-    label=etiqueta;
-    hints=gui;
-    padre=parent;
-    formato=format;
-    url = urls;
-    size=tam;
-    value=valor;
-}
-
 
 itemblob::itemblob(indigo_item item,QWidget *parent): QWidget(parent){
 

@@ -8,17 +8,43 @@
 using namespace std;
 
 
-
+/**
+ *
+ * @author eyehalcon97
+ * Clase itemswitch almacena el item de tipo itemswitch
+ */
 class itemswitch : public QWidget
 {
     Q_OBJECT
 
 public:
+/**
+ *
+ * @brief Constructor por defecto
+ */
     explicit itemswitch(QWidget *parent = nullptr);
+/**
+ *
+ * @brief Destructor por defecto
+ */
     ~itemswitch();
-    itemswitch(string nombre,string etiqueta,string gui,bool valor,QWidget *parent =nullptr);
+/**
+ *
+ * @brief Constructor con un item
+ * @param item indigo item
+ */
     itemswitch(indigo_item item,QWidget *parent = nullptr);
+/**
+ *
+ * @brief Devuelve el nombre del item
+ * @return name
+ */
     string getname();
+/**
+ *
+ * @brief Devuelve el valor del item
+ * @return value
+ */
     bool getvalue();
 
 private:

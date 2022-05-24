@@ -8,16 +8,37 @@
 using namespace std;
 
 
-
+/**
+ *
+ * @author eyehalcon97
+ * Clase itemlight almacena el item de tipo itemlight
+ */
 class itemlight : public QWidget
 {
     Q_OBJECT
 
 public:
+/**
+ *
+ * @brief Constructor por defecto
+ */
     explicit itemlight(QWidget *parent = nullptr);
+/**
+ *
+ * @brief Destructor por defecto
+ */
     ~itemlight();
-    itemlight(string nombre,string etiqueta,string gui ,int valor,QWidget *parent =nullptr);
+/**
+ *
+ * @brief Constructor con un item
+ * @param item indigo item
+ */
     itemlight(indigo_item item,QWidget *parent = nullptr);
+/**
+ *
+ * @brief Devuelve el valor del item
+ * @return value
+ */
     int getvalue();
 private:
     string name;

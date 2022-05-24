@@ -13,16 +13,6 @@ itemtexto::~itemtexto()
 
 }
 
-
-itemtexto::itemtexto(string nombre,string etiqueta,string gui,string value,QWidget *parent){
-    name=nombre;
-    label=etiqueta;
-    hints=gui;
-    padre=parent;
-    this->value=value;
-
-}
-
 string itemtexto::getname(){
     return name;
 }
@@ -43,29 +33,12 @@ itemtexto::itemtexto(indigo_item item,QWidget *parent):QWidget(parent){
 
     if(item.text.length < INDIGO_VALUE_SIZE){
         this->value=string(item.text.value);
-        indigo_log(item.text.value);
     }else{
         this->value=string(item.text.long_value);
-        indigo_log(item.text.long_value);
     }
-    indigo_log(this->name.c_str());
-
-
 
 
 
 }
 
-
-
-void itemtexto::mostrarpropiedad(){
-
-    indigo_log("valor");
-    indigo_log(this->name.c_str());
-}
-
-void itemtexto::on_poner_clicked()
-{
-
-}
 

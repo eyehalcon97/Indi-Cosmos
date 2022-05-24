@@ -1,0 +1,33 @@
+\hypertarget{itemlight_8h_source}{}\doxysection{itemlight.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef itemLIGHT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define itemLIGHT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <indigo/indigo\_bus.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <indigo/indigo\_client.h>}}
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classitemlight}{itemlight}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     Q\_OBJECT}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{keyword}{explicit} \mbox{\hyperlink{classitemlight_a1e9600d8f0d831dbe2f4fcb2c155a70c}{itemlight}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{30     \mbox{\hyperlink{classitemlight_a289195cd7bd1d8f02dcdaabca35df7f5}{\string~itemlight}}();}
+\DoxyCodeLine{36     \mbox{\hyperlink{classitemlight_a1e9600d8f0d831dbe2f4fcb2c155a70c}{itemlight}}(indigo\_item item,QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} \mbox{\hyperlink{classitemlight_a63e84106dc075cb55ce5a9ec563d0300}{getvalue}}();}
+\DoxyCodeLine{43 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{45     \textcolor{keywordtype}{string} label;}
+\DoxyCodeLine{46     \textcolor{keywordtype}{string} hints;}
+\DoxyCodeLine{47     QWidget* padre;}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} value;    }
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// itemLIGHT\_H}}
+
+\end{DoxyCode}

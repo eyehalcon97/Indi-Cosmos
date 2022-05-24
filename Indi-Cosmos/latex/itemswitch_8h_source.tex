@@ -1,0 +1,36 @@
+\hypertarget{itemswitch_8h_source}{}\doxysection{itemswitch.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef itemSWITCH\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define itemSWITCH\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <indigo/indigo\_bus.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <indigo/indigo\_client.h>}}
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classitemswitch}{itemswitch}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     Q\_OBJECT}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{keyword}{explicit} \mbox{\hyperlink{classitemswitch_a14f6d7c67e15f2d0d693f7e3075da296}{itemswitch}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{30     \mbox{\hyperlink{classitemswitch_ae0545d12ecaee131b29667f294a813ec}{\string~itemswitch}}();}
+\DoxyCodeLine{36     \mbox{\hyperlink{classitemswitch_a14f6d7c67e15f2d0d693f7e3075da296}{itemswitch}}(indigo\_item item,QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{42     \textcolor{keywordtype}{string} \mbox{\hyperlink{classitemswitch_ae3b6ad7de39efeb192689b7cac7fd819}{getname}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classitemswitch_a77e5579fa63cf92fccc2b33cb82aefeb}{getvalue}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{53     \textcolor{keywordtype}{string} label;}
+\DoxyCodeLine{54     \textcolor{keywordtype}{string} hints;}
+\DoxyCodeLine{55     QWidget* padre;}
+\DoxyCodeLine{56     \textcolor{keywordtype}{bool} value;}
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// itemSWITCH\_H}}
+
+\end{DoxyCode}
